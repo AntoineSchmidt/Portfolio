@@ -7,6 +7,6 @@ The human driver recorded the view from three cameras using the segmented images
 For that the *settings.json* file has to be moved into the AirSim directory.
 
 Finally the model was trained to imitate the human driver, correcting the steering label for the left and right view to get back on track.\
-The learned result can be viewed here: [link text itself]: https://youtu.be/NtGKL55OlRk
+The learned result can be viewed here: https://youtu.be/NtGKL55OlRk
 
 **This is just a quick project, falling short of any network search!**
