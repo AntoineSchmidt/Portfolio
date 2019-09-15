@@ -14,7 +14,7 @@ This project is:
 <img src="../anim_b.gif">
 
 ## Run the simulation
-*alife.exe data.xml setting-id*
+>*alife.exe data.xml setting-id*\
 All automata rules, the world (initial state, size, dimension) and the wanted outputs (bmp images, sdl window, console) can be configurated in a xml file.\
 Checkout data.xml and data_lab.xml for examples.\
 *linux_dependencies.txt* states all dependencies needed using linux.
