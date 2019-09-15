@@ -1,0 +1,45 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Car",
+  "Vehicles": {
+    "PhysXCar": {
+      "VehicleType": "PhysXCar",
+      "DefaultVehicleState": "",
+      "AutoCreate": true,
+      "PawnPath": "",
+      "EnableCollisionPassthrogh": false,
+      "EnableCollisions": true,
+      "RC": {
+        "RemoteControlID": -1
+      },
+      "Cameras": {   
+        "MyCamera0": {
+          "X": 2, "Y": 0, "Z": -1,
+          "Pitch": 0, "Roll": 0, "Yaw": -25
+        },
+        "MyCamera1": {
+          "X": 2, "Y": 0, "Z": -1,
+		      "Pitch": 0, "Roll": 0, "Yaw": 0
+        },
+		    "MyCamera2": {
+          "X": 2, "Y": 0, "Z": -1,
+		      "Pitch": 0, "Roll": 0, "Yaw": 25
+        }
+      }
+    }
+  },
+  "SubWindows": [
+	  {"WindowID": 0, "ImageType": 0, "CameraName": "MyCamera0", "Visible": true},
+    {"WindowID": 1, "ImageType": 0, "CameraName": "MyCamera1", "Visible": true},
+    {"WindowID": 2, "ImageType": 0, "CameraName": "MyCamera2", "Visible": true}
+  ],
+  "Recording": {
+    "RecordOnMove": false,
+    "RecordInterval": 0.05,
+    "Cameras": [
+      { "CameraName": "MyCamera0", "ImageType": 5, "PixelsAsFloat": false, "Compress": true },
+      { "CameraName": "MyCamera1", "ImageType": 5, "PixelsAsFloat": false, "Compress": true },
+      { "CameraName": "MyCamera2", "ImageType": 5, "PixelsAsFloat": false, "Compress": true }
+    ]
+  }
+}
