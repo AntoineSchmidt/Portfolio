@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{39684DE7-E96A-4B0C-812C-55D2E6560E9C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>alife</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include;.\include\library\boost_1_61_0</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\include\library\boost_1_61_0\stage\lib;.\include\library\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\benchmark\Benchmark.h" />
+    <ClInclude Include="include\controller\Console.h" />
+    <ClInclude Include="include\controller\Controller.h" />
+    <ClInclude Include="include\controller\Settings.h" />
+    <ClInclude Include="include\darwinEngine\IDarwinEngine.h" />
+    <ClInclude Include="include\darwinEngine\NuklearDarwin.h" />
+    <ClInclude Include="include\dataAccess\extern\ExtensionRle.h" />
+    <ClInclude Include="include\dataAccess\extern\ExtensionRule.h" />
+    <ClInclude Include="include\dataAccess\extern\File.h" />
+    <ClInclude Include="include\dataAccess\XmlHandler.h" />
+    <ClInclude Include="include\dataAccess\IData.h" />
+    <ClInclude Include="include\debug\StepTracer.h" />
+    <ClInclude Include="include\debug\WorldCheck.h" />
+    <ClInclude Include="include\interpreter\CombiInterpreter.h" />
+    <ClInclude Include="include\interpreter\DumbInterpreter.h" />
+    <ClInclude Include="include\interpreter\IInterpreter.h" />
+    <ClInclude Include="include\interpreter\PNCInterpreter.h" />
+    <ClInclude Include="include\interpreter\PointNodeInterpreter.h" />
+    <ClInclude Include="include\library\base64.h" />
+    <ClInclude Include="include\library\bitmap_image.hpp" />
+    <ClInclude Include="include\library\freeglut.h" />
+    <ClInclude Include="include\library\freeglut_ext.h" />
+    <ClInclude Include="include\library\freeglut_std.h" />
+    <ClInclude Include="include\library\glut.h" />
+    <ClInclude Include="include\library\tinyxml2.h" />
+    <ClInclude Include="include\library\utils.h" />
+    <ClInclude Include="include\model\IRules.h" />
+    <ClInclude Include="include\model\IWorld.h" />
+    <ClInclude Include="include\model\Point.h" />
+    <ClInclude Include="include\model\PointNode.h" />
+    <ClInclude Include="include\model\Rule.h" />
+    <ClInclude Include="include\model\RulePart.h" />
+    <ClInclude Include="include\model\Rules.h" />
+    <ClInclude Include="include\model\RulesCalculator.h" />
+    <ClInclude Include="include\model\World.h" />
+    <ClInclude Include="include\model\WorldMatrix.h" />
+    <ClInclude Include="include\view\View.h" />
+    <ClInclude Include="include\view\viewComponents\ViewBmp.h" />
+    <ClInclude Include="include\view\viewComponents\ViewComponent.h" />
+    <ClInclude Include="include\view\viewComponents\ViewConsole.h" />
+    <ClInclude Include="include\view\viewComponents\ViewOGL.h" />
+    <ClInclude Include="include\view\viewComponents\ViewOGL1D.h" />
+    <ClInclude Include="include\view\viewComponents\ViewOGLWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alife.cpp" />
+    <ClCompile Include="source\benchmark\Benchmark.cpp" />
+    <ClCompile Include="source\controller\Console.cpp" />
+    <ClCompile Include="source\controller\Controller.cpp" />
+    <ClCompile Include="source\controller\Settings.cpp" />
+    <ClCompile Include="source\darwinEngine\NuklearDarwin.cpp" />
+    <ClCompile Include="source\dataAccess\extern\ExtensionRle.cpp" />
+    <ClCompile Include="source\dataAccess\extern\ExtensionRule.cpp" />
+    <ClCompile Include="source\dataAccess\extern\File.cpp" />
+    <ClCompile Include="source\dataAccess\XmlHandler.cpp" />
+    <ClCompile Include="source\debug\StepTracer.cpp" />
+    <ClCompile Include="source\debug\WorldCheck.cpp" />
+    <ClCompile Include="source\interpreter\CombiInterpreter.cpp" />
+    <ClCompile Include="source\interpreter\DumbInterpreter.cpp" />
+    <ClCompile Include="source\interpreter\PNCInterpreter.cpp" />
+    <ClCompile Include="source\interpreter\PointNodeInterpreter.cpp" />
+    <ClCompile Include="source\library\base64.cpp" />
+    <ClCompile Include="source\library\tinyxml2.cpp" />
+    <ClCompile Include="source\library\utils.cpp" />
+    <ClCompile Include="source\model\IRules.cpp" />
+    <ClCompile Include="source\model\Point.cpp" />
+    <ClCompile Include="source\model\PointNode.cpp" />
+    <ClCompile Include="source\model\Rule.cpp" />
+    <ClCompile Include="source\model\RulePart.cpp" />
+    <ClCompile Include="source\model\Rules.cpp" />
+    <ClCompile Include="source\model\RulesCalculator.cpp" />
+    <ClCompile Include="source\model\World.cpp" />
+    <ClCompile Include="source\model\WorldMatrix.cpp" />
+    <ClCompile Include="source\view\View.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewBmp.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewComponent.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewConsole.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewOGL.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewOGL1D.cpp" />
+    <ClCompile Include="source\view\viewComponents\ViewOGLWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="data.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

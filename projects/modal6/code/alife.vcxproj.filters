@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\model">
+      <UniqueIdentifier>{56b241a3-82e4-4cce-afd5-18d8d583a8d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\view">
+      <UniqueIdentifier>{79f7d274-c00d-4746-be89-4318edf7704f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\controller">
+      <UniqueIdentifier>{48c57b8f-b9c2-4517-9659-18c35499c9a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\dataAccess">
+      <UniqueIdentifier>{9cbba723-dcd9-4541-b4fa-606bfe076d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\interpreter">
+      <UniqueIdentifier>{a0a45ac0-304d-4552-a5b6-a98ac05d8022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\view\viewComponents">
+      <UniqueIdentifier>{10bc1478-7e50-4e0e-bc11-b27b5e70c448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\model">
+      <UniqueIdentifier>{dfd39cb8-25d7-45e6-a39b-33583db7a5b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\view">
+      <UniqueIdentifier>{81d17457-400c-43be-b9fa-3dd7f0121632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\controller">
+      <UniqueIdentifier>{372b0a60-0261-4a02-9fce-4c3a8f85d179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\dataAccess">
+      <UniqueIdentifier>{4d0a8f47-0107-4154-af63-18b3f383018f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\interpreter">
+      <UniqueIdentifier>{7ddf333a-048f-4152-a89c-8479ae08139c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\view\viewComponents">
+      <UniqueIdentifier>{bf6b3e34-ff75-4b50-b746-1eaadadbe561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\library">
+      <UniqueIdentifier>{849b254d-0fd0-49a5-aa48-47496d2a694c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\library">
+      <UniqueIdentifier>{bb509488-2107-4c97-9c1e-9660414f5e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\benchmark">
+      <UniqueIdentifier>{9b12f0f4-6e61-453e-bb12-bff8c4687f79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\benchmark">
+      <UniqueIdentifier>{95f87e91-a4e2-453c-8510-86430b19d201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\darwinEngine">
+      <UniqueIdentifier>{029754a5-e3ef-4ec0-b979-3cc90df0ccee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\darwinEngine">
+      <UniqueIdentifier>{6052e05e-57b4-4df1-a29e-50c796ff36ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\dataAccess\extern">
+      <UniqueIdentifier>{28b1b8f5-7203-417a-b9d7-a5f23b8b9cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\dataAccess\extern">
+      <UniqueIdentifier>{197cef67-7331-49eb-9801-8f6d7055c5a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\debug">
+      <UniqueIdentifier>{4c584067-0b95-4c8e-a2aa-5e40ad7a1dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\debug">
+      <UniqueIdentifier>{de1693d4-3eec-46f9-8b65-5153621940bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\controller\Controller.h">
+      <Filter>Headerdateien\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\Point.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\Rules.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\controller\Settings.h">
+      <Filter>Headerdateien\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\View.h">
+      <Filter>Headerdateien\view</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dataAccess\XmlHandler.h">
+      <Filter>Headerdateien\dataAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewComponent.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\tinyxml2.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\base64.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\utils.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interpreter\PointNodeInterpreter.h">
+      <Filter>Headerdateien\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewConsole.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewBmp.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\bitmap_image.hpp">
+      <Filter>Quelldateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\IRules.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\IWorld.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\benchmark\Benchmark.h">
+      <Filter>Headerdateien\benchmark</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\PointNode.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interpreter\PNCInterpreter.h">
+      <Filter>Headerdateien\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\darwinEngine\IDarwinEngine.h">
+      <Filter>Headerdateien\darwinEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\RulePart.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\Rule.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interpreter\IInterpreter.h">
+      <Filter>Headerdateien\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\RulesCalculator.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dataAccess\IData.h">
+      <Filter>Headerdateien\dataAccess</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interpreter\DumbInterpreter.h">
+      <Filter>Headerdateien\interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\World.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewOGL.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\glut.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\freeglut_std.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\freeglut.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\library\freeglut_ext.h">
+      <Filter>Headerdateien\library</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\WorldMatrix.h">
+      <Filter>Headerdateien\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\darwinEngine\NuklearDarwin.h">
+      <Filter>Headerdateien\darwinEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dataAccess\extern\ExtensionRle.h">
+      <Filter>Headerdateien\dataAccess\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dataAccess\extern\ExtensionRule.h">
+      <Filter>Headerdateien\dataAccess\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dataAccess\extern\File.h">
+      <Filter>Headerdateien\dataAccess\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\WorldCheck.h">
+      <Filter>Headerdateien\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\StepTracer.h">
+      <Filter>Headerdateien\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\controller\Console.h">
+      <Filter>Headerdateien\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewOGL1D.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\view\viewComponents\ViewOGLWindow.h">
+      <Filter>Headerdateien\view\viewComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interpreter\CombiInterpreter.h">
+      <Filter>Headerdateien\interpreter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="alife.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="source\controller\Controller.cpp">
+      <Filter>Quelldateien\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\Point.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\Rules.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\controller\Settings.cpp">
+      <Filter>Quelldateien\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\View.cpp">
+      <Filter>Quelldateien\view</Filter>
+    </ClCompile>
+    <ClCompile Include="source\dataAccess\XmlHandler.cpp">
+      <Filter>Quelldateien\dataAccess</Filter>
+    </ClCompile>
+    <ClCompile Include="source\library\tinyxml2.cpp">
+      <Filter>Quelldateien\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewComponent.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\library\base64.cpp">
+      <Filter>Quelldateien\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\library\utils.cpp">
+      <Filter>Quelldateien\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\interpreter\PointNodeInterpreter.cpp">
+      <Filter>Quelldateien\interpreter</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewConsole.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewBmp.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\benchmark\Benchmark.cpp">
+      <Filter>Quelldateien\benchmark</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\PointNode.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\interpreter\PNCInterpreter.cpp">
+      <Filter>Quelldateien\interpreter</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\Rule.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\RulePart.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\IRules.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\RulesCalculator.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\interpreter\DumbInterpreter.cpp">
+      <Filter>Quelldateien\interpreter</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\World.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewOGL.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\WorldMatrix.cpp">
+      <Filter>Quelldateien\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\darwinEngine\NuklearDarwin.cpp">
+      <Filter>Quelldateien\darwinEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\dataAccess\extern\ExtensionRle.cpp">
+      <Filter>Quelldateien\dataAccess\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="source\dataAccess\extern\ExtensionRule.cpp">
+      <Filter>Quelldateien\dataAccess\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="source\dataAccess\extern\File.cpp">
+      <Filter>Quelldateien\dataAccess\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="source\debug\StepTracer.cpp">
+      <Filter>Quelldateien\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\debug\WorldCheck.cpp">
+      <Filter>Quelldateien\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\controller\Console.cpp">
+      <Filter>Quelldateien\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewOGL1D.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\view\viewComponents\ViewOGLWindow.cpp">
+      <Filter>Quelldateien\view\viewComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="source\interpreter\CombiInterpreter.cpp">
+      <Filter>Quelldateien\interpreter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="data.xml" />
+  </ItemGroup>
+</Project>

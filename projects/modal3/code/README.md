@@ -23,4 +23,4 @@ Three random steps:
 <img src="image/path_1_2.png">
 <img src="image/path_2_0.png">
 
-The given game simulation code can be easily modified to run a depth/breath first search on the transition tree.
+The given game simulation code can be easily modified to run a depth/breadth first search on the transition tree.

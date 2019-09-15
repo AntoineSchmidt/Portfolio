@@ -1,0 +1,4 @@
+libncurses5-dev
+libboost-all-dev (libboost-thread-dev, libboost-regex-dev, libboost-chrono-dev)
+(libsdl2-dev)
+freeglut3-dev

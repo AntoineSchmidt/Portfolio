@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="alife" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/alife" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/alife" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-std=c++11" />
+		</Compiler>
+		<Linker>
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="gdi32" />
+			<Add library="ncurses" />
+		</Linker>
+		<Unit filename="alife.cpp" />
+		<Unit filename="data.xml" />
+		<Unit filename="include/controller/Console.h" />
+		<Unit filename="include/controller/Controller.h" />
+		<Unit filename="include/controller/Settings.h" />
+		<Unit filename="include/darwinEngine/IDarwinEngine.h" />
+		<Unit filename="include/darwinEngine/NuklearDarwin.h" />
+		<Unit filename="include/dataAccess/IData.h" />
+		<Unit filename="include/dataAccess/XmlHandler.h" />
+		<Unit filename="include/dataAccess/extern/ExtensionRle.h" />
+		<Unit filename="include/dataAccess/extern/ExtensionRule.h" />
+		<Unit filename="include/dataAccess/extern/File.h" />
+		<Unit filename="include/debug/StepTracer.h" />
+		<Unit filename="include/debug/WorldCheck.h" />
+		<Unit filename="include/interpreter/CombiInterpreter.h" />
+		<Unit filename="include/interpreter/DumbInterpreter.h" />
+		<Unit filename="include/interpreter/IInterpreter.h" />
+		<Unit filename="include/interpreter/PNCInterpreter.h" />
+		<Unit filename="include/interpreter/PointNodeInterpreter.h" />
+		<Unit filename="include/library/base64.h" />
+		<Unit filename="include/library/bitmap_image.hpp" />
+		<Unit filename="include/library/conio.h" />
+		<Unit filename="include/library/tinyxml2.h" />
+		<Unit filename="include/library/utils.h" />
+		<Unit filename="include/model/IRules.h" />
+		<Unit filename="include/model/IWorld.h" />
+		<Unit filename="include/model/Point.h" />
+		<Unit filename="include/model/PointNode.h" />
+		<Unit filename="include/model/Rule.h" />
+		<Unit filename="include/model/RulePart.h" />
+		<Unit filename="include/model/Rules.h" />
+		<Unit filename="include/model/RulesCalculator.h" />
+		<Unit filename="include/model/World.h" />
+		<Unit filename="include/model/WorldMatrix.h" />
+		<Unit filename="include/view/View.h" />
+		<Unit filename="include/view/viewComponents/ViewBmp.h" />
+		<Unit filename="include/view/viewComponents/ViewComponent.h" />
+		<Unit filename="include/view/viewComponents/ViewConsole.h" />
+		<Unit filename="include/view/viewComponents/ViewOGL.h" />
+		<Unit filename="include/view/viewComponents/ViewOGL1D.h" />
+		<Unit filename="include/view/viewComponents/ViewOGLWindow.h" />
+		<Unit filename="source/controller/Console.cpp" />
+		<Unit filename="source/controller/Controller.cpp" />
+		<Unit filename="source/controller/Settings.cpp" />
+		<Unit filename="source/darwinEngine/NuklearDarwin.cpp" />
+		<Unit filename="source/dataAccess/XmlHandler.cpp" />
+		<Unit filename="source/dataAccess/extern/ExtensionRle.cpp" />
+		<Unit filename="source/dataAccess/extern/ExtensionRule.cpp" />
+		<Unit filename="source/dataAccess/extern/File.cpp" />
+		<Unit filename="source/debug/StepTracer.cpp" />
+		<Unit filename="source/debug/WorldCheck.cpp" />
+		<Unit filename="source/interpreter/CombiInterpreter.cpp" />
+		<Unit filename="source/interpreter/DumbInterpreter.cpp" />
+		<Unit filename="source/interpreter/PNCInterpreter.cpp" />
+		<Unit filename="source/interpreter/PointNodeInterpreter.cpp" />
+		<Unit filename="source/library/base64.cpp" />
+		<Unit filename="source/library/tinyxml2.cpp" />
+		<Unit filename="source/library/utils.cpp" />
+		<Unit filename="source/model/IRules.cpp" />
+		<Unit filename="source/model/Point.cpp" />
+		<Unit filename="source/model/PointNode.cpp" />
+		<Unit filename="source/model/Rule.cpp" />
+		<Unit filename="source/model/RulePart.cpp" />
+		<Unit filename="source/model/Rules.cpp" />
+		<Unit filename="source/model/RulesCalculator.cpp" />
+		<Unit filename="source/model/World.cpp" />
+		<Unit filename="source/model/WorldMatrix.cpp" />
+		<Unit filename="source/view/View.cpp" />
+		<Unit filename="source/view/viewComponents/ViewBmp.cpp" />
+		<Unit filename="source/view/viewComponents/ViewComponent.cpp" />
+		<Unit filename="source/view/viewComponents/ViewConsole.cpp" />
+		<Unit filename="source/view/viewComponents/ViewOGL.cpp" />
+		<Unit filename="source/view/viewComponents/ViewOGL1D.cpp" />
+		<Unit filename="source/view/viewComponents/ViewOGLWindow.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

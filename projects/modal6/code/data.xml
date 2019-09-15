@@ -1,0 +1,2495 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--- Detaillierte Information im OPS unter "Dateien" -->
+<alife version="0.2">
+	<Settings id="0" name="Langton Loops">
+		<WorldID>0</WorldID>
+		<RuleID>0</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="1" name="Evoloops">
+		<WorldID>1</WorldID>
+		<RuleID>1</RuleID>
+		<ViewID>0</ViewID>
+		<DarwinEnginesID>0</DarwinEnginesID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="2" name="Chou-Reggia Loop 2">
+		<WorldID>2</WorldID>
+		<RuleID>2</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="3" name="Byl Loop">
+		<WorldID>3</WorldID>
+		<RuleID>3</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="4" name="SDSR Loop">
+		<WorldID>0</WorldID> <!--- wie bei Langton Loops -->
+		<RuleID>4</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="5" name="Mario 8-bit Simulation">
+		<WorldID>4</WorldID>
+		<RuleID>0</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="6" name="Pacman Simulation">
+		<WorldID>5</WorldID>
+		<RuleID>5</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<Settings id="7" name="File Example">
+		<WorldID>MazeSolver.rle</WorldID>
+		<RuleID>MazeSolver.rule</RuleID>
+		<ViewID>0</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+		<Settings id="8" name="1D Example">
+		<WorldID>6</WorldID>
+		<RuleID>6</RuleID>
+		<ViewID>1</ViewID>
+		<Steps>0</Steps>
+		<Output messages="true" errors="true" exceptions="true">true</Output>
+	</Settings>
+	<View id="0">
+		<PixelSize>5</PixelSize>
+		<GridSize color="000000">1</GridSize>
+		<Colors>
+			<!--- Hier stehen die Farbdefinitionen -->
+			<!-- Schwarz -->
+            <Color id="0">000000</Color>
+			<!-- Blau -->
+			<Color id="1">0900ff</Color>
+			<!-- Rot -->
+			<Color id="2">ff0000</Color>
+			<!-- Gruen -->
+			<Color id="3">00ff2b</Color>
+			<!-- Gelb -->
+			<Color id="4">f0ff00</Color>
+			<!-- Lila -->
+			<Color id="5">9600ff</Color>
+			<!-- Weiß -->
+			<Color id="6">ffffff</Color>
+			<!-- Tuerkis -->
+			<Color id="7">00f9ff</Color>
+			<!-- Orange -->
+			<Color id="8">ff8000</Color>
+			<!-- Gelb -->
+			<Color id="80">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="81">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="82">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="83">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="84">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="85">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="86">f0ff00</Color>
+			<!-- Gelb -->
+			<Color id="87">f0ff00</Color>
+		</Colors>
+		<ViewBMP>
+			<OutputDirectory></OutputDirectory>
+			<FileName>alife-%STEP%.bmp</FileName>
+			<StepsPerImage>50</StepsPerImage>
+		</ViewBMP>
+		<!---<ViewConsole/>-->
+		<ViewOGL>
+			<fps enable="true">60</fps>
+		</ViewOGL>
+	</View>
+	<View id="1">
+		<PixelSize>5</PixelSize>
+		<GridSize color="000000">1</GridSize>
+		<Colors>
+			<!--- Hier stehen die Farbdefinitionen -->
+			<!-- Blau -->
+			<Color id="1">0900ff</Color>
+			<!-- Rot -->
+			<Color id="2">ff0000</Color>
+		</Colors>
+		<ViewOGL1D/>
+	</View>
+	<!--- World 0: SumulationStart.png -->
+	<!--- Langton Loops -->
+	<World id="0" size="100,80" startPoint="40,50" border="false">
+	<!--- Blau = 1; Rot = 2; Grün = 3; Gelb = 4; Lila = 5; Weiß = 6; Türkis = 7 -->
+	<!--- 1. Spalte -->
+		<Point position="0,0">2</Point>
+		<Point position="0,-1">2</Point>
+		<Point position="0,-2">2</Point>
+		<Point position="0,-3">2</Point>
+		<Point position="0,-4">2</Point>
+		<Point position="0,-5">2</Point>
+		<Point position="0,-6">2</Point>
+		<Point position="0,-7">2</Point>
+	<!--- 2. Spalte -->
+		<Point position="1,1">2</Point>
+		<Point position="1,-1">1</Point>
+		<Point position="1,-2">7</Point>
+		<Point position="1,-4">1</Point>
+		<Point position="1,-5">7</Point>
+		<Point position="1,-7">1</Point>
+		<Point position="1,-8">2</Point>
+	<!--- 3. Spalte -->
+		<Point position="2,1">2</Point>
+		<Point position="2,0">7</Point>
+		<Point position="2,-1">2</Point>
+		<Point position="2,-2">2</Point>
+		<Point position="2,-3">2</Point>
+		<Point position="2,-4">2</Point>
+		<Point position="2,-5">2</Point>
+		<Point position="2,-6">2</Point>
+		<Point position="2,-7">7</Point>
+		<Point position="2,-8">2</Point>
+	<!--- 4. Spalte -->
+		<Point position="3,1">2</Point>
+		<Point position="3,0">1</Point>
+		<Point position="3,-1">2</Point>
+		<Point position="3,-6">2</Point>
+		<Point position="3,-8">2</Point>
+	<!--- 5. Spalte -->
+		<Point position="4,1">2</Point>
+		<Point position="4,-1">2</Point>
+		<Point position="4,-6">2</Point>
+		<Point position="4,-7">1</Point>
+		<Point position="4,-8">2</Point>
+	<!--- 6. Spalte -->
+		<Point position="5,1">2</Point>
+		<Point position="5,0">7</Point>
+		<Point position="5,-1">2</Point>
+		<Point position="5,-6">2</Point>
+		<Point position="5,-7">4</Point>
+		<Point position="5,-8">2</Point>
+	<!--- 7. Spalte -->
+		<Point position="6,1">2</Point>
+		<Point position="6,0">1</Point>
+		<Point position="6,-1">2</Point>
+		<Point position="6,-6">2</Point>
+		<Point position="6,-8">2</Point>
+	<!--- 8. Spalte -->
+		<Point position="7,1">2</Point>
+		<Point position="7,-1">2</Point>
+		<Point position="7,-2">2</Point>
+		<Point position="7,-3">2</Point>
+		<Point position="7,-4">2</Point>
+		<Point position="7,-5">2</Point>
+		<Point position="7,-6">2</Point>
+		<Point position="7,-7">1</Point>
+		<Point position="7,-8">2</Point>
+	<!--- 9. Spalte -->
+		<Point position="8,1">2</Point>
+		<Point position="8,0">7</Point>
+		<Point position="8,-1">1</Point>
+		<Point position="8,-2">1</Point>
+		<Point position="8,-3">1</Point>
+		<Point position="8,-4">1</Point>
+		<Point position="8,-5">1</Point>
+		<Point position="8,-7">4</Point>
+		<Point position="8,-8">2</Point>
+	<!--- 10. Spalte -->
+		<Point position="9,1">2</Point>
+		<Point position="9,0">1</Point>
+		<Point position="9,-1">2</Point>
+		<Point position="9,-2">2</Point>
+		<Point position="9,-3">2</Point>
+		<Point position="9,-4">2</Point>
+		<Point position="9,-5">2</Point>
+		<Point position="9,-6">2</Point>
+		<Point position="9,-7">2</Point>
+	<!--- 11. Spalte -->
+		<Point position="10,1">2</Point>
+		<Point position="10,0">1</Point>
+		<Point position="10,-1">2</Point>
+	<!--- 12. Spalte -->
+		<Point position="11,1">2</Point>
+		<Point position="11,0">1</Point>
+		<Point position="11,-1">2</Point>
+	<!--- 13. Spalte -->
+		<Point position="12,1">2</Point>
+		<Point position="12,0">1</Point>
+		<Point position="12,-1">2</Point>
+	<!--- 14. Spalte -->
+		<Point position="13,1">2</Point>
+		<Point position="13,0">1</Point>
+		<Point position="13,-1">2</Point>
+	<!--- 15. Spalte -->
+		<Point position="14,0">2</Point>
+	</World>
+	<!--- Evoloops -->
+	<World id="1" size="100,80" startPoint="10,55" border="false">
+	<!--- Blau = 1; Rot = 2; Grün = 3; Gelb = 4; Lila = 5; Weiß = 6; Türkis = 7; Orange = 8 -->
+	<!--- 1. Spalte -->
+		<Point position="0,0">2</Point>
+		<Point position="0,-1">2</Point>
+		<Point position="0,-2">2</Point>
+		<Point position="0,-3">2</Point>
+		<Point position="0,-4">2</Point>
+		<Point position="0,-5">2</Point>
+		<Point position="0,-6">2</Point>
+		<Point position="0,-7">2</Point>
+		<Point position="0,-8">2</Point>
+		<Point position="0,-9">2</Point>
+		<Point position="0,-10">2</Point>
+		<Point position="0,-11">2</Point>
+		<Point position="0,-12">2</Point>
+		<Point position="0,-13">2</Point>
+		<Point position="0,-14">2</Point>
+	<!--- 2. Spalte -->
+		<Point position="1,1">2</Point>
+		<Point position="1,-1">1</Point>
+		<Point position="1,-2">7</Point>
+		<Point position="1,-4">1</Point>
+		<Point position="1,-5">7</Point>
+		<Point position="1,-7">1</Point>
+		<Point position="1,-8">7</Point>
+		<Point position="1,-10">1</Point>
+		<Point position="1,-11">7</Point>
+		<Point position="1,-13">1</Point>
+		<Point position="1,-14">7</Point>
+		<Point position="1,-15">2</Point>
+	<!--- 3. Spalte -->
+		<Point position="2,1">2</Point>
+		<Point position="2,0">7</Point>
+		<Point position="2,-1">2</Point>
+		<Point position="2,-2">2</Point>
+		<Point position="2,-3">2</Point>
+		<Point position="2,-4">2</Point>
+		<Point position="2,-5">2</Point>
+		<Point position="2,-6">2</Point>
+		<Point position="2,-7">2</Point>
+		<Point position="2,-8">2</Point>
+		<Point position="2,-9">2</Point>
+		<Point position="2,-10">2</Point>
+		<Point position="2,-11">2</Point>
+		<Point position="2,-12">2</Point>
+		<Point position="2,-13">2</Point>
+		<Point position="2,-15">2</Point>
+	<!--- 4. Spalte -->
+		<Point position="3,1">2</Point>
+		<Point position="3,0">1</Point>
+		<Point position="3,-1">2</Point>
+		<Point position="3,-13">2</Point>
+		<Point position="3,-14">1</Point>
+		<Point position="3,-15">2</Point>
+	<!--- 5. Spalte -->
+		<Point position="4,1">2</Point>
+		<Point position="4,-1">2</Point>
+		<Point position="4,-13">2</Point>
+		<Point position="4,-14">7</Point>
+		<Point position="4,-15">2</Point>
+	<!--- 6. Spalte -->
+		<Point position="5,1">2</Point>
+		<Point position="5,0">7</Point>
+		<Point position="5,-1">2</Point>
+		<Point position="5,-13">2</Point>
+		<Point position="5,-15">2</Point>
+	<!--- 7. Spalte -->
+		<Point position="6,1">2</Point>
+		<Point position="6,0">1</Point>
+		<Point position="6,-1">2</Point>
+		<Point position="6,-13">2</Point>
+		<Point position="6,-14">1</Point>
+		<Point position="6,-15">2</Point>
+	<!--- 8. Spalte -->
+		<Point position="7,1">2</Point>
+		<Point position="7,-1">2</Point>
+		<Point position="7,-13">2</Point>
+		<Point position="7,-14">7</Point>
+		<Point position="7,-15">2</Point>
+	<!--- 9. Spalte -->
+		<Point position="8,1">2</Point>
+		<Point position="8,0">7</Point>
+		<Point position="8,-1">2</Point>
+		<Point position="8,-13">2</Point>
+		<Point position="8,-15">2</Point>
+	<!--- 10. Spalte -->
+		<Point position="9,1">2</Point>
+		<Point position="9,0">1</Point>
+		<Point position="9,-1">2</Point>
+		<Point position="9,-13">2</Point>
+		<Point position="9,-14">1</Point>
+		<Point position="9,-15">2</Point>
+	<!--- 11. Spalte -->
+		<Point position="10,1">2</Point>
+		<Point position="10,-1">2</Point>
+		<Point position="10,-13">2</Point>
+		<Point position="10,-14">7</Point>
+		<Point position="10,-15">2</Point>
+	<!--- 12. Spalte -->
+		<Point position="11,1">2</Point>
+		<Point position="11,0">4</Point>
+		<Point position="11,-1">2</Point>
+		<Point position="11,-13">2</Point>
+		<Point position="11,-15">2</Point>
+	<!--- 13. Spalte -->
+		<Point position="12,1">2</Point>
+		<Point position="12,0">1</Point>
+		<Point position="12,-1">2</Point>
+		<Point position="12,-13">2</Point>
+		<Point position="12,-14">1</Point>
+		<Point position="12,-15">2</Point>
+	<!--- 14. Spalte -->
+		<Point position="13,1">2</Point>
+		<Point position="13,-1">2</Point>
+		<Point position="13,-13">2</Point>
+		<Point position="13,-14">1</Point>
+		<Point position="13,-15">2</Point>
+	<!--- 15. Spalte -->
+		<Point position="14,1">2</Point>
+		<Point position="14,0">4</Point>
+		<Point position="14,-1">2</Point>
+		<Point position="14,-2">2</Point>
+		<Point position="14,-3">2</Point>
+		<Point position="14,-4">2</Point>
+		<Point position="14,-5">2</Point>
+		<Point position="14,-6">2</Point>
+		<Point position="14,-7">2</Point>
+		<Point position="14,-8">2</Point>
+		<Point position="14,-9">2</Point>
+		<Point position="14,-10">2</Point>
+		<Point position="14,-11">2</Point>
+		<Point position="14,-12">2</Point>
+		<Point position="14,-13">2</Point>
+		<Point position="14,-14">1</Point>
+		<Point position="14,-15">2</Point>
+	<!--- 16. Spalte -->
+		<Point position="15,1">5</Point>
+		<Point position="15,0">1</Point>
+		<Point position="15,-2">7</Point>
+		<Point position="15,-3">1</Point>
+		<Point position="15,-5">7</Point>
+		<Point position="15,-6">1</Point>
+		<Point position="15,-7">1</Point>
+		<Point position="15,-8">1</Point>
+		<Point position="15,-9">1</Point>
+		<Point position="15,-10">1</Point>
+		<Point position="15,-11">1</Point>
+		<Point position="15,-12">1</Point>
+		<Point position="15,-13">1</Point>
+		<Point position="15,-14">1</Point>
+		<Point position="15,-15">2</Point>
+	<!--- 17. Spalte -->
+		<Point position="16,0">2</Point>
+		<Point position="16,-1">2</Point>
+		<Point position="16,-2">2</Point>
+		<Point position="16,-3">2</Point>
+		<Point position="16,-4">2</Point>
+		<Point position="16,-5">2</Point>
+		<Point position="16,-6">2</Point>
+		<Point position="16,-7">2</Point>
+		<Point position="16,-8">2</Point>
+		<Point position="16,-9">2</Point>
+		<Point position="16,-10">2</Point>
+		<Point position="16,-11">2</Point>
+		<Point position="16,-12">2</Point>
+		<Point position="16,-13">2</Point>
+		<Point position="16,-14">2</Point>
+	</World>
+	<!--- Chou-Reggia Loop 2: -->
+	<World id="2" size="100,80" startPoint="49,40" border="false">
+		<Point position="0,0">3</Point>
+		<Point position="0,-1">1</Point>
+		<Point position="1,0">4</Point>
+		<Point position="1,-1">1</Point>
+		<Point position="2,0">1</Point>
+	</World>
+	<!--- Byl Loop: -->
+	<World id="3" size="100,80" startPoint="49,40" border="false">
+		<Point position="0,0">2</Point>
+		<Point position="0,-1">2</Point>		
+		<Point position="1,1">2</Point>
+		<Point position="1,0">3</Point>
+		<Point position="1,-1">3</Point>
+		<Point position="1,-2">2</Point>		
+		<Point position="2,1">5</Point>
+		<Point position="2,0">4</Point>
+		<Point position="2,-1">1</Point>
+		<Point position="2,-2">2</Point>		
+		<Point position="3,0">2</Point>
+		<Point position="3,-1">2</Point>
+	</World>
+	<!--- Mario 8-bit Simulation: -->
+	<World id="4" size="100,80" startPoint="20,70" border="false">
+		<Point position="0,0">6</Point>
+		<Point position="1,0">6</Point>		
+		<Point position="2,0">6</Point>
+		<Point position="3,0">6</Point>
+		<Point position="8,0">6</Point>
+		<Point position="9,0">6</Point>		
+		<Point position="10,0">6</Point>
+		<Point position="11,0">6</Point>		
+		<Point position="1,-1">6</Point>		
+		<Point position="2,-1">6</Point>
+		<Point position="3,-1">6</Point>
+		<Point position="8,-1">6</Point>
+		<Point position="9,-1">6</Point>		
+		<Point position="10,-1">6</Point>		
+		<Point position="2,-2">2</Point>
+		<Point position="3,-2">2</Point>		
+		<Point position="4,-2">2</Point>
+		<Point position="7,-2">2</Point>
+		<Point position="8,-2">2</Point>
+		<Point position="9,-2">2</Point>	
+		<Point position="0,-3">8</Point>
+		<Point position="1,-3">8</Point>		
+		<Point position="2,-3">2</Point>
+		<Point position="3,-3">2</Point>
+		<Point position="4,-3">2</Point>
+		<Point position="5,-3">2</Point>
+		<Point position="6,-3">2</Point>
+		<Point position="7,-3">2</Point>
+		<Point position="8,-3">2</Point>
+		<Point position="9,-3">2</Point>		
+		<Point position="10,-3">8</Point>
+		<Point position="11,-3">8</Point>
+		<Point position="0,-4">8</Point>
+		<Point position="1,-4">8</Point>		
+		<Point position="2,-4">8</Point>
+		<Point position="3,-4">2</Point>
+		<Point position="4,-4">4</Point>
+		<Point position="5,-4">2</Point>
+		<Point position="6,-4">2</Point>
+		<Point position="7,-4">4</Point>
+		<Point position="8,-4">2</Point>
+		<Point position="9,-4">8</Point>		
+		<Point position="10,-4">8</Point>
+		<Point position="11,-4">8</Point>
+		<Point position="0,-5">8</Point>
+		<Point position="1,-5">8</Point>		
+		<Point position="2,-5">1</Point>
+		<Point position="3,-5">1</Point>
+		<Point position="4,-5">2</Point>
+		<Point position="5,-5">2</Point>
+		<Point position="6,-5">2</Point>
+		<Point position="7,-5">2</Point>
+		<Point position="8,-5">1</Point>
+		<Point position="9,-5">1</Point>		
+		<Point position="10,-5">8</Point>
+		<Point position="11,-5">8</Point>
+		<Point position="0,-6">1</Point>
+		<Point position="1,-6">1</Point>		
+		<Point position="2,-6">1</Point>
+		<Point position="3,-6">1</Point>
+		<Point position="4,-6">2</Point>
+		<Point position="5,-6">1</Point>
+		<Point position="6,-6">1</Point>
+		<Point position="7,-6">2</Point>
+		<Point position="8,-6">1</Point>
+		<Point position="9,-6">1</Point>		
+		<Point position="10,-6">1</Point>
+		<Point position="11,-6">1</Point>	
+		<Point position="1,-7">1</Point>		
+		<Point position="2,-7">1</Point>
+		<Point position="3,-7">1</Point>
+		<Point position="4,-7">2</Point>
+		<Point position="5,-7">1</Point>
+		<Point position="6,-7">1</Point>
+		<Point position="7,-7">2</Point>
+		<Point position="8,-7">1</Point>
+		<Point position="9,-7">1</Point>		
+		<Point position="10,-7">1</Point>			
+		<Point position="2,-8">1</Point>
+		<Point position="3,-8">1</Point>
+		<Point position="4,-8">2</Point>
+		<Point position="5,-8">1</Point>
+		<Point position="6,-8">1</Point>
+		<Point position="7,-8">1</Point>		
+		<Point position="3,-9">8</Point>
+		<Point position="4,-9">8</Point>
+		<Point position="5,-9">8</Point>
+		<Point position="6,-9">8</Point>
+		<Point position="7,-9">8</Point>
+		<Point position="8,-9">8</Point>
+		<Point position="9,-9">8</Point>
+		<Point position="1,-10">6</Point>
+		<Point position="2,-10">6</Point>
+		<Point position="3,-10">8</Point>
+		<Point position="4,-10">8</Point>
+		<Point position="5,-10">8</Point>
+		<Point position="6,-10">8</Point>
+		<Point position="7,-10">6</Point>
+		<Point position="8,-10">6</Point>
+		<Point position="9,-10">6</Point>
+		<Point position="10,-10">6</Point>		
+		<Point position="1,-11">6</Point>
+		<Point position="2,-11">8</Point>
+		<Point position="3,-11">6</Point>
+		<Point position="4,-11">6</Point>
+		<Point position="5,-11">8</Point>
+		<Point position="6,-11">8</Point>
+		<Point position="7,-11">8</Point>
+		<Point position="8,-11">6</Point>
+		<Point position="9,-11">8</Point>
+		<Point position="10,-11">8</Point>
+		<Point position="11,-11">8</Point>		
+		<Point position="1,-12">6</Point>
+		<Point position="2,-12">8</Point>
+		<Point position="3,-12">6</Point>
+		<Point position="4,-12">8</Point>
+		<Point position="5,-12">8</Point>
+		<Point position="6,-12">8</Point>
+		<Point position="7,-12">6</Point>
+		<Point position="8,-12">8</Point>
+		<Point position="9,-12">8</Point>
+		<Point position="10,-12">8</Point>		
+		<Point position="2,-13">6</Point>
+		<Point position="3,-13">6</Point>
+		<Point position="4,-13">6</Point>
+		<Point position="5,-13">8</Point>
+		<Point position="6,-13">8</Point>
+		<Point position="7,-13">6</Point>
+		<Point position="8,-13">8</Point>
+		<Point position="2,-14">2</Point>
+		<Point position="3,-14">2</Point>
+		<Point position="4,-14">2</Point>
+		<Point position="5,-14">2</Point>
+		<Point position="6,-14">2</Point>
+		<Point position="7,-14">2</Point>
+		<Point position="8,-14">2</Point>
+		<Point position="9,-14">2</Point>
+		<Point position="10,-14">2</Point>	
+		<Point position="3,-15">2</Point>
+		<Point position="4,-15">2</Point>
+		<Point position="5,-15">2</Point>
+		<Point position="6,-15">2</Point>
+		<Point position="7,-15">2</Point>
+	</World>
+		<!--- Pacman Simulation: -->
+	<World id="5" size="60,41" startPoint="0,40" border="false">
+		<!--- Roter Rand: -->
+		<Point position="0,0">2</Point>
+		<Point position="0,-1">2</Point>
+		<Point position="0,-2">2</Point>
+		<Point position="0,-3">2</Point>
+		<Point position="0,-4">2</Point>
+		<Point position="0,-5">2</Point>
+		<Point position="0,-6">2</Point>
+		<Point position="0,-7">2</Point>
+		<Point position="0,-8">2</Point>
+		<Point position="0,-9">2</Point>
+		<Point position="0,-10">2</Point>
+		<Point position="0,-11">2</Point>
+		<Point position="0,-12">2</Point>
+		<Point position="0,-13">2</Point>
+		<Point position="0,-14">2</Point>
+		<Point position="0,-15">2</Point>
+		<Point position="0,-16">2</Point>
+		<Point position="0,-17">2</Point>
+		<Point position="0,-18">2</Point>
+		<Point position="0,-19">2</Point>
+		<Point position="0,-20">2</Point>
+		<Point position="0,-21">2</Point>
+		<Point position="0,-22">2</Point>
+		<Point position="0,-23">2</Point>
+		<Point position="0,-24">2</Point>
+		<Point position="0,-25">2</Point>
+		<Point position="0,-26">2</Point>
+		<Point position="0,-27">2</Point>
+		<Point position="0,-28">2</Point>
+		<Point position="0,-29">2</Point>
+		<Point position="0,-30">2</Point>
+		<Point position="0,-31">2</Point>
+		<Point position="0,-32">2</Point>
+		<Point position="0,-33">2</Point>
+		<Point position="0,-34">2</Point>
+		<Point position="0,-35">2</Point>
+		<Point position="0,-36">2</Point>
+		<Point position="0,-37">2</Point>
+		<Point position="0,-38">2</Point>
+		<Point position="0,-39">2</Point>		
+		<Point position="0,-40">2</Point>	
+		<Point position="1,0">2</Point>
+		<Point position="1,-1">2</Point>
+		<Point position="1,-2">2</Point>
+		<Point position="1,-3">2</Point>
+		<Point position="1,-4">2</Point>
+		<Point position="1,-5">2</Point>
+		<Point position="1,-6">2</Point>
+		<Point position="1,-7">2</Point>
+		<Point position="1,-8">2</Point>
+		<Point position="1,-9">2</Point>
+		<Point position="1,-10">2</Point>
+		<Point position="1,-11">2</Point>
+		<Point position="1,-12">2</Point>
+		<Point position="1,-13">2</Point>
+		<Point position="1,-14">2</Point>
+		<Point position="1,-15">2</Point>
+		<Point position="1,-16">2</Point>
+		<Point position="1,-17">2</Point>
+		<Point position="1,-18">2</Point>
+		<Point position="1,-19">2</Point>
+		<Point position="1,-20">2</Point>
+		<Point position="1,-21">2</Point>
+		<Point position="1,-22">2</Point>
+		<Point position="1,-23">2</Point>
+		<Point position="1,-24">2</Point>
+		<Point position="1,-25">2</Point>
+		<Point position="1,-26">2</Point>
+		<Point position="1,-27">2</Point>
+		<Point position="1,-28">2</Point>
+		<Point position="1,-29">2</Point>
+		<Point position="1,-30">2</Point>
+		<Point position="1,-31">2</Point>
+		<Point position="1,-32">2</Point>
+		<Point position="1,-33">2</Point>
+		<Point position="1,-34">2</Point>
+		<Point position="1,-35">2</Point>
+		<Point position="1,-36">2</Point>
+		<Point position="1,-37">2</Point>
+		<Point position="1,-38">2</Point>
+		<Point position="1,-39">2</Point>		
+		<Point position="1,-40">2</Point>	
+		<Point position="2,0">2</Point>
+		<Point position="3,0">2</Point>
+		<Point position="4,0">2</Point>
+		<Point position="5,0">2</Point>
+		<Point position="6,0">2</Point>
+		<Point position="7,0">2</Point>
+		<Point position="8,0">2</Point>
+		<Point position="9,0">2</Point>
+		<Point position="10,0">2</Point>
+		<Point position="11,0">2</Point>
+		<Point position="12,0">2</Point>
+		<Point position="13,0">2</Point>
+		<Point position="14,0">2</Point>
+		<Point position="15,0">2</Point>
+		<Point position="16,0">2</Point>
+		<Point position="17,0">2</Point>
+		<Point position="18,0">2</Point>
+		<Point position="19,0">2</Point>
+		<Point position="20,0">2</Point>
+		<Point position="21,0">2</Point>
+		<Point position="22,0">2</Point>
+		<Point position="23,0">2</Point>
+		<Point position="24,0">2</Point>
+		<Point position="25,0">2</Point>
+		<Point position="26,0">2</Point>
+		<Point position="27,0">2</Point>
+		<Point position="28,0">2</Point>
+		<Point position="29,0">2</Point>
+		<Point position="30,0">2</Point>
+		<Point position="31,0">2</Point>
+		<Point position="32,0">2</Point>
+		<Point position="33,0">2</Point>
+		<Point position="34,0">2</Point>
+		<Point position="35,0">2</Point>
+		<Point position="36,0">2</Point>
+		<Point position="37,0">2</Point>
+		<Point position="38,0">2</Point>
+		<Point position="39,0">2</Point>
+		<Point position="40,0">2</Point>
+		<Point position="41,0">2</Point>
+		<Point position="42,0">2</Point>
+		<Point position="43,0">2</Point>
+		<Point position="44,0">2</Point>
+		<Point position="45,0">2</Point>
+		<Point position="46,0">2</Point>
+		<Point position="47,0">2</Point>
+		<Point position="48,0">2</Point>
+		<Point position="49,0">2</Point>
+		<Point position="50,0">2</Point>
+		<Point position="51,0">2</Point>
+		<Point position="52,0">2</Point>
+		<Point position="53,0">2</Point>
+		<Point position="54,0">2</Point>
+		<Point position="55,0">2</Point>
+		<Point position="56,0">2</Point>
+		<Point position="57,0">2</Point>
+		<Point position="58,0">2</Point>
+		<Point position="59,0">2</Point>				
+		<Point position="2,-40">2</Point>
+		<Point position="3,-40">2</Point>
+		<Point position="4,-40">2</Point>
+		<Point position="5,-40">2</Point>
+		<Point position="6,-40">2</Point>
+		<Point position="7,-40">2</Point>
+		<Point position="8,-40">2</Point>
+		<Point position="9,-40">2</Point>
+		<Point position="10,-40">2</Point>
+		<Point position="11,-40">2</Point>
+		<Point position="12,-40">2</Point>
+		<Point position="13,-40">2</Point>
+		<Point position="14,-40">2</Point>
+		<Point position="15,-40">2</Point>
+		<Point position="16,-40">2</Point>
+		<Point position="17,-40">2</Point>
+		<Point position="18,-40">2</Point>
+		<Point position="19,-40">2</Point>
+		<Point position="20,-40">2</Point>
+		<Point position="21,-40">2</Point>
+		<Point position="22,-40">2</Point>
+		<Point position="23,-40">2</Point>
+		<Point position="24,-40">2</Point>
+		<Point position="25,-40">2</Point>
+		<Point position="26,-40">2</Point>
+		<Point position="27,-40">2</Point>
+		<Point position="28,-40">2</Point>
+		<Point position="29,-40">2</Point>
+		<Point position="30,-40">2</Point>
+		<Point position="31,-40">2</Point>
+		<Point position="32,-40">2</Point>
+		<Point position="33,-40">2</Point>
+		<Point position="34,-40">2</Point>
+		<Point position="35,-40">2</Point>
+		<Point position="36,-40">2</Point>
+		<Point position="37,-40">2</Point>
+		<Point position="38,-40">2</Point>
+		<Point position="39,-40">2</Point>
+		<Point position="40,-40">2</Point>
+		<Point position="41,-40">2</Point>
+		<Point position="42,-40">2</Point>
+		<Point position="43,-40">2</Point>
+		<Point position="44,-40">2</Point>
+		<Point position="45,-40">2</Point>
+		<Point position="46,-40">2</Point>
+		<Point position="47,-40">2</Point>
+		<Point position="48,-40">2</Point>
+		<Point position="49,-40">2</Point>
+		<Point position="50,-40">2</Point>
+		<Point position="51,-40">2</Point>
+		<Point position="52,-40">2</Point>
+		<Point position="53,-40">2</Point>
+		<Point position="54,-40">2</Point>
+		<Point position="55,-40">2</Point>
+		<Point position="56,-40">2</Point>
+		<Point position="57,-40">2</Point>
+		<Point position="58,-40">2</Point>
+		<Point position="59,-40">2</Point>
+		<Point position="2,-39">2</Point>
+		<Point position="3,-39">2</Point>
+		<Point position="4,-39">2</Point>
+		<Point position="5,-39">2</Point>
+		<Point position="6,-39">2</Point>
+		<Point position="7,-39">2</Point>
+		<Point position="8,-39">2</Point>
+		<Point position="9,-39">2</Point>
+		<Point position="10,-39">2</Point>
+		<Point position="11,-39">2</Point>
+		<Point position="12,-39">2</Point>
+		<Point position="13,-39">2</Point>
+		<Point position="14,-39">2</Point>
+		<Point position="15,-39">2</Point>
+		<Point position="16,-39">2</Point>
+		<Point position="17,-39">2</Point>
+		<Point position="18,-39">2</Point>
+		<Point position="19,-39">2</Point>
+		<Point position="20,-39">2</Point>
+		<Point position="21,-39">2</Point>
+		<Point position="22,-39">2</Point>
+		<Point position="23,-39">2</Point>
+		<Point position="24,-39">2</Point>
+		<Point position="25,-39">2</Point>
+		<Point position="26,-39">2</Point>
+		<Point position="27,-39">2</Point>
+		<Point position="28,-39">2</Point>
+		<Point position="29,-39">2</Point>
+		<Point position="30,-39">2</Point>
+		<Point position="31,-39">2</Point>
+		<Point position="32,-39">2</Point>
+		<Point position="33,-39">2</Point>
+		<Point position="34,-39">2</Point>
+		<Point position="35,-39">2</Point>
+		<Point position="36,-39">2</Point>
+		<Point position="37,-39">2</Point>
+		<Point position="38,-39">2</Point>
+		<Point position="39,-39">2</Point>
+		<Point position="40,-39">2</Point>
+		<Point position="41,-39">2</Point>
+		<Point position="42,-39">2</Point>
+		<Point position="43,-39">2</Point>
+		<Point position="44,-39">2</Point>
+		<Point position="45,-39">2</Point>
+		<Point position="46,-39">2</Point>
+		<Point position="47,-39">2</Point>
+		<Point position="48,-39">2</Point>
+		<Point position="49,-39">2</Point>
+		<Point position="50,-39">2</Point>
+		<Point position="51,-39">2</Point>
+		<Point position="52,-39">2</Point>
+		<Point position="53,-39">2</Point>
+		<Point position="54,-39">2</Point>
+		<Point position="55,-39">2</Point>
+		<Point position="56,-39">2</Point>
+		<Point position="57,-39">2</Point>
+		<Point position="58,-39">2</Point>
+		<Point position="59,-39">2</Point>		
+		<Point position="2,-1">2</Point>
+		<Point position="3,-1">2</Point>
+		<Point position="4,-1">2</Point>
+		<Point position="5,-1">2</Point>
+		<Point position="6,-1">2</Point>
+		<Point position="7,-1">2</Point>
+		<Point position="8,-1">2</Point>
+		<Point position="9,-1">2</Point>
+		<Point position="10,-1">2</Point>
+		<Point position="11,-1">2</Point>
+		<Point position="12,-1">2</Point>
+		<Point position="13,-1">2</Point>
+		<Point position="14,-1">2</Point>
+		<Point position="15,-1">2</Point>
+		<Point position="16,-1">2</Point>
+		<Point position="17,-1">2</Point>
+		<Point position="18,-1">2</Point>
+		<Point position="19,-1">2</Point>
+		<Point position="20,-1">2</Point>
+		<Point position="21,-1">2</Point>
+		<Point position="22,-1">2</Point>
+		<Point position="23,-1">2</Point>
+		<Point position="24,-1">2</Point>
+		<Point position="25,-1">2</Point>
+		<Point position="26,-1">2</Point>
+		<Point position="27,-1">2</Point>
+		<Point position="28,-1">2</Point>
+		<Point position="29,-1">2</Point>
+		<Point position="30,-1">2</Point>
+		<Point position="31,-1">2</Point>
+		<Point position="32,-1">2</Point>
+		<Point position="33,-1">2</Point>
+		<Point position="34,-1">2</Point>
+		<Point position="35,-1">2</Point>
+		<Point position="36,-1">2</Point>
+		<Point position="37,-1">2</Point>
+		<Point position="38,-1">2</Point>
+		<Point position="39,-1">2</Point>
+		<Point position="40,-1">2</Point>
+		<Point position="41,-1">2</Point>
+		<Point position="42,-1">2</Point>
+		<Point position="43,-1">2</Point>
+		<Point position="44,-1">2</Point>
+		<Point position="45,-1">2</Point>
+		<Point position="46,-1">2</Point>
+		<Point position="47,-1">2</Point>
+		<Point position="48,-1">2</Point>
+		<Point position="49,-1">2</Point>
+		<Point position="50,-1">2</Point>
+		<Point position="51,-1">2</Point>
+		<Point position="52,-1">2</Point>
+		<Point position="53,-1">2</Point>
+		<Point position="54,-1">2</Point>
+		<Point position="55,-1">2</Point>
+		<Point position="56,-1">2</Point>
+		<Point position="57,-1">2</Point>
+		<Point position="58,-1">2</Point>
+		<Point position="59,-1">2</Point>				
+		<Point position="58,0">2</Point>
+		<Point position="58,-1">2</Point>
+		<Point position="58,-2">2</Point>
+		<Point position="58,-3">2</Point>
+		<Point position="58,-4">2</Point>
+		<Point position="58,-5">2</Point>
+		<Point position="58,-6">2</Point>
+		<Point position="58,-7">2</Point>
+		<Point position="58,-8">2</Point>
+		<Point position="58,-9">2</Point>
+		<Point position="58,-10">2</Point>
+		<Point position="58,-11">2</Point>
+		<Point position="58,-12">2</Point>
+		<Point position="58,-13">2</Point>
+		<Point position="58,-14">2</Point>
+		<Point position="58,-15">2</Point>
+		<Point position="58,-16">2</Point>
+		<Point position="58,-17">2</Point>
+		<Point position="58,-18">2</Point>
+		<Point position="58,-19">2</Point>
+		<Point position="58,-20">2</Point>
+		<Point position="58,-21">2</Point>
+		<Point position="58,-22">2</Point>
+		<Point position="58,-23">2</Point>
+		<Point position="58,-24">2</Point>
+		<Point position="58,-25">2</Point>
+		<Point position="58,-26">2</Point>
+		<Point position="58,-27">2</Point>
+		<Point position="58,-28">2</Point>
+		<Point position="58,-29">2</Point>
+		<Point position="58,-30">2</Point>
+		<Point position="58,-31">2</Point>
+		<Point position="58,-32">2</Point>
+		<Point position="58,-33">2</Point>
+		<Point position="58,-34">2</Point>
+		<Point position="58,-35">2</Point>
+		<Point position="58,-36">2</Point>
+		<Point position="58,-37">2</Point>
+		<Point position="58,-38">2</Point>
+		<Point position="58,-39">2</Point>		
+		<Point position="58,-40">2</Point>		
+		<Point position="59,0">2</Point>
+		<Point position="59,-1">2</Point>
+		<Point position="59,-2">2</Point>
+		<Point position="59,-3">2</Point>
+		<Point position="59,-4">2</Point>
+		<Point position="59,-5">2</Point>
+		<Point position="59,-6">2</Point>
+		<Point position="59,-7">2</Point>
+		<Point position="59,-8">2</Point>
+		<Point position="59,-9">2</Point>
+		<Point position="59,-10">2</Point>
+		<Point position="59,-11">2</Point>
+		<Point position="59,-12">2</Point>
+		<Point position="59,-13">2</Point>
+		<Point position="59,-14">2</Point>
+		<Point position="59,-15">2</Point>
+		<Point position="59,-16">2</Point>
+		<Point position="59,-17">2</Point>
+		<Point position="59,-18">2</Point>
+		<Point position="59,-19">2</Point>
+		<Point position="59,-20">2</Point>
+		<Point position="59,-21">2</Point>
+		<Point position="59,-22">2</Point>
+		<Point position="59,-23">2</Point>
+		<Point position="59,-24">2</Point>
+		<Point position="59,-25">2</Point>
+		<Point position="59,-26">2</Point>
+		<Point position="59,-27">2</Point>
+		<Point position="59,-28">2</Point>
+		<Point position="59,-29">2</Point>
+		<Point position="59,-30">2</Point>
+		<Point position="59,-31">2</Point>
+		<Point position="59,-32">2</Point>
+		<Point position="59,-33">2</Point>
+		<Point position="59,-34">2</Point>
+		<Point position="59,-35">2</Point>
+		<Point position="59,-36">2</Point>
+		<Point position="59,-37">2</Point>
+		<Point position="59,-38">2</Point>
+		<Point position="59,-39">2</Point>		
+		<Point position="59,-40">2</Point>		
+		
+		<!--- Blauer Rand: -->	
+		<Point position="5,-5">1</Point>
+		<Point position="6,-5">1</Point>
+		<Point position="7,-5">1</Point>
+		<Point position="8,-5">1</Point>
+		<Point position="9,-5">1</Point>
+		<Point position="10,-5">1</Point>
+		<Point position="11,-5">1</Point>
+		<Point position="12,-5">1</Point>
+		<Point position="13,-5">1</Point>
+		<Point position="14,-5">1</Point>
+		<Point position="15,-5">1</Point>
+		<Point position="16,-5">1</Point>
+		<Point position="17,-5">1</Point>
+		<Point position="18,-5">1</Point>
+		<Point position="19,-5">1</Point>
+		<Point position="20,-5">1</Point>
+		<Point position="21,-5">1</Point>
+		<Point position="22,-5">1</Point>
+		<Point position="23,-5">1</Point>
+		<Point position="24,-5">1</Point>
+		<Point position="25,-5">1</Point>
+		<Point position="26,-5">1</Point>
+		<Point position="27,-5">1</Point>
+		<Point position="28,-5">1</Point>
+		<Point position="29,-5">1</Point>
+		<Point position="30,-5">1</Point>
+		<Point position="31,-5">1</Point>
+		<Point position="32,-5">1</Point>
+		<Point position="33,-5">1</Point>
+		<Point position="34,-5">1</Point>
+		<Point position="35,-5">1</Point>
+		<Point position="36,-5">1</Point>
+		<Point position="37,-5">1</Point>
+		<Point position="38,-5">1</Point>
+		<Point position="39,-5">1</Point>
+		<Point position="40,-5">1</Point>
+		<Point position="41,-5">1</Point>
+		<Point position="42,-5">1</Point>
+		<Point position="43,-5">1</Point>
+		<Point position="44,-5">1</Point>
+		<Point position="45,-5">1</Point>
+		<Point position="46,-5">1</Point>
+		<Point position="47,-5">1</Point>
+		<Point position="48,-5">1</Point>
+		<Point position="49,-5">1</Point>
+		<Point position="50,-5">1</Point>
+		<Point position="51,-5">1</Point>
+		<Point position="52,-5">1</Point>
+		<Point position="53,-5">1</Point>
+		<Point position="54,-5">1</Point>	
+		<Point position="5,-35">1</Point>
+		<Point position="6,-35">1</Point>
+		<Point position="7,-35">1</Point>
+		<Point position="8,-35">1</Point>
+		<Point position="9,-35">1</Point>
+		<Point position="10,-35">1</Point>
+		<Point position="11,-35">1</Point>
+		<Point position="12,-35">1</Point>
+		<Point position="13,-35">1</Point>
+		<Point position="14,-35">1</Point>
+		<Point position="15,-35">1</Point>
+		<Point position="16,-35">1</Point>
+		<Point position="17,-35">1</Point>
+		<Point position="18,-35">1</Point>
+		<Point position="19,-35">1</Point>
+		<Point position="20,-35">1</Point>
+		<Point position="21,-35">1</Point>
+		<Point position="22,-35">1</Point>
+		<Point position="23,-35">1</Point>
+		<Point position="24,-35">1</Point>
+		<Point position="25,-35">1</Point>
+		<Point position="26,-35">1</Point>
+		<Point position="27,-35">1</Point>
+		<Point position="28,-35">1</Point>
+		<Point position="29,-35">1</Point>
+		<Point position="30,-35">1</Point>
+		<Point position="31,-35">1</Point>
+		<Point position="32,-35">1</Point>
+		<Point position="33,-35">1</Point>
+		<Point position="34,-35">1</Point>
+		<Point position="35,-35">1</Point>
+		<Point position="36,-35">1</Point>
+		<Point position="37,-35">1</Point>
+		<Point position="38,-35">1</Point>
+		<Point position="39,-35">1</Point>
+		<Point position="40,-35">1</Point>
+		<Point position="41,-35">1</Point>
+		<Point position="42,-35">1</Point>
+		<Point position="43,-35">1</Point>
+		<Point position="44,-35">1</Point>
+		<Point position="45,-35">1</Point>
+		<Point position="46,-35">1</Point>
+		<Point position="47,-35">1</Point>
+		<Point position="48,-35">1</Point>
+		<Point position="49,-35">1</Point>
+		<Point position="50,-35">1</Point>
+		<Point position="51,-35">1</Point>
+		<Point position="52,-35">1</Point>
+		<Point position="53,-35">1</Point>
+		<Point position="54,-35">1</Point>
+		<Point position="54,-6">1</Point>
+		<Point position="54,-7">1</Point>
+		<Point position="54,-8">1</Point>
+		<Point position="54,-9">1</Point>
+		<Point position="54,-10">1</Point>
+		<Point position="54,-11">1</Point>
+		<Point position="54,-12">1</Point>
+		<Point position="54,-13">1</Point>
+		<Point position="54,-14">1</Point>
+		<Point position="54,-15">1</Point>
+		<Point position="54,-16">1</Point>
+		<Point position="54,-17">1</Point>
+		<Point position="54,-18">1</Point>
+		<Point position="54,-19">1</Point>
+		<Point position="54,-20">1</Point>
+		<Point position="54,-21">1</Point>		
+		<Point position="54,-22">1</Point>
+		<Point position="54,-23">1</Point>
+		<Point position="54,-24">1</Point>
+		<Point position="54,-25">1</Point>
+		<Point position="54,-26">1</Point>
+		<Point position="54,-27">1</Point>
+		<Point position="54,-28">1</Point>
+		<Point position="54,-29">1</Point>
+		<Point position="54,-30">1</Point>
+		<Point position="54,-31">1</Point>
+		<Point position="54,-32">1</Point>
+		<Point position="54,-33">1</Point>
+		<Point position="54,-34">1</Point>
+		<Point position="54,-35">1</Point>	
+		<Point position="5,-6">1</Point>
+		<Point position="5,-7">1</Point>
+		<Point position="5,-8">1</Point>
+		<Point position="5,-9">1</Point>
+		<Point position="5,-10">1</Point>
+		<Point position="5,-11">1</Point>
+		<Point position="5,-12">1</Point>
+		<Point position="5,-13">1</Point>
+		<Point position="5,-14">1</Point>
+		<Point position="5,-15">1</Point>
+		<Point position="5,-16">1</Point>
+		<Point position="5,-17">1</Point>
+		<Point position="5,-18">1</Point>
+		<Point position="5,-19">1</Point>
+		<Point position="5,-20">1</Point>
+		<Point position="5,-21">1</Point>		
+		<Point position="5,-22">1</Point>
+		<Point position="5,-23">1</Point>
+		<Point position="5,-24">1</Point>
+		<Point position="5,-25">1</Point>
+		<Point position="5,-26">1</Point>
+		<Point position="5,-27">1</Point>
+		<Point position="5,-28">1</Point>
+		<Point position="5,-29">1</Point>
+		<Point position="5,-30">1</Point>
+		<Point position="5,-31">1</Point>
+		<Point position="5,-32">1</Point>
+		<Point position="5,-33">1</Point>
+		<Point position="5,-34">1</Point>
+		<Point position="5,-35">1</Point>
+		<Point position="11,-11">1</Point>	
+		<Point position="11,-12">1</Point>
+		<Point position="11,-13">1</Point>
+		<Point position="11,-14">1</Point>
+		<Point position="11,-15">1</Point>
+		<Point position="11,-16">1</Point>
+		<Point position="11,-17">1</Point>
+		<Point position="11,-18">1</Point>
+		<Point position="11,-19">1</Point>
+		<Point position="11,-20">1</Point>
+		<Point position="11,-21">1</Point>		
+		<Point position="11,-22">1</Point>
+		<Point position="11,-23">1</Point>
+		<Point position="11,-24">1</Point>
+		<Point position="11,-25">1</Point>
+		<Point position="11,-26">1</Point>
+		<Point position="11,-27">1</Point>
+		<Point position="11,-28">1</Point>
+		<Point position="11,-29">1</Point>	
+		<Point position="48,-11">1</Point>	
+		<Point position="48,-12">1</Point>
+		<Point position="48,-13">1</Point>
+		<Point position="48,-14">1</Point>
+		<Point position="48,-15">1</Point>
+		<Point position="48,-16">1</Point>
+		<Point position="48,-17">1</Point>
+		<Point position="48,-18">1</Point>
+		<Point position="48,-19">1</Point>
+		<Point position="48,-20">1</Point>
+		<Point position="48,-21">1</Point>		
+		<Point position="48,-22">1</Point>
+		<Point position="48,-23">1</Point>
+		<Point position="48,-24">1</Point>
+		<Point position="48,-25">1</Point>
+		<Point position="48,-26">1</Point>
+		<Point position="48,-27">1</Point>
+		<Point position="48,-28">1</Point>
+		<Point position="48,-29">1</Point>	
+		<Point position="11,-11">1</Point>
+		<Point position="12,-11">1</Point>
+		<Point position="13,-11">1</Point>
+		<Point position="14,-11">1</Point>
+		<Point position="15,-11">1</Point>
+		<Point position="16,-11">1</Point>
+		<Point position="17,-11">1</Point>
+		<Point position="18,-11">1</Point>
+		<Point position="19,-11">1</Point>
+		<Point position="20,-11">1</Point>
+		<Point position="21,-11">1</Point>
+		<Point position="22,-11">1</Point>
+		<Point position="23,-11">1</Point>
+		<Point position="24,-11">1</Point>
+		<Point position="25,-11">1</Point>
+		<Point position="26,-11">1</Point>
+		<Point position="27,-11">1</Point>
+		<Point position="28,-11">1</Point>
+		<Point position="29,-11">1</Point>
+		<Point position="30,-11">1</Point>
+		<Point position="31,-11">1</Point>
+		<Point position="32,-11">1</Point>
+		<Point position="33,-11">1</Point>
+		<Point position="34,-11">1</Point>
+		<Point position="35,-11">1</Point>
+		<Point position="36,-11">1</Point>
+		<Point position="37,-11">1</Point>
+		<Point position="38,-11">1</Point>
+		<Point position="39,-11">1</Point>
+		<Point position="40,-11">1</Point>
+		<Point position="41,-11">1</Point>
+		<Point position="42,-11">1</Point>
+		<Point position="43,-11">1</Point>
+		<Point position="44,-11">1</Point>
+		<Point position="45,-11">1</Point>
+		<Point position="46,-11">1</Point>
+		<Point position="47,-11">1</Point>
+		<Point position="48,-11">1</Point>	
+		<Point position="17,-29">1</Point>
+		<Point position="18,-29">1</Point>
+		<Point position="19,-29">1</Point>
+		<Point position="20,-29">1</Point>
+		<Point position="21,-29">1</Point>
+		<Point position="22,-29">1</Point>
+		<Point position="23,-29">1</Point>
+		<Point position="24,-29">1</Point>
+		<Point position="25,-29">1</Point>
+		<Point position="26,-29">1</Point>
+		<Point position="27,-29">1</Point>
+		<Point position="28,-29">1</Point>
+		<Point position="29,-29">1</Point>
+		<Point position="30,-29">1</Point>
+		<Point position="31,-29">1</Point>
+		<Point position="32,-29">1</Point>
+		<Point position="33,-29">1</Point>
+		<Point position="34,-29">1</Point>
+		<Point position="35,-29">1</Point>
+		<Point position="36,-29">1</Point>
+		<Point position="37,-29">1</Point>
+		<Point position="38,-29">1</Point>
+		<Point position="39,-29">1</Point>
+		<Point position="40,-29">1</Point>
+		<Point position="41,-29">1</Point>
+		<Point position="42,-29">1</Point>
+		<Point position="43,-29">1</Point>
+		<Point position="44,-29">1</Point>
+		<Point position="45,-29">1</Point>
+		<Point position="46,-29">1</Point>
+		<Point position="47,-29">1</Point>
+		<Point position="48,-29">1</Point>	
+		<Point position="23,-23">1</Point>
+		<Point position="24,-23">1</Point>
+		<Point position="25,-23">1</Point>
+		<Point position="26,-23">1</Point>
+		<Point position="27,-23">1</Point>
+		<Point position="28,-23">1</Point>
+		<Point position="29,-23">1</Point>
+		<Point position="30,-23">1</Point>
+		<Point position="31,-23">1</Point>
+		<Point position="32,-23">1</Point>
+		<Point position="33,-23">1</Point>
+		<Point position="34,-23">1</Point>
+		<Point position="35,-23">1</Point>
+		<Point position="36,-23">1</Point>
+		<Point position="37,-23">1</Point>
+		<Point position="38,-23">1</Point>
+		<Point position="39,-23">1</Point>
+		<Point position="40,-23">1</Point>
+		<Point position="41,-23">1</Point>
+		<Point position="42,-23">1</Point>	
+		<Point position="18,-17">1</Point>
+		<Point position="19,-17">1</Point>
+		<Point position="20,-17">1</Point>
+		<Point position="21,-17">1</Point>
+		<Point position="22,-17">1</Point>
+		<Point position="23,-17">1</Point>
+		<Point position="24,-17">1</Point>
+		<Point position="25,-17">1</Point>
+		<Point position="26,-17">1</Point>
+		<Point position="27,-17">1</Point>
+		<Point position="28,-17">1</Point>
+		<Point position="29,-17">1</Point>
+		<Point position="30,-17">1</Point>
+		<Point position="31,-17">1</Point>
+		<Point position="32,-17">1</Point>
+		<Point position="33,-17">1</Point>
+		<Point position="34,-17">1</Point>
+		<Point position="35,-17">1</Point>
+		<Point position="36,-17">1</Point>
+		<Point position="37,-17">1</Point>
+		<Point position="38,-17">1</Point>
+		<Point position="39,-17">1</Point>
+		<Point position="40,-17">1</Point>
+		<Point position="41,-17">1</Point>
+		<Point position="42,-17">1</Point>
+		<Point position="42,-18">1</Point>
+		<Point position="42,-19">1</Point>
+		<Point position="42,-20">1</Point>
+		<Point position="42,-21">1</Point>
+		<Point position="42,-22">1</Point>
+		<Point position="17,-17">1</Point>
+		<Point position="17,-18">1</Point>
+		<Point position="17,-19">1</Point>
+		<Point position="17,-20">1</Point>
+		<Point position="17,-21">1</Point>
+		<Point position="17,-22">1</Point>
+		<Point position="17,-23">1</Point>
+		
+		<!--- Pacman: -->
+		<Point position="7,-8">80</Point>
+		<Point position="8,-7">80</Point>
+		<Point position="8,-9">80</Point>
+		
+		<!--- "Essen": -->
+		<Point position="10,-8">7</Point>
+		<Point position="13,-8">7</Point>
+		<Point position="16,-8">7</Point>
+		<Point position="19,-8">7</Point>
+		<Point position="22,-8">7</Point>
+		<Point position="25,-8">7</Point>
+		<Point position="28,-8">7</Point>
+		<Point position="31,-8">7</Point>
+		<Point position="34,-8">7</Point>
+		<Point position="37,-8">7</Point>
+		<Point position="40,-8">7</Point>
+		<Point position="43,-8">7</Point>	
+		<Point position="46,-8">7</Point>	
+		<Point position="49,-8">7</Point>	
+		<Point position="51,-11">7</Point>
+		<Point position="51,-14">7</Point>
+		<Point position="51,-17">7</Point>
+		<Point position="51,-20">7</Point>
+		<Point position="51,-23">7</Point>
+		<Point position="51,-26">7</Point>
+		<Point position="51,-29">7</Point>		
+		<Point position="49,-32">7</Point>
+		<Point position="46,-32">7</Point>
+		<Point position="43,-32">7</Point>
+		<Point position="40,-32">7</Point>
+		<Point position="37,-32">7</Point>
+		<Point position="34,-32">7</Point>
+		<Point position="31,-32">7</Point>
+		<Point position="28,-32">7</Point>
+		<Point position="25,-32">7</Point>
+		<Point position="22,-32">7</Point>
+		<Point position="19,-32">7</Point>
+		<Point position="16,-32">7</Point>	
+		<Point position="14,-17">7</Point>
+		<Point position="14,-20">7</Point>
+		<Point position="14,-23">7</Point>
+		<Point position="14,-26">7</Point>
+		<Point position="14,-29">7</Point>	
+		<Point position="17,-14">7</Point>
+		<Point position="19,-14">7</Point>
+		<Point position="22,-14">7</Point>
+		<Point position="25,-14">7</Point>
+		<Point position="28,-14">7</Point>
+		<Point position="31,-14">7</Point>
+		<Point position="34,-14">7</Point>
+		<Point position="37,-14">7</Point>
+		<Point position="40,-14">7</Point>
+		<Point position="43,-14">7</Point>
+		<Point position="45,-17">7</Point>
+		<Point position="45,-20">7</Point>
+		<Point position="45,-23">7</Point>					
+		<Point position="42,-26">7</Point>
+		<Point position="40,-26">7</Point>
+		<Point position="37,-26">7</Point>
+		<Point position="34,-26">7</Point>
+		<Point position="31,-26">7</Point>
+		<Point position="28,-26">7</Point>
+		<Point position="25,-26">7</Point>
+		<Point position="22,-26">7</Point>
+		<Point position="20,-23">7</Point>	
+		<Point position="23,-20">7</Point>
+		<Point position="26,-20">7</Point>
+		<Point position="29,-20">7</Point>	
+		<Point position="32,-20">7</Point>	
+		<Point position="35,-20">7</Point>			
+
+		<!---Wendepunkte: -->		
+		<Point position="20,-20">2</Point>	
+		<Point position="20,-26">2</Point>					
+		<Point position="45,-26">2</Point>					
+		<Point position="45,-14">2</Point>
+		<Point position="14,-14">2</Point>
+		<Point position="14,-32">2</Point>		
+		<Point position="51,-32">2</Point>
+		<Point position="51,-8">2</Point>	
+
+		<!---Ende: -->
+		<Point position="40,-18">6</Point>
+		<Point position="40,-19">6</Point>
+		<Point position="39,-20">6</Point>		
+		<Point position="40,-20">6</Point>
+		<Point position="40,-21">6</Point>
+		<Point position="40,-22">6</Point>
+		<Point position="41,-18">6</Point>
+		<Point position="41,-19">6</Point>		
+		<Point position="41,-20">6</Point>
+		<Point position="41,-21">6</Point>
+		<Point position="41,-22">6</Point>		
+	</World>
+	<!--- 1D Welt = 2-->
+	<World id="6" size="10" startPoint="0" border="false">
+	<!--- Blau = 1; Rot = 2-->
+		<Point position="0">2</Point>
+		<Point position="1">1</Point>
+		<Point position="2">2</Point>
+		<Point position="3">2</Point>
+		<Point position="4">2</Point>
+		<Point position="5">2</Point>
+		<Point position="6">2</Point>
+		<Point position="7">2</Point>
+		<Point position="8">2</Point>
+		<Point position="9">2</Point>
+	</World>
+	<!--- Translations (Rules) aus golly übernehmen: -->
+	<!--- Suchen nach: ([0-9])([0-9])([0-9])([0-9])([0-9])([0-9]) -->
+	<!--- Ersetzen durch: <Rule id="0" translation="\1,\2,\3,\4,\5">\6</Rule> -->
+	<!--- Translation = "Center, Top, Right, Left, Bottom" -->
+	<!--- Langton Loops: -->
+	<Rules id="0" symmetries="rotate4">
+		<Rule id="1" translation="0,0,0,0,0">0</Rule>
+		<Rule id="2" translation="0,0,0,0,1">2</Rule>
+		<Rule id="3" translation="0,0,0,0,2">0</Rule>
+		<Rule id="4" translation="0,0,0,0,3">0</Rule>
+		<Rule id="5" translation="0,0,0,0,5">0</Rule>
+		<Rule id="6" translation="0,0,0,0,6">3</Rule>
+		<Rule id="7" translation="0,0,0,0,7">1</Rule>
+		<Rule id="8" translation="0,0,0,1,1">2</Rule>
+		<Rule id="9" translation="0,0,0,1,2">2</Rule>
+		<Rule id="10" translation="0,0,0,1,3">2</Rule>
+		<Rule id="11" translation="0,0,0,2,1">2</Rule>
+		<Rule id="12" translation="0,0,0,2,2">0</Rule>
+		<Rule id="13" translation="0,0,0,2,3">0</Rule>
+		<Rule id="14" translation="0,0,0,2,6">2</Rule>
+		<Rule id="15" translation="0,0,0,2,7">2</Rule>
+		<Rule id="16" translation="0,0,0,3,2">0</Rule>
+		<Rule id="17" translation="0,0,0,5,2">5</Rule>
+		<Rule id="18" translation="0,0,0,6,2">2</Rule>
+		<Rule id="19" translation="0,0,0,7,2">2</Rule>
+		<Rule id="20" translation="0,0,1,0,2">2</Rule>
+		<Rule id="21" translation="0,0,1,1,2">0</Rule>
+		<Rule id="22" translation="0,0,2,0,2">0</Rule>
+		<Rule id="23" translation="0,0,2,0,3">0</Rule>
+		<Rule id="24" translation="0,0,2,0,5">0</Rule>
+		<Rule id="25" translation="0,0,2,1,2">5</Rule>
+		<Rule id="26" translation="0,0,2,2,2">0</Rule>
+		<Rule id="27" translation="0,0,2,3,2">2</Rule>
+		<Rule id="28" translation="0,0,5,2,2">2</Rule>
+		<Rule id="29" translation="0,1,2,3,2">1</Rule>
+		<Rule id="30" translation="0,1,2,4,2">1</Rule>
+		<Rule id="31" translation="0,1,2,5,2">5</Rule>
+		<Rule id="32" translation="0,1,2,6,2">1</Rule>
+		<Rule id="33" translation="0,1,2,7,2">1</Rule>
+		<Rule id="34" translation="0,1,2,7,5">1</Rule>
+		<Rule id="35" translation="0,1,4,2,2">1</Rule>
+		<Rule id="36" translation="0,1,4,3,2">1</Rule>
+		<Rule id="37" translation="0,1,4,4,2">1</Rule>
+		<Rule id="38" translation="0,1,4,7,2">1</Rule>
+		<Rule id="39" translation="0,1,6,2,5">1</Rule>
+		<Rule id="40" translation="0,1,7,2,2">1</Rule>
+		<Rule id="41" translation="0,1,7,2,5">5</Rule>
+		<Rule id="42" translation="0,1,7,5,2">1</Rule>
+		<Rule id="43" translation="0,1,7,6,2">1</Rule>
+		<Rule id="44" translation="0,1,7,7,2">1</Rule>
+		<Rule id="45" translation="0,2,5,2,7">1</Rule>
+		<Rule id="46" translation="1,0,0,0,1">1</Rule>
+		<Rule id="47" translation="1,0,0,0,6">1</Rule>
+		<Rule id="48" translation="1,0,0,0,7">7</Rule>
+		<Rule id="49" translation="1,0,0,1,1">1</Rule>
+		<Rule id="50" translation="1,0,0,1,2">1</Rule>
+		<Rule id="51" translation="1,0,0,2,1">1</Rule>
+		<Rule id="52" translation="1,0,0,2,4">4</Rule>
+		<Rule id="53" translation="1,0,0,2,7">7</Rule>
+		<Rule id="54" translation="1,0,0,5,1">1</Rule>
+		<Rule id="55" translation="1,0,1,0,1">1</Rule>
+		<Rule id="56" translation="1,0,1,1,1">1</Rule>
+		<Rule id="57" translation="1,0,1,2,4">4</Rule>
+		<Rule id="58" translation="1,0,1,2,7">7</Rule>
+		<Rule id="59" translation="1,0,2,0,2">6</Rule>
+		<Rule id="60" translation="1,0,2,1,2">1</Rule>
+		<Rule id="61" translation="1,0,2,2,1">1</Rule>
+		<Rule id="62" translation="1,0,2,2,4">4</Rule>
+		<Rule id="63" translation="1,0,2,2,6">3</Rule>
+		<Rule id="64" translation="1,0,2,2,7">7</Rule>
+		<Rule id="65" translation="1,0,2,3,2">7</Rule>
+		<Rule id="66" translation="1,0,2,4,2">4</Rule>
+		<Rule id="67" translation="1,0,2,6,2">6</Rule>
+		<Rule id="68" translation="1,0,2,6,4">4</Rule>
+		<Rule id="69" translation="1,0,2,6,7">7</Rule>
+		<Rule id="70" translation="1,0,2,7,1">0</Rule>
+		<Rule id="71" translation="1,0,2,7,2">7</Rule>
+		<Rule id="72" translation="1,0,5,4,2">7</Rule>
+		<Rule id="73" translation="1,1,1,1,2">1</Rule>
+		<Rule id="74" translation="1,1,1,2,2">1</Rule>
+		<Rule id="75" translation="1,1,1,2,4">4</Rule>
+		<Rule id="76" translation="1,1,1,2,5">1</Rule>
+		<Rule id="77" translation="1,1,1,2,6">1</Rule>
+		<Rule id="78" translation="1,1,1,2,7">7</Rule>
+		<Rule id="79" translation="1,1,1,5,2">2</Rule>
+		<Rule id="80" translation="1,1,2,1,2">1</Rule>
+		<Rule id="81" translation="1,1,2,2,2">1</Rule>
+		<Rule id="82" translation="1,1,2,2,4">4</Rule>
+		<Rule id="83" translation="1,1,2,2,5">1</Rule>
+		<Rule id="84" translation="1,1,2,2,7">7</Rule>
+		<Rule id="85" translation="1,1,2,3,2">1</Rule>
+		<Rule id="86" translation="1,1,2,4,2">4</Rule>
+		<Rule id="87" translation="1,1,2,6,2">1</Rule>
+		<Rule id="88" translation="1,1,2,7,2">7</Rule>
+		<Rule id="89" translation="1,1,3,2,2">1</Rule>
+		<Rule id="90" translation="1,2,2,2,4">4</Rule>
+		<Rule id="91" translation="1,2,2,2,7">7</Rule>
+		<Rule id="92" translation="1,2,2,4,3">4</Rule>
+		<Rule id="93" translation="1,2,2,5,4">7</Rule>
+		<Rule id="94" translation="1,2,3,2,4">4</Rule>
+		<Rule id="95" translation="1,2,3,2,7">7</Rule>
+		<Rule id="96" translation="1,2,4,2,5">5</Rule>
+		<Rule id="97" translation="1,2,4,2,6">7</Rule>
+		<Rule id="98" translation="1,2,5,2,7">5</Rule>
+		<Rule id="99" translation="2,0,0,0,1">2</Rule>
+		<Rule id="100" translation="2,0,0,0,2">2</Rule>
+		<Rule id="101" translation="2,0,0,0,4">2</Rule>
+		<Rule id="102" translation="2,0,0,0,7">1</Rule>
+		<Rule id="103" translation="2,0,0,1,2">2</Rule>
+		<Rule id="104" translation="2,0,0,1,5">2</Rule>
+		<Rule id="105" translation="2,0,0,2,1">2</Rule>
+		<Rule id="106" translation="2,0,0,2,2">2</Rule>
+		<Rule id="107" translation="2,0,0,2,3">2</Rule>
+		<Rule id="108" translation="2,0,0,2,4">2</Rule>
+		<Rule id="109" translation="2,0,0,2,5">0</Rule>
+		<Rule id="110" translation="2,0,0,2,6">2</Rule>
+		<Rule id="111" translation="2,0,0,2,7">2</Rule>
+		<Rule id="112" translation="2,0,0,3,2">6</Rule>
+		<Rule id="113" translation="2,0,0,4,2">3</Rule>
+		<Rule id="114" translation="2,0,0,5,1">7</Rule>
+		<Rule id="115" translation="2,0,0,5,2">2</Rule>
+		<Rule id="116" translation="2,0,0,5,7">5</Rule>
+		<Rule id="117" translation="2,0,0,7,2">2</Rule>
+		<Rule id="118" translation="2,0,1,0,2">2</Rule>
+		<Rule id="119" translation="2,0,1,1,2">2</Rule>
+		<Rule id="120" translation="2,0,1,2,2">2</Rule>
+		<Rule id="121" translation="2,0,1,4,2">2</Rule>
+		<Rule id="122" translation="2,0,1,7,2">2</Rule>
+		<Rule id="123" translation="2,0,2,0,2">2</Rule>
+		<Rule id="124" translation="2,0,2,0,3">2</Rule>
+		<Rule id="125" translation="2,0,2,0,5">2</Rule>
+		<Rule id="126" translation="2,0,2,0,7">3</Rule>
+		<Rule id="127" translation="2,0,2,1,2">2</Rule>
+		<Rule id="128" translation="2,0,2,1,5">2</Rule>
+		<Rule id="129" translation="2,0,2,2,1">2</Rule>
+		<Rule id="130" translation="2,0,2,2,2">2</Rule>
+		<Rule id="131" translation="2,0,2,2,7">2</Rule>
+		<Rule id="132" translation="2,0,2,3,2">1</Rule>
+		<Rule id="133" translation="2,0,2,4,2">2</Rule>
+		<Rule id="134" translation="2,0,2,4,5">2</Rule>
+		<Rule id="135" translation="2,0,2,5,2">0</Rule>
+		<Rule id="136" translation="2,0,2,5,5">2</Rule>
+		<Rule id="137" translation="2,0,2,6,2">2</Rule>
+		<Rule id="138" translation="2,0,2,7,2">2</Rule>
+		<Rule id="139" translation="2,0,3,1,2">2</Rule>
+		<Rule id="140" translation="2,0,3,2,1">6</Rule>
+		<Rule id="141" translation="2,0,3,2,2">6</Rule>
+		<Rule id="142" translation="2,0,3,4,2">2</Rule>
+		<Rule id="143" translation="2,0,4,2,2">2</Rule>
+		<Rule id="144" translation="2,0,5,1,2">2</Rule>
+		<Rule id="145" translation="2,0,5,2,1">2</Rule>
+		<Rule id="146" translation="2,0,5,2,2">2</Rule>
+		<Rule id="147" translation="2,0,5,5,2">1</Rule>
+		<Rule id="148" translation="2,0,5,7,2">5</Rule>
+		<Rule id="149" translation="2,0,6,2,2">2</Rule>
+		<Rule id="150" translation="2,0,6,7,2">2</Rule>
+		<Rule id="151" translation="2,0,7,1,2">2</Rule>
+		<Rule id="152" translation="2,0,7,2,2">2</Rule>
+		<Rule id="153" translation="2,0,7,4,2">2</Rule>
+		<Rule id="154" translation="2,0,7,7,2">2</Rule>
+		<Rule id="155" translation="2,1,1,2,2">2</Rule>
+		<Rule id="156" translation="2,1,1,2,6">1</Rule>
+		<Rule id="157" translation="2,1,2,2,2">2</Rule>
+		<Rule id="158" translation="2,1,2,2,4">2</Rule>
+		<Rule id="159" translation="2,1,2,2,6">2</Rule>
+		<Rule id="160" translation="2,1,2,2,7">2</Rule>
+		<Rule id="161" translation="2,1,4,2,2">2</Rule>
+		<Rule id="162" translation="2,1,5,2,2">2</Rule>
+		<Rule id="163" translation="2,1,6,2,2">2</Rule>
+		<Rule id="164" translation="2,1,7,2,2">2</Rule>
+		<Rule id="165" translation="2,2,2,2,7">2</Rule>
+		<Rule id="166" translation="2,2,2,4,4">2</Rule>
+		<Rule id="167" translation="2,2,2,4,6">2</Rule>
+		<Rule id="168" translation="2,2,2,7,6">2</Rule>
+		<Rule id="169" translation="2,2,2,7,7">2</Rule>
+		<Rule id="170" translation="3,0,0,0,1">3</Rule>
+		<Rule id="171" translation="3,0,0,0,2">2</Rule>
+		<Rule id="172" translation="3,0,0,0,4">1</Rule>
+		<Rule id="173" translation="3,0,0,0,7">6</Rule>
+		<Rule id="174" translation="3,0,0,1,2">3</Rule>
+		<Rule id="175" translation="3,0,0,4,2">1</Rule>
+		<Rule id="176" translation="3,0,0,6,2">2</Rule>
+		<Rule id="177" translation="3,0,1,0,2">1</Rule>
+		<Rule id="178" translation="3,0,1,2,2">0</Rule>
+		<Rule id="179" translation="3,0,2,5,1">1</Rule>
+		<Rule id="180" translation="4,0,1,1,2">0</Rule>
+		<Rule id="181" translation="4,0,1,2,2">0</Rule>
+		<Rule id="182" translation="4,0,1,2,5">0</Rule>
+		<Rule id="183" translation="4,0,2,1,2">0</Rule>
+		<Rule id="184" translation="4,0,2,2,2">1</Rule>
+		<Rule id="185" translation="4,0,2,3,2">6</Rule>
+		<Rule id="186" translation="4,0,2,5,2">0</Rule>
+		<Rule id="187" translation="4,0,3,2,2">1</Rule>
+		<Rule id="188" translation="5,0,0,0,2">2</Rule>
+		<Rule id="189" translation="5,0,0,2,1">5</Rule>
+		<Rule id="190" translation="5,0,0,2,2">5</Rule>
+		<Rule id="191" translation="5,0,0,2,3">2</Rule>
+		<Rule id="192" translation="5,0,0,2,7">2</Rule>
+		<Rule id="193" translation="5,0,0,5,2">0</Rule>
+		<Rule id="194" translation="5,0,2,0,2">2</Rule>
+		<Rule id="195" translation="5,0,2,1,2">2</Rule>
+		<Rule id="196" translation="5,0,2,1,5">2</Rule>
+		<Rule id="197" translation="5,0,2,2,2">0</Rule>
+		<Rule id="198" translation="5,0,2,2,4">4</Rule>
+		<Rule id="199" translation="5,0,2,7,2">2</Rule>
+		<Rule id="200" translation="5,1,2,1,2">2</Rule>
+		<Rule id="201" translation="5,1,2,2,2">0</Rule>
+		<Rule id="202" translation="5,1,2,4,2">2</Rule>
+		<Rule id="203" translation="5,1,2,7,2">2</Rule>
+		<Rule id="204" translation="6,0,0,0,1">1</Rule>
+		<Rule id="205" translation="6,0,0,0,2">1</Rule>
+		<Rule id="206" translation="6,0,2,1,2">0</Rule>
+		<Rule id="207" translation="6,1,2,1,2">5</Rule>
+		<Rule id="208" translation="6,1,2,1,3">1</Rule>
+		<Rule id="209" translation="6,1,2,2,2">5</Rule>
+		<Rule id="210" translation="7,0,0,0,7">7</Rule>
+		<Rule id="211" translation="7,0,1,1,2">0</Rule>
+		<Rule id="212" translation="7,0,1,2,2">0</Rule>
+		<Rule id="213" translation="7,0,1,2,5">0</Rule>
+		<Rule id="214" translation="7,0,2,1,2">0</Rule>
+		<Rule id="215" translation="7,0,2,2,2">1</Rule>
+		<Rule id="216" translation="7,0,2,2,5">1</Rule>
+		<Rule id="217" translation="7,0,2,3,2">1</Rule>
+		<Rule id="218" translation="7,0,2,5,2">5</Rule>
+		<Rule id="219" translation="7,0,2,7,2">0</Rule>
+	</Rules>
+	<!--- Suchen nach: ([0-9]*[A-Za-z]*),([0-9]*[A-Za-z]*),([0-9]*[A-Za-z]*),([0-9]*[A-Za-z]*),([0-9]*[A-Za-z]*),([0-9]*[A-Za-z]*) -->
+	<!--- Ersetzen durch: <Rule id="0" translation="\1,\2,\3,\4,\5">\6</Rule> -->
+	<!--- Suchen nach: var.([A-Za-z]*)..((([0-9])(,))*([0-9])). -->
+	<!--- Ersetzen durch: <Var id="\1">\2</Var> -->
+	<!--- Evoloops: -->
+	<Rules id="1" symmetries="rotate4">
+		<Var id="a">0,2,5</Var>
+		<Var id="b">0,1,2,3,4,5,6,7</Var>
+		<Var id="c">0,1,2,3,4,5,6,7</Var>
+		<Var id="d">1,4,6,7</Var>
+		<Var id="e">1,4</Var>
+		<Var id="f">0,1</Var>
+		<Var id="g">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="h">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="i">2,3,4,5,6,7</Var>
+		<Var id="j">0,2,3,5</Var>
+		<Var id="k">0,2,3,4,5,6,7</Var>
+		<Var id="l">4,6,7</Var>
+		<Var id="m">2,5</Var>
+		<Var id="n">0,1,8</Var>
+		<Var id="o">0,3,5</Var>
+		<Var id="p">2,3,5</Var>
+		<Var id="q">3,5</Var>
+		<Var id="r">2,4,6,7</Var>
+		<Var id="s">0,1</Var>
+		<Var id="t">0,1</Var>
+		<Var id="u">0,1,2,3,4,7</Var>
+		<Var id="v">5,6</Var>
+		<Var id="w">1,6,7</Var>
+		<Var id="x">0,3,5</Var>
+		<Var id="y">0,3,5</Var>
+		<Var id="z">1,3,5</Var>
+		<Var id="A">0,1,3,5</Var>
+		<Var id="B">0,1,3,5</Var>
+		<Var id="C">1,3,5</Var>
+		<Var id="D">1,3,5</Var>
+		<Var id="E">0,1,2,3,4,5</Var>
+		<Var id="F">0,1,2,4,5</Var>
+		<Var id="G">1,2,4</Var>
+		<Var id="H">0,1,3,4,5,6</Var>
+		<Var id="I">0,1,2,3,4,5,6</Var>
+		<Var id="J">1,2,4,6</Var>
+		<Var id="K">0,1,2,4,5,6,7</Var>
+		<Var id="L">0,1,2,3,4,5,7</Var>
+		<Var id="M">1,2,4,6,7</Var>
+		<Var id="N">0,3</Var>
+		<Var id="O">0,1,2,3,5</Var>
+		<Var id="P">0,1,2,3,4</Var>
+		<Var id="Q">0,2,3,5,6</Var>
+		<Var id="R">0,1,3,4,5,6,7</Var>
+		<Var id="S">1,3</Var>
+		<Var id="T">1,2,3,5</Var>
+		<Var id="U">0,1,3,4,5</Var>
+		<Var id="V">0,1,4,5,6</Var>
+		<Var id="W">1,4,6</Var>
+		<Var id="X">2,3,5</Var>
+		<Var id="Y">0,5</Var>
+		<Var id="Z">1,2</Var>
+		<Var id="aa">0,1,5</Var>
+		<Var id="ab">0,2</Var>
+		<Var id="ac">2,3,4,5</Var>
+		<Var id="ad">2,3,4,5,6</Var>
+		<Var id="ae">0,3</Var>
+		<Var id="af">0,3</Var>
+		<Var id="ag">3,7</Var>
+		<Var id="ah">2,8</Var>
+		<Var id="ai">0,2,8</Var>
+		<Var id="aj">0,8</Var>
+		<Var id="ak">0,2,8</Var>
+		<Var id="al">6,8</Var>
+		<Var id="am">0,1,4,5,6,7</Var>
+		<Var id="an">0,1,4,5,6,7</Var>
+		<Var id="ao">1,4,6,7</Var>
+		<Var id="ap">1,3,4,5,6,7</Var>
+		<Var id="aq">2,3,5,8</Var>
+		<Var id="ar">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="as">0,1,4,6,7</Var>
+		<Var id="at">1,5,6</Var>
+		<Var id="au">4,7</Var>
+		<Var id="av">1,3,4,5,7</Var>
+		<Var id="aw">0,4,5,7</Var>
+		<Var id="ax">1,4,5,6,7</Var>
+		<Var id="ay">0,4,5,7</Var>
+		<Var id="az">1,4,5,6,7</Var>
+		<Var id="aA">0,1,3,5,6,7</Var>
+		<Var id="aB">1,2,3,4,5,7</Var>
+		<Var id="aC">0,1,4,7</Var>
+		<Var id="aD">2,4,6,7,8</Var>
+		<Var id="aE">3,5,6</Var>
+		<Var id="aF">2,3,5,6</Var>
+		<Var id="aG">2,3,5,6</Var>
+		<Var id="aH">2,3</Var>
+		<Var id="aI">0,1,3,4,7</Var>
+		<Var id="aJ">2,5,6,7</Var>
+		<Var id="aK">1,2,3,4,6,7</Var>
+		<Var id="aL">1,3,4,7</Var>
+		<Var id="aM">0,2,3</Var>
+		<Var id="aN">1,2,4,7</Var>
+		<Var id="aO">3,6</Var>
+		<Var id="aP">1,2,3,4,7</Var>
+		<Var id="aQ">3,4,7</Var>
+		<Var id="aR">1,2,3,4,5,6,7</Var>
+		<Var id="aS">3,4,6,7,8</Var>
+		<Var id="aT">0,3,6</Var>
+		<Var id="aU">3,4,5,7</Var>
+		<Var id="aV">2,3,6</Var>
+		<Var id="aW">1,2,3,4,5,6,7</Var>
+		<Var id="aX">0,8</Var>
+		<Var id="aY">0,8</Var>
+		<Var id="aZ">4,5,6,7</Var>
+		<Var id="ba">4,6,7,8</Var>
+		<Var id="bb">1,2,4,6,7</Var>
+		<Var id="bc">4,5</Var>
+		<Var id="bd">4,7,8</Var>
+		<Var id="be">0,1,4,5,7</Var>
+		<Var id="bf">4,5,7</Var>
+		<Var id="bg">1,2,4,5,7</Var>
+		<Var id="bh">1,2,4,5,7</Var>
+		<Var id="bi">0,1,2,3,4,6,7</Var>
+		<Var id="bj">2,5,6</Var>
+		<Var id="bk">1,3,4,6,7</Var>
+		<Var id="bl">0,4,6,7</Var>
+		<Var id="bm">6,7,8</Var>
+		<Var id="bn">1,3,4,5,6,7</Var>
+		<Var id="bo">1,4,7</Var>
+		<Var id="bp">2,3,5,6</Var>
+		<Var id="bq">2,3,5,6</Var>
+		<Var id="br">0,1,2,3,4,5,6,7</Var>
+		<Var id="bs">0,1,2,3,4,5,6,7</Var>
+		<Rule id="0" translation="0,a,0,0,1">2</Rule>
+		<Rule id="1" translation="0,0,0,0,4">3</Rule>
+		<Rule id="2" translation="0,b,c,1,d">1</Rule>
+		<Rule id="3" translation="0,0,0,2,e">2</Rule>
+		<Rule id="4" translation="f,g,h,i,8">8</Rule>
+		<Rule id="5" translation="0,j,k,l,1">1</Rule>
+		<Rule id="6" translation="0,0,0,4,m">2</Rule>
+		<Rule id="7" translation="0,0,0,7,5">2</Rule>
+		<Rule id="8" translation="f,b,n,8,i">8</Rule>
+		<Rule id="9" translation="0,o,1,j,d">1</Rule>
+		<Rule id="10" translation="0,0,1,0,2">2</Rule>
+		<Rule id="11" translation="0,o,1,2,p">1</Rule>
+		<Rule id="12" translation="0,j,1,q,r">1</Rule>
+		<Rule id="13" translation="f,s,i,t,8">8</Rule>
+		<Rule id="14" translation="0,u,2,1,p">1</Rule>
+		<Rule id="15" translation="0,0,r,p,1">1</Rule>
+		<Rule id="16" translation="0,0,2,3,2">2</Rule>
+		<Rule id="17" translation="0,0,q,1,2">1</Rule>
+		<Rule id="18" translation="0,o,q,2,1">1</Rule>
+		<Rule id="19" translation="0,1,2,v,2">6</Rule>
+		<Rule id="20" translation="w,o,x,y,k">8</Rule>
+		<Rule id="21" translation="z,A,B,C,D">8</Rule>
+		<Rule id="22" translation="1,E,F,G,4">4</Rule>
+		<Rule id="23" translation="1,H,I,J,6">6</Rule>
+		<Rule id="24" translation="1,K,L,M,7">7</Rule>
+		<Rule id="25" translation="1,N,A,j,p">8</Rule>
+		<Rule id="26" translation="1,O,P,4,G">4</Rule>
+		<Rule id="27" translation="1,Q,I,6,J">6</Rule>
+		<Rule id="28" translation="1,b,R,7,M">7</Rule>
+		<Rule id="29" translation="1,N,S,f,T">8</Rule>
+		<Rule id="30" translation="1,O,e,o,4">4</Rule>
+		<Rule id="31" translation="1,U,J,o,6">6</Rule>
+		<Rule id="32" translation="1,V,M,I,7">7</Rule>
+		<Rule id="33" translation="1,I,W,7,3">7</Rule>
+		<Rule id="34" translation="1,o,2,N,4">4</Rule>
+		<Rule id="35" translation="S,j,p,O,5">8</Rule>
+		<Rule id="36" translation="C,j,p,2,X">8</Rule>
+		<Rule id="37" translation="1,0,2,3,2">4</Rule>
+		<Rule id="38" translation="1,f,2,5,2">7</Rule>
+		<Rule id="39" translation="1,f,2,5,4">3</Rule>
+		<Rule id="40" translation="1,f,2,7,3">5</Rule>
+		<Rule id="41" translation="1,Y,3,Z,4">4</Rule>
+		<Rule id="42" translation="C,aa,q,ab,D">8</Rule>
+		<Rule id="43" translation="1,o,5,4,Z">4</Rule>
+		<Rule id="44" translation="1,f,6,2,4">4</Rule>
+		<Rule id="45" translation="1,o,7,3,M">7</Rule>
+		<Rule id="46" translation="C,f,2,X,q">8</Rule>
+		<Rule id="47" translation="1,e,ac,6,2">6</Rule>
+		<Rule id="48" translation="C,f,A,5,ab">8</Rule>
+		<Rule id="49" translation="1,1,4,3,3">4</Rule>
+		<Rule id="50" translation="1,X,2,5,4">4</Rule>
+		<Rule id="51" translation="1,ad,2,7,3">7</Rule>
+		<Rule id="52" translation="1,2,4,3,3">3</Rule>
+		<Rule id="53" translation="1,2,6,2,7">6</Rule>
+		<Rule id="54" translation="X,0,0,0,0">8</Rule>
+		<Rule id="55" translation="2,N,ae,af,ag">1</Rule>
+		<Rule id="56" translation="ah,ai,aj,ak,al">0</Rule>
+		<Rule id="57" translation="X,am,an,d,ao">8</Rule>
+		<Rule id="58" translation="2,b,R,ap,3">1</Rule>
+		<Rule id="59" translation="aq,g,h,ar,8">0</Rule>
+		<Rule id="60" translation="2,as,ab,3,ap">1</Rule>
+		<Rule id="61" translation="2,0,0,3,2">4</Rule>
+		<Rule id="62" translation="2,0,0,4,2">3</Rule>
+		<Rule id="63" translation="X,am,an,v,at">8</Rule>
+		<Rule id="64" translation="2,ab,0,5,au">5</Rule>
+		<Rule id="65" translation="2,0,0,8,av">0</Rule>
+		<Rule id="66" translation="X,aw,ax,ay,az">8</Rule>
+		<Rule id="67" translation="2,aA,ap,ab,3">1</Rule>
+		<Rule id="68" translation="2,0,aB,0,8">0</Rule>
+		<Rule id="69" translation="2,aC,2,0,6">5</Rule>
+		<Rule id="70" translation="2,0,2,0,7">3</Rule>
+		<Rule id="71" translation="2,am,2,ax,3">1</Rule>
+		<Rule id="72" translation="2,aC,2,3,2">3</Rule>
+		<Rule id="73" translation="2,0,2,5,2">5</Rule>
+		<Rule id="74" translation="aD,0,2,6,Y">0</Rule>
+		<Rule id="75" translation="2,0,3,2,ax">1</Rule>
+		<Rule id="76" translation="2,ab,3,aE,2">1</Rule>
+		<Rule id="77" translation="2,2,aF,aG,3">1</Rule>
+		<Rule id="78" translation="2,2,3,4,5">1</Rule>
+		<Rule id="79" translation="3,0,0,0,aH">2</Rule>
+		<Rule id="80" translation="3,R,k,b,v">8</Rule>
+		<Rule id="81" translation="3,0,0,0,7">4</Rule>
+		<Rule id="82" translation="3,aI,R,aJ,aK">8</Rule>
+		<Rule id="83" translation="3,0,0,3,2">2</Rule>
+		<Rule id="84" translation="3,u,U,aL,ao">8</Rule>
+		<Rule id="85" translation="3,0,0,4,2">1</Rule>
+		<Rule id="86" translation="3,aM,b,aN,aO">8</Rule>
+		<Rule id="87" translation="3,0,1,0,2">1</Rule>
+		<Rule id="88" translation="3,f,aP,s,aQ">8</Rule>
+		<Rule id="89" translation="q,R,ax,aR,aK">8</Rule>
+		<Rule id="90" translation="aS,0,1,2,5">0</Rule>
+		<Rule id="91" translation="3,0,2,aT,2">8</Rule>
+		<Rule id="92" translation="3,aC,2,5,2">1</Rule>
+		<Rule id="93" translation="3,0,3,3,2">1</Rule>
+		<Rule id="94" translation="aU,ap,aR,aV,aW">8</Rule>
+		<Rule id="95" translation="4,aj,aX,aY,ai">1</Rule>
+		<Rule id="96" translation="aZ,o,x,y,ap">8</Rule>
+		<Rule id="97" translation="ba,0,am,M,bb">0</Rule>
+		<Rule id="98" translation="l,ar,g,h,8">1</Rule>
+		<Rule id="99" translation="4,o,x,2,q">8</Rule>
+		<Rule id="100" translation="bc,0,o,q,2">8</Rule>
+		<Rule id="101" translation="4,0,0,8,ap">1</Rule>
+		<Rule id="102" translation="ba,0,ao,o,M">0</Rule>
+		<Rule id="103" translation="4,0,ap,0,8">1</Rule>
+		<Rule id="104" translation="ba,0,M,bb,ap">0</Rule>
+		<Rule id="105" translation="bd,0,2,be,M">0</Rule>
+		<Rule id="106" translation="4,0,2,0,q">8</Rule>
+		<Rule id="107" translation="ba,0,2,C,ao">0</Rule>
+		<Rule id="108" translation="4,0,2,aH,2">1</Rule>
+		<Rule id="109" translation="au,0,2,6,2">6</Rule>
+		<Rule id="110" translation="ba,0,3,ao,M">0</Rule>
+		<Rule id="111" translation="ba,0,3,2,ao">0</Rule>
+		<Rule id="112" translation="4,0,3,2,2">1</Rule>
+		<Rule id="113" translation="bf,bg,bh,aR,aW">8</Rule>
+		<Rule id="114" translation="5,b,bi,aF,bj">8</Rule>
+		<Rule id="115" translation="5,0,0,2,3">2</Rule>
+		<Rule id="116" translation="5,aI,bk,bl,bi">8</Rule>
+		<Rule id="117" translation="5,0,1,2,1">8</Rule>
+		<Rule id="118" translation="5,0,2,0,m">2</Rule>
+		<Rule id="119" translation="5,0,2,1,5">2</Rule>
+		<Rule id="120" translation="5,0,2,au,5">8</Rule>
+		<Rule id="121" translation="5,0,3,1,2">0</Rule>
+		<Rule id="122" translation="6,0,2,aC,2">2</Rule>
+		<Rule id="123" translation="al,0,2,aF,2">0</Rule>
+		<Rule id="124" translation="bm,0,3,2,2">0</Rule>
+		<Rule id="125" translation="6,ap,bn,aR,aW">8</Rule>
+		<Rule id="126" translation="6,ap,2,bn,2">8</Rule>
+		<Rule id="127" translation="al,bo,2,2,2">0</Rule>
+		<Rule id="128" translation="6,aF,aG,bp,bq">8</Rule>
+		<Rule id="129" translation="7,0,2,2,2">1</Rule>
+		<Rule id="130" translation="7,0,2,3,2">0</Rule>
+		<Rule id="131" translation="8,b,c,br,bs">0</Rule>
+	</Rules>
+	<!--- Chou-Reggia Loop 2: -->
+	<Rules id="2" symmetries="rotate4">
+		<Rule id="1" translation="0,0,0,0,0">0</Rule>
+		<Rule id="2" translation="0,0,0,4,4">0</Rule>
+		<Rule id="3" translation="0,0,0,5,4">7</Rule>
+		<Rule id="4" translation="0,0,0,1,0">0</Rule>
+		<Rule id="5" translation="0,0,0,1,1">0</Rule>
+		<Rule id="6" translation="0,0,0,3,3">0</Rule>
+		<Rule id="7" translation="0,0,4,0,4">0</Rule>
+		<Rule id="8" translation="0,0,4,4,4">5</Rule>
+		<Rule id="9" translation="0,0,4,1,0">0</Rule>
+		<Rule id="10" translation="0,0,1,0,4">0</Rule>
+		<Rule id="11" translation="0,0,1,0,1">0</Rule>
+		<Rule id="12" translation="0,0,1,7,4">0</Rule>
+		<Rule id="13" translation="0,0,3,0,0">0</Rule>
+		<Rule id="14" translation="0,0,3,0,1">0</Rule>
+		<Rule id="15" translation="0,0,3,0,3">0</Rule>
+		<Rule id="16" translation="0,0,7,0,4">0</Rule>
+		<Rule id="17" translation="0,0,7,0,3">0</Rule>
+		<Rule id="18" translation="0,0,7,1,0">4</Rule>
+		<Rule id="19" translation="0,0,7,1,1">0</Rule>
+		<Rule id="20" translation="0,4,0,0,0">0</Rule>
+		<Rule id="21" translation="0,4,0,0,7">0</Rule>
+		<Rule id="22" translation="0,4,7,1,0">0</Rule>
+		<Rule id="23" translation="0,5,0,0,0">7</Rule>
+		<Rule id="24" translation="0,1,7,0,0">0</Rule>
+		<Rule id="25" translation="0,7,0,0,0">0</Rule>
+		<Rule id="26" translation="0,7,0,0,7">7</Rule>
+		<Rule id="27" translation="0,7,1,0,1">0</Rule>
+		<Rule id="28" translation="4,0,0,1,0">1</Rule>
+		<Rule id="29" translation="4,0,0,3,1">3</Rule>
+		<Rule id="30" translation="4,0,1,0,3">3</Rule>
+		<Rule id="31" translation="4,0,7,1,0">3</Rule>
+		<Rule id="32" translation="4,1,1,0,3">3</Rule>
+		<Rule id="33" translation="4,3,1,0,3">3</Rule>
+		<Rule id="34" translation="5,0,0,0,3">3</Rule>
+		<Rule id="35" translation="5,0,3,3,3">0</Rule>
+		<Rule id="36" translation="1,0,0,0,4">5</Rule>
+		<Rule id="37" translation="1,0,0,0,1">1</Rule>
+		<Rule id="38" translation="1,0,0,4,1">4</Rule>
+		<Rule id="39" translation="1,0,1,0,4">4</Rule>
+		<Rule id="40" translation="1,0,1,3,0">1</Rule>
+		<Rule id="41" translation="1,0,3,0,1">1</Rule>
+		<Rule id="42" translation="1,0,7,1,3">1</Rule>
+		<Rule id="43" translation="1,4,0,4,1">4</Rule>
+		<Rule id="44" translation="1,4,1,0,4">4</Rule>
+		<Rule id="45" translation="1,1,1,0,4">4</Rule>
+		<Rule id="46" translation="1,3,3,0,1">1</Rule>
+		<Rule id="47" translation="1,7,7,7,1">1</Rule>
+		<Rule id="48" translation="3,0,4,0,1">1</Rule>
+		<Rule id="49" translation="3,0,5,0,1">1</Rule>
+		<Rule id="50" translation="3,0,5,1,4">1</Rule>
+		<Rule id="51" translation="3,0,7,1,4">1</Rule>
+		<Rule id="52" translation="3,4,4,0,1">1</Rule>
+		<Rule id="53" translation="3,4,5,0,1">1</Rule>
+		<Rule id="54" translation="3,5,4,0,1">0</Rule>
+		<Rule id="55" translation="3,1,4,0,0">1</Rule>
+		<Rule id="56" translation="3,7,7,7,1">1</Rule>
+		<Rule id="57" translation="7,0,0,0,0">0</Rule>
+		<Rule id="58" translation="7,0,0,3,3">7</Rule>
+		<Rule id="59" translation="7,0,7,1,0">0</Rule>
+		<Rule id="60" translation="7,0,7,1,4">1</Rule>
+		<Rule id="61" translation="7,0,7,1,1">0</Rule>
+		<Rule id="62" translation="7,1,7,0,0">0</Rule>
+		<Rule id="63" translation="7,3,0,0,0">7</Rule>
+		<Rule id="64" translation="7,7,0,0,7">0</Rule>
+		<Rule id="65" translation="7,7,0,7,1">1</Rule>
+	</Rules>
+	<!--- Byl Loop: -->
+	<Rules id="3" symmetries="rotate4">
+		<Rule id="1" translation="0,0,0,0,0">0</Rule>
+		<Rule id="2" translation="0,0,0,0,1">0</Rule>
+		<Rule id="3" translation="0,0,0,0,3">1</Rule>
+		<Rule id="4" translation="0,0,0,4,2">0</Rule>
+		<Rule id="5" translation="0,0,0,1,1">0</Rule>
+		<Rule id="6" translation="0,0,0,1,2">0</Rule>
+		<Rule id="7" translation="0,0,0,3,1">1</Rule>
+		<Rule id="8" translation="0,0,0,3,3">0</Rule>
+		<Rule id="9" translation="0,0,0,3,2">0</Rule>
+		<Rule id="10" translation="0,0,0,2,0">0</Rule>
+		<Rule id="11" translation="0,0,0,2,4">2</Rule>
+		<Rule id="12" translation="0,0,0,2,3">3</Rule>
+		<Rule id="13" translation="0,0,4,3,3">0</Rule>
+		<Rule id="14" translation="0,0,5,1,2">0</Rule>
+		<Rule id="15" translation="0,0,1,4,0">0</Rule>
+		<Rule id="16" translation="0,0,1,1,2">0</Rule>
+		<Rule id="17" translation="0,0,1,3,0">5</Rule>
+		<Rule id="18" translation="0,0,1,3,1">0</Rule>
+		<Rule id="19" translation="0,0,1,3,2">0</Rule>
+		<Rule id="20" translation="0,0,3,0,2">0</Rule>
+		<Rule id="21" translation="0,0,3,4,0">0</Rule>
+		<Rule id="22" translation="0,0,3,4,2">0</Rule>
+		<Rule id="23" translation="0,0,3,1,2">0</Rule>
+		<Rule id="24" translation="0,0,2,0,4">0</Rule>
+		<Rule id="25" translation="0,0,2,0,5">0</Rule>
+		<Rule id="26" translation="0,0,2,0,1">0</Rule>
+		<Rule id="27" translation="0,0,2,0,2">0</Rule>
+		<Rule id="28" translation="0,0,2,4,2">0</Rule>
+		<Rule id="29" translation="0,0,2,5,0">0</Rule>
+		<Rule id="30" translation="0,0,2,5,2">0</Rule>
+		<Rule id="31" translation="0,0,2,2,0">0</Rule>
+		<Rule id="32" translation="0,0,2,2,5">0</Rule>
+		<Rule id="33" translation="0,0,2,2,2">0</Rule>
+		<Rule id="34" translation="0,4,0,0,0">0</Rule>
+		<Rule id="35" translation="0,5,0,0,0">0</Rule>
+		<Rule id="36" translation="0,5,0,5,0">0</Rule>
+		<Rule id="37" translation="0,1,0,0,5">2</Rule>
+		<Rule id="38" translation="0,1,0,0,2">2</Rule>
+		<Rule id="39" translation="0,1,0,4,0">0</Rule>
+		<Rule id="40" translation="0,1,0,1,0">0</Rule>
+		<Rule id="41" translation="0,2,0,0,5">5</Rule>
+		<Rule id="42" translation="4,0,0,2,3">3</Rule>
+		<Rule id="43" translation="4,0,5,2,3">5</Rule>
+		<Rule id="44" translation="4,0,1,2,3">3</Rule>
+		<Rule id="45" translation="4,4,2,0,2">4</Rule>
+		<Rule id="46" translation="4,5,2,0,2">0</Rule>
+		<Rule id="47" translation="4,1,5,2,3">3</Rule>
+		<Rule id="48" translation="4,1,1,2,3">3</Rule>
+		<Rule id="49" translation="4,1,2,0,2">4</Rule>
+		<Rule id="50" translation="4,1,2,5,3">3</Rule>
+		<Rule id="51" translation="4,3,2,0,2">4</Rule>
+		<Rule id="52" translation="4,2,1,4,3">3</Rule>
+		<Rule id="53" translation="4,2,2,3,1">3</Rule>
+		<Rule id="54" translation="5,0,1,3,0">2</Rule>
+		<Rule id="55" translation="5,0,2,2,3">0</Rule>
+		<Rule id="56" translation="5,4,0,0,2">2</Rule>
+		<Rule id="57" translation="5,4,2,0,0">2</Rule>
+		<Rule id="58" translation="5,1,2,0,2">4</Rule>
+		<Rule id="59" translation="5,3,0,0,2">5</Rule>
+		<Rule id="60" translation="5,2,0,0,2">5</Rule>
+		<Rule id="61" translation="5,2,0,4,4">2</Rule>
+		<Rule id="62" translation="5,2,3,2,4">2</Rule>
+		<Rule id="63" translation="5,2,2,0,2">0</Rule>
+		<Rule id="64" translation="1,0,0,0,0">0</Rule>
+		<Rule id="65" translation="1,0,0,0,1">0</Rule>
+		<Rule id="66" translation="1,0,0,0,3">3</Rule>
+		<Rule id="67" translation="1,0,0,3,3">0</Rule>
+		<Rule id="68" translation="1,0,1,2,3">3</Rule>
+		<Rule id="69" translation="1,0,3,4,0">1</Rule>
+		<Rule id="70" translation="1,0,3,2,4">4</Rule>
+		<Rule id="71" translation="1,1,1,2,4">4</Rule>
+		<Rule id="72" translation="1,1,3,2,4">4</Rule>
+		<Rule id="73" translation="1,1,2,4,0">4</Rule>
+		<Rule id="74" translation="1,3,3,2,4">4</Rule>
+		<Rule id="75" translation="1,2,1,3,5">1</Rule>
+		<Rule id="76" translation="1,2,3,4,4">4</Rule>
+		<Rule id="77" translation="1,2,3,5,4">3</Rule>
+		<Rule id="78" translation="1,2,2,4,1">4</Rule>
+		<Rule id="79" translation="1,2,2,4,3">4</Rule>
+		<Rule id="80" translation="3,0,0,1,0">0</Rule>
+		<Rule id="81" translation="3,0,0,3,0">0</Rule>
+		<Rule id="82" translation="3,0,0,2,1">1</Rule>
+		<Rule id="83" translation="3,0,0,2,3">3</Rule>
+		<Rule id="84" translation="3,0,4,2,3">3</Rule>
+		<Rule id="85" translation="3,0,1,1,0">0</Rule>
+		<Rule id="86" translation="3,0,1,2,1">1</Rule>
+		<Rule id="87" translation="3,0,3,2,1">1</Rule>
+		<Rule id="88" translation="3,0,3,2,3">3</Rule>
+		<Rule id="89" translation="3,0,2,2,3">3</Rule>
+		<Rule id="90" translation="3,4,4,2,3">3</Rule>
+		<Rule id="91" translation="3,4,3,2,3">3</Rule>
+		<Rule id="92" translation="3,5,1,2,0">2</Rule>
+		<Rule id="93" translation="3,5,3,2,1">5</Rule>
+		<Rule id="94" translation="3,1,4,2,3">3</Rule>
+		<Rule id="95" translation="3,1,1,2,3">3</Rule>
+		<Rule id="96" translation="3,1,3,2,5">1</Rule>
+		<Rule id="97" translation="3,1,3,2,1">1</Rule>
+		<Rule id="98" translation="3,1,2,2,1">1</Rule>
+		<Rule id="99" translation="3,3,5,2,2">3</Rule>
+		<Rule id="100" translation="3,3,3,2,1">1</Rule>
+		<Rule id="101" translation="3,2,0,5,3">3</Rule>
+		<Rule id="102" translation="3,2,4,4,3">3</Rule>
+		<Rule id="103" translation="3,2,5,4,1">5</Rule>
+		<Rule id="104" translation="3,2,1,4,3">3</Rule>
+		<Rule id="105" translation="3,2,1,5,1">1</Rule>
+		<Rule id="106" translation="3,2,1,3,2">1</Rule>
+		<Rule id="107" translation="3,2,3,4,1">1</Rule>
+		<Rule id="108" translation="2,0,0,0,0">0</Rule>
+		<Rule id="109" translation="2,0,0,0,4">2</Rule>
+		<Rule id="110" translation="2,0,0,0,3">2</Rule>
+		<Rule id="111" translation="2,0,0,0,2">2</Rule>
+		<Rule id="112" translation="2,0,0,4,4">2</Rule>
+		<Rule id="113" translation="2,0,0,5,1">5</Rule>
+		<Rule id="114" translation="2,0,0,1,1">2</Rule>
+		<Rule id="115" translation="2,0,0,1,2">2</Rule>
+		<Rule id="116" translation="2,0,0,3,4">2</Rule>
+		<Rule id="117" translation="2,0,0,3,3">2</Rule>
+		<Rule id="118" translation="2,0,0,2,4">2</Rule>
+		<Rule id="119" translation="2,0,0,2,1">2</Rule>
+		<Rule id="120" translation="2,0,1,5,0">2</Rule>
+		<Rule id="121" translation="2,0,3,2,0">2</Rule>
+		<Rule id="122" translation="2,0,2,3,0">2</Rule>
+		<Rule id="123" translation="2,4,4,0,2">2</Rule>
+		<Rule id="124" translation="2,4,5,0,2">2</Rule>
+		<Rule id="125" translation="2,4,2,0,4">2</Rule>
+		<Rule id="126" translation="2,4,2,0,2">2</Rule>
+		<Rule id="127" translation="2,5,4,2,0">2</Rule>
+		<Rule id="128" translation="2,5,5,0,4">2</Rule>
+		<Rule id="129" translation="2,5,2,0,2">5</Rule>
+		<Rule id="130" translation="2,1,0,0,4">2</Rule>
+		<Rule id="131" translation="2,1,4,0,2">2</Rule>
+		<Rule id="132" translation="2,1,5,0,2">2</Rule>
+		<Rule id="133" translation="2,1,2,0,5">5</Rule>
+		<Rule id="134" translation="2,1,2,0,2">2</Rule>
+		<Rule id="135" translation="2,3,0,0,5">2</Rule>
+		<Rule id="136" translation="2,3,4,0,2">2</Rule>
+		<Rule id="137" translation="2,3,5,0,0">2</Rule>
+		<Rule id="138" translation="2,3,5,0,2">2</Rule>
+		<Rule id="139" translation="2,3,2,0,4">2</Rule>
+		<Rule id="140" translation="2,3,2,0,2">2</Rule>
+		<Rule id="141" translation="2,2,0,0,4">2</Rule>
+		<Rule id="142" translation="2,2,0,0,2">0</Rule>
+		<Rule id="143" translation="2,2,0,5,3">3</Rule>
+		<Rule id="144" translation="2,2,1,5,5">2</Rule>
+	</Rules>
+	<!--- SDSR Loop: -->
+	<Rules id="4" symmetries="rotate4">
+		<Var id="a">0,1,2</Var>
+		<Var id="b">0,1</Var>
+		<Var id="c">0,1</Var>
+		<Var id="d">0,1</Var>
+		<Var id="e">2,3</Var>
+		<Var id="f">0,1,2,3,4,5,6,7</Var>
+		<Var id="g">0,1,2,3,4,6,7</Var>
+		<Var id="h">4,6,7</Var>
+		<Var id="i">6,7</Var>
+		<Var id="j">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="k">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="l">2,3,4,5,6,7</Var>
+		<Var id="m">0,1,2,3,5</Var>
+		<Var id="n">0,1,8</Var>
+		<Var id="o">1,4,6,7</Var>
+		<Var id="p">0,1,3,5</Var>
+		<Var id="q">1,2,4,6,7</Var>
+		<Var id="r">3,5</Var>
+		<Var id="s">2,3,4,5,6</Var>
+		<Var id="t">0,3,5</Var>
+		<Var id="u">1,3,5</Var>
+		<Var id="v">0,5</Var>
+		<Var id="w">2,3,5</Var>
+		<Var id="x">0,2</Var>
+		<Var id="y">1,4,7</Var>
+		<Var id="z">0,3,5</Var>
+		<Var id="A">0,3,5</Var>
+		<Var id="B">0,2,3,4,5</Var>
+		<Var id="C">0,2,4,6,7</Var>
+		<Var id="D">0,1,2,4,6,7</Var>
+		<Var id="E">0,1,2,4,6,7</Var>
+		<Var id="F">1,3,4,6,7</Var>
+		<Var id="G">0,1,2,3,4,5</Var>
+		<Var id="H">0,1,2,3,4</Var>
+		<Var id="I">1,2,4</Var>
+		<Var id="J">0,3,5,6</Var>
+		<Var id="K">0,1,3,4,5,6</Var>
+		<Var id="L">1,2,4,6</Var>
+		<Var id="M">0,3</Var>
+		<Var id="N">0,2,3,5</Var>
+		<Var id="O">1,3,4,5,6,7</Var>
+		<Var id="P">0,1,3,4</Var>
+		<Var id="Q">1,2</Var>
+		<Var id="R">2,4,6,7</Var>
+		<Var id="S">0,1,2,3,4,5,6</Var>
+		<Var id="T">0,1,3,4,5,6,7</Var>
+		<Var id="U">1,5</Var>
+		<Var id="V">0,1,3,4,5</Var>
+		<Var id="W">1,3,5</Var>
+		<Var id="X">1,3,5</Var>
+		<Var id="Y">0,3,4,5,6</Var>
+		<Var id="Z">0,6</Var>
+		<Var id="aa">0,6</Var>
+		<Var id="ab">1,3</Var>
+		<Var id="ac">2,5</Var>
+		<Var id="ad">2,3,5</Var>
+		<Var id="ae">0,7</Var>
+		<Var id="af">2,7</Var>
+		<Var id="ag">1,4,6,7,8</Var>
+		<Var id="ah">1,3,5</Var>
+		<Var id="ai">1,2,3,4,5</Var>
+		<Var id="aj">1,4,5,6,7</Var>
+		<Var id="ak">1,2,3,5</Var>
+		<Var id="al">1,2,3,5</Var>
+		<Var id="am">4,7</Var>
+		<Var id="an">0,5,6</Var>
+		<Var id="ao">0,5,6</Var>
+		<Var id="ap">0,5,6</Var>
+		<Var id="aq">0,5,6</Var>
+		<Var id="ar">0,3</Var>
+		<Var id="as">0,3</Var>
+		<Var id="at">3,7</Var>
+		<Var id="au">2,3,5,8</Var>
+		<Var id="av">0,1,2,3,4,5,6,7,8</Var>
+		<Var id="aw">0,1,4,5,6,7</Var>
+		<Var id="ax">0,1,4,5,6,7</Var>
+		<Var id="ay">1,4,6,7</Var>
+		<Var id="az">0,1,2,3,4,5,6,7</Var>
+		<Var id="aA">2,8</Var>
+		<Var id="aB">4,5,6,7</Var>
+		<Var id="aC">4,5,6</Var>
+		<Var id="aD">0,1,5</Var>
+		<Var id="aE">0,1,5</Var>
+		<Var id="aF">1,4,5,6,7</Var>
+		<Var id="aG">0,1,2,4,5,6,7</Var>
+		<Var id="aH">5,6,7</Var>
+		<Var id="aI">0,2,3,4,5,6,7</Var>
+		<Var id="aJ">0,4,6,7</Var>
+		<Var id="aK">2,3,5,7</Var>
+		<Var id="aL">1,2,3,4,6,7</Var>
+		<Var id="aM">1,2,3,4,5,6,7</Var>
+		<Var id="aN">3,4,6,7,8</Var>
+		<Var id="aO">1,3,4,5,6,7</Var>
+		<Var id="aP">2,4,6,7</Var>
+		<Var id="aQ">4,5</Var>
+		<Var id="aR">0,1,3,4,6,7</Var>
+		<Var id="aS">4,6,7,8</Var>
+		<Var id="aT">1,2,4,6,7</Var>
+		<Var id="aU">4,6,8</Var>
+		<Var id="aV">1,2,3,4,5,6,7</Var>
+		<Var id="aW">1,2,3,4,5,6,7</Var>
+		<Var id="aX">1,2,3,4,5,6,7</Var>
+		<Var id="aY">0,3,7</Var>
+		<Var id="aZ">0,1,2,3</Var>
+		<Var id="ba">0,3,4,5,6,7</Var>
+		<Var id="bb">5,8</Var>
+		<Var id="bc">0,1,7</Var>
+		<Var id="bd">0,1,3,7</Var>
+		<Var id="be">1,2,7</Var>
+		<Var id="bf">1,3,6,7</Var>
+		<Var id="bg">0,1,2,3,7</Var>
+		<Var id="bh">3,6</Var>
+		<Var id="bi">5,6</Var>
+		<Var id="bj">2,3,4,5,6,7</Var>
+		<Var id="bk">2,3,4,5,6,7</Var>
+		<Var id="bl">2,3,4,5,6,7</Var>
+		<Var id="bm">6,8</Var>
+		<Var id="bn">6,7,8</Var>
+		<Var id="bo">3,4,6,7</Var>
+		<Var id="bp">1,6</Var>
+		<Var id="bq">0,1,4,6,7</Var>
+		<Var id="br">0,1,2,3,4,5,6,7</Var>
+		<Var id="bs">0,1,2,3,4,5,6,7</Var>
+		<Rule id="1" translation="0,0,0,a,1">2</Rule>
+		<Rule id="2" translation="0,0,0,0,6">3</Rule>
+		<Rule id="3" translation="0,b,c,d,7">1</Rule>
+		<Rule id="4" translation="0,0,0,1,e">2</Rule>
+		<Rule id="5" translation="0,f,g,1,h">1</Rule>
+		<Rule id="6" translation="0,0,0,2,i">2</Rule>
+		<Rule id="7" translation="b,j,k,l,8">8</Rule>
+		<Rule id="8" translation="0,m,f,h,1">1</Rule>
+		<Rule id="9" translation="0,0,0,5,2">5</Rule>
+		<Rule id="10" translation="0,0,0,i,2">2</Rule>
+		<Rule id="11" translation="b,f,n,8,l">8</Rule>
+		<Rule id="12" translation="0,m,1,f,o">1</Rule>
+		<Rule id="13" translation="0,0,1,0,2">2</Rule>
+		<Rule id="14" translation="0,p,1,q,r">1</Rule>
+		<Rule id="15" translation="0,m,1,s,2">1</Rule>
+		<Rule id="16" translation="b,c,l,d,8">8</Rule>
+		<Rule id="17" translation="0,t,2,1,u">1</Rule>
+		<Rule id="18" translation="0,v,2,1,2">5</Rule>
+		<Rule id="19" translation="0,0,2,w,1">1</Rule>
+		<Rule id="20" translation="0,0,2,3,2">2</Rule>
+		<Rule id="21" translation="0,0,r,1,q">1</Rule>
+		<Rule id="22" translation="0,0,r,2,1">1</Rule>
+		<Rule id="23" translation="0,0,5,2,2">2</Rule>
+		<Rule id="24" translation="x,1,q,3,f">1</Rule>
+		<Rule id="25" translation="0,1,7,2,5">5</Rule>
+		<Rule id="26" translation="0,2,5,2,7">1</Rule>
+		<Rule id="27" translation="y,t,z,A,B">8</Rule>
+		<Rule id="28" translation="1,C,D,E,7">7</Rule>
+		<Rule id="29" translation="F,A,t,f,r">8</Rule>
+		<Rule id="30" translation="1,G,H,I,4">4</Rule>
+		<Rule id="31" translation="1,J,K,L,6">6</Rule>
+		<Rule id="32" translation="1,M,p,N,w">8</Rule>
+		<Rule id="33" translation="O,A,t,3,f">8</Rule>
+		<Rule id="34" translation="1,m,P,4,Q">4</Rule>
+		<Rule id="35" translation="F,0,A,5,R">8</Rule>
+		<Rule id="36" translation="1,S,K,6,L">6</Rule>
+		<Rule id="37" translation="1,f,T,7,q">7</Rule>
+		<Rule id="38" translation="U,M,u,m,w">8</Rule>
+		<Rule id="39" translation="1,p,I,A,4">4</Rule>
+		<Rule id="40" translation="1,A,L,V,6">6</Rule>
+		<Rule id="41" translation="u,A,W,w,X">8</Rule>
+		<Rule id="42" translation="1,p,q,f,7">7</Rule>
+		<Rule id="43" translation="1,p,L,7,Y">7</Rule>
+		<Rule id="44" translation="1,Z,2,aa,2">6</Rule>
+		<Rule id="45" translation="1,A,w,U,W">8</Rule>
+		<Rule id="46" translation="ab,N,w,ac,ad">8</Rule>
+		<Rule id="47" translation="1,0,2,2,6">3</Rule>
+		<Rule id="48" translation="1,ae,af,3,2">7</Rule>
+		<Rule id="49" translation="1,B,2,6,W">6</Rule>
+		<Rule id="50" translation="1,0,2,6,4">4</Rule>
+		<Rule id="51" translation="ag,0,2,7,1">0</Rule>
+		<Rule id="52" translation="O,A,r,v,D">8</Rule>
+		<Rule id="53" translation="1,b,s,L,7">7</Rule>
+		<Rule id="54" translation="1,p,5,I,4">4</Rule>
+		<Rule id="55" translation="1,A,5,4,1">4</Rule>
+		<Rule id="56" translation="1,x,5,4,2">7</Rule>
+		<Rule id="57" translation="1,0,7,r,L">7</Rule>
+		<Rule id="58" translation="O,W,X,u,ah">8</Rule>
+		<Rule id="59" translation="1,1,Q,2,7">7</Rule>
+		<Rule id="60" translation="ab,m,Q,5,x">8</Rule>
+		<Rule id="61" translation="1,ai,2,6,4">6</Rule>
+		<Rule id="62" translation="aj,ak,5,ad,al">8</Rule>
+		<Rule id="63" translation="1,W,5,4,2">4</Rule>
+		<Rule id="64" translation="1,2,ad,2,6">6</Rule>
+		<Rule id="65" translation="1,2,am,2,5">5</Rule>
+		<Rule id="66" translation="1,2,4,2,6">7</Rule>
+		<Rule id="67" translation="ad,an,ao,ap,aq">8</Rule>
+		<Rule id="68" translation="2,M,ar,as,at">1</Rule>
+		<Rule id="69" translation="au,j,k,av,8">0</Rule>
+		<Rule id="70" translation="ad,aw,ax,o,ay">8</Rule>
+		<Rule id="71" translation="2,f,az,O,3">1</Rule>
+		<Rule id="72" translation="aA,x,0,2,5">0</Rule>
+		<Rule id="73" translation="2,aw,x,3,aj">1</Rule>
+		<Rule id="74" translation="2,a,0,3,2">6</Rule>
+		<Rule id="75" translation="2,0,0,4,2">3</Rule>
+		<Rule id="76" translation="ad,aw,ax,aB,aC">8</Rule>
+		<Rule id="77" translation="2,0,0,5,1">7</Rule>
+		<Rule id="78" translation="2,0,b,5,aC">8</Rule>
+		<Rule id="79" translation="2,x,0,5,7">5</Rule>
+		<Rule id="80" translation="ad,aD,aj,aE,aF">8</Rule>
+		<Rule id="81" translation="2,0,O,x,3">1</Rule>
+		<Rule id="82" translation="2,0,2,0,7">3</Rule>
+		<Rule id="83" translation="2,aG,l,2,3">1</Rule>
+		<Rule id="84" translation="af,0,2,3,2">1</Rule>
+		<Rule id="85" translation="2,0,3,2,aB">1</Rule>
+		<Rule id="86" translation="2,0,3,aH,2">1</Rule>
+		<Rule id="87" translation="2,0,5,5,2">1</Rule>
+		<Rule id="88" translation="2,1,1,2,6">1</Rule>
+		<Rule id="89" translation="3,0,0,Z,2">2</Rule>
+		<Rule id="90" translation="3,aI,az,f,r">8</Rule>
+		<Rule id="91" translation="3,x,0,0,4">1</Rule>
+		<Rule id="92" translation="3,0,0,0,7">6</Rule>
+		<Rule id="93" translation="3,D,aJ,aK,aL">8</Rule>
+		<Rule id="94" translation="3,v,1,0,2">1</Rule>
+		<Rule id="95" translation="3,az,aM,F,aL">8</Rule>
+		<Rule id="96" translation="aN,0,1,2,2">0</Rule>
+		<Rule id="97" translation="r,T,O,az,aO">8</Rule>
+		<Rule id="98" translation="3,0,R,0,aP">8</Rule>
+		<Rule id="99" translation="aQ,A,0,v,aR">8</Rule>
+		<Rule id="100" translation="h,av,j,k,8">1</Rule>
+		<Rule id="101" translation="aS,0,aw,q,aT">0</Rule>
+		<Rule id="102" translation="aS,0,ay,A,aT">0</Rule>
+		<Rule id="103" translation="aU,0,aT,q,O">0</Rule>
+		<Rule id="104" translation="aU,0,2,aw,aT">0</Rule>
+		<Rule id="105" translation="aS,0,2,aM,ay">0</Rule>
+		<Rule id="106" translation="4,0,e,2,2">1</Rule>
+		<Rule id="107" translation="4,0,2,3,2">6</Rule>
+		<Rule id="108" translation="aS,0,e,ay,aT">0</Rule>
+		<Rule id="109" translation="aS,0,3,2,ay">0</Rule>
+		<Rule id="110" translation="am,aM,aV,aW,aX">8</Rule>
+		<Rule id="111" translation="5,aY,0,0,2">2</Rule>
+		<Rule id="112" translation="5,aZ,T,F,az">8</Rule>
+		<Rule id="113" translation="5,az,ba,e,aC">8</Rule>
+		<Rule id="114" translation="bb,0,0,5,2">0</Rule>
+		<Rule id="115" translation="5,b,2,bc,2">2</Rule>
+		<Rule id="116" translation="5,0,e,bd,h">8</Rule>
+		<Rule id="117" translation="5,v,e,be,bf">8</Rule>
+		<Rule id="118" translation="5,0,2,1,5">2</Rule>
+		<Rule id="119" translation="bb,b,2,2,2">0</Rule>
+		<Rule id="120" translation="5,0,2,2,4">4</Rule>
+		<Rule id="121" translation="5,0,2,af,5">8</Rule>
+		<Rule id="122" translation="5,bg,2,bh,2">8</Rule>
+		<Rule id="123" translation="5,1,2,4,2">2</Rule>
+		<Rule id="124" translation="bi,l,bj,bk,bl">8</Rule>
+		<Rule id="125" translation="6,0,0,0,aJ">8</Rule>
+		<Rule id="126" translation="6,0,0,0,Q">1</Rule>
+		<Rule id="127" translation="i,0,0,5,1">8</Rule>
+		<Rule id="128" translation="bm,0,2,e,2">0</Rule>
+		<Rule id="129" translation="bn,0,3,2,2">0</Rule>
+		<Rule id="130" translation="6,O,aF,aM,bj">8</Rule>
+		<Rule id="131" translation="6,1,2,Q,2">5</Rule>
+		<Rule id="132" translation="6,1,2,1,3">1</Rule>
+		<Rule id="133" translation="6,1,e,bo,2">8</Rule>
+		<Rule id="134" translation="6,1,3,2,2">8</Rule>
+		<Rule id="135" translation="7,0,0,0,bp">8</Rule>
+		<Rule id="136" translation="7,0,ay,aT,r">0</Rule>
+		<Rule id="137" translation="7,0,2,bq,2">0</Rule>
+		<Rule id="138" translation="7,0,2,ay,r">0</Rule>
+		<Rule id="139" translation="7,0,2,2,ac">1</Rule>
+		<Rule id="140" translation="7,0,2,2,3">0</Rule>
+		<Rule id="141" translation="7,0,2,5,2">5</Rule>
+		<Rule id="142" translation="8,az,f,br,bs">0</Rule>
+	</Rules>
+	<!--- Pacman Rules: -->
+	<Rules id="5" symmetries="rotate0">
+		<Rule id="1" translation="80,0,0,0,0">0</Rule>
+		<Rule id="2" translation="0,0,0,0,80">80</Rule>
+		<Rule id="3" translation="7,80,0,80,80">80</Rule>
+		<Rule id="4" translation="0,0,0,7,80">80</Rule>
+		<Rule id="5" translation="0,7,0,0,80">80</Rule>
+		<Rule id="6" translation="0,80,0,80,80">80</Rule>
+		<Rule id="7" translation="0,80,7,80,80">80</Rule>
+		<Rule id="8" translation="80,0,7,0,0">0</Rule>
+		<Rule id="9" translation="80,0,0,7,0">0</Rule>
+		<Rule id="10" translation="80,7,0,0,0">0</Rule>
+		
+		<!--- Nach oben drehen: -->		
+		<Rule id="11" translation="0,0,0,2,80">81</Rule>
+		<Rule id="12" translation="0,80,2,80,80">81</Rule>
+		<Rule id="13" translation="0,2,0,0,80">81</Rule>		
+		<Rule id="14" translation="81,0,0,2,0">0</Rule>
+		<Rule id="15" translation="2,0,0,81,81">3</Rule>
+		<Rule id="16" translation="0,0,0,0,3">81</Rule>		
+		<Rule id="17" translation="3,0,81,81,81">0</Rule>	
+		<Rule id="18" translation="81,0,0,0,0">82</Rule>
+		
+		<!--- Nach oben: -->
+		<Rule id="19" translation="82,0,0,0,0">0</Rule>
+		<Rule id="20" translation="0,0,82,82,82">82</Rule>
+		<Rule id="21" translation="0,0,0,82,0">82</Rule>
+		<Rule id="22" translation="0,0,7,82,0">82</Rule>
+		<Rule id="23" translation="0,0,0,82,7">82</Rule>
+		<Rule id="24" translation="0,7,0,82,0">82</Rule>
+		<Rule id="25" translation="82,0,7,0,0">0</Rule>	
+		<Rule id="26" translation="82,0,0,0,7">0</Rule>
+		<Rule id="27" translation="7,0,82,82,82">82</Rule>
+		<Rule id="28" translation="0,7,82,82,82">82</Rule>
+		<Rule id="29" translation="82,7,0,0,0">0</Rule>	
+		
+		<!--- Nach links drehen: -->	
+		<Rule id="30" translation="0,2,82,82,82">83</Rule>
+		<Rule id="31" translation="0,0,2,82,0">83</Rule>
+		<Rule id="32" translation="0,0,0,82,2">83</Rule>	
+		<Rule id="33" translation="83,0,2,0,0">0</Rule>
+		<Rule id="34" translation="2,0,83,83,0">4</Rule>
+		<Rule id="35" translation="0,0,0,4,0">83</Rule>
+		<Rule id="36" translation="4,83,83,83,0">0</Rule>	
+		<Rule id="37" translation="83,0,0,0,0">84</Rule>
+		
+		<!--- Nach links: -->
+		<Rule id="38" translation="84,0,0,0,0">0</Rule>
+		<Rule id="39" translation="0,84,84,84,0">84</Rule>
+		<Rule id="40" translation="0,0,84,0,0">84</Rule>
+		<Rule id="41" translation="0,0,84,0,0">84</Rule>
+		<Rule id="42" translation="0,84,84,84,7">84</Rule>
+		<Rule id="43" translation="0,0,84,7,0">84</Rule>
+		<Rule id="44" translation="0,7,84,0,0">84</Rule>
+		<Rule id="45" translation="7,84,84,84,0">84</Rule>
+		<Rule id="46" translation="84,0,0,0,7">0</Rule>
+		<Rule id="47" translation="84,0,0,7,0">0</Rule>
+		<Rule id="48" translation="84,7,0,0,0">0</Rule>
+		
+		<!--- Nach unten drehen: -->
+		<Rule id="49" translation="0,84,84,84,2">85</Rule>
+		<Rule id="50" translation="0,0,84,2,0">85</Rule>
+		<Rule id="51" translation="0,2,84,0,0">85</Rule>
+		<Rule id="52" translation="85,2,0,0,0">0</Rule>
+		<Rule id="53" translation="2,85,85,85,0">5</Rule>
+		<Rule id="54" translation="0,0,5,0,0">85</Rule>
+		<Rule id="55" translation="5,85,85,0,85">0</Rule>
+		<Rule id="56" translation="85,0,0,0,0">86</Rule>
+		
+		<!--- Nach unten: -->
+		<Rule id="57" translation="86,0,0,0,0">0</Rule>
+		<Rule id="58" translation="0,86,86,0,86">86</Rule>
+		<Rule id="59" translation="0,86,86,7,86">86</Rule>
+		<Rule id="60" translation="0,86,0,0,0">86</Rule>
+		<Rule id="61" translation="7,86,86,0,86">86</Rule>
+		<Rule id="62" translation="0,86,0,0,7">86</Rule>
+		<Rule id="63" translation="0,86,7,0,0">86</Rule>
+		<Rule id="64" translation="86,0,0,7,0">0</Rule>
+		<Rule id="65" translation="86,0,0,0,7">0</Rule>
+		<Rule id="66" translation="86,0,7,0,0">0</Rule>
+		
+		<!--- Nach rechts drehen: -->
+		<Rule id="67" translation="0,86,86,2,86">87</Rule>
+		<Rule id="68" translation="0,86,0,0,2">87</Rule>
+		<Rule id="69" translation="0,86,2,0,0">87</Rule>
+		<Rule id="70" translation="87,0,0,0,2">0</Rule>
+		<Rule id="71" translation="2,87,87,0,87">6</Rule>
+		<Rule id="72" translation="0,6,0,0,0">87</Rule>
+		<Rule id="73" translation="6,87,0,87,87">0</Rule>
+		<Rule id="74" translation="87,0,0,0,0">80</Rule>
+		
+		<!--- Ende: -->
+		<Rule id="75" translation="0,0,6,6,80">80</Rule>	
+		<Rule id="76" translation="0,6,6,0,80">80</Rule>	
+		<Rule id="77" translation="0,80,6,80,80">80</Rule>
+	</Rules>
+	<Rules id="6" symmetries="none">
+		<Rule id="1" translation="2,2,2,2,2">1</Rule>
+		<Rule id="2" translation="1,1,1,1,1">2</Rule>
+	</Rules>
+	<DarwinEngines id="0">
+		<NuklearDarwin>
+			<OutputDirectory></OutputDirectory>
+			<FileName>NuklearDarwin.txt</FileName>
+			<MutationChance>10/1000000</MutationChance>
+			<StartAtStep>200</StartAtStep>
+			<StepsActive>0</StepsActive>
+			<MutateAfterXSteps>0</MutateAfterXSteps>
+			<MutationTargets>2,3</MutationTargets>
+			<MutationValues>0,2</MutationValues>
+		</NuklearDarwin>
+	</DarwinEngines>
+</alife>
+
