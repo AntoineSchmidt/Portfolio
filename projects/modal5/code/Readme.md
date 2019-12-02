@@ -4,6 +4,7 @@ Using a specially preparated toothbrush, as shown below, the app can detect its 
 
 By additionally detecting the users eyes the quadrant schema can be layed over.
 <img src="../schema.png" width="500px">
+
 This quadrant schema gets positioned and appropriately sized with the help of the eye distance and the toothbrush length.\
 Directly detecting the users mouth didn't show success as the mouth is mostly covered in the process of toothbrushing.
 
@@ -18,7 +19,7 @@ By analysing their color "volume" and positioning relative to each other, the br
 
 Shown below is a full analysis output, with the edgepoints of the schema and the detected brush colors.\
 The calculated brushed quad, tooth and surface are shown in the top left corner.
-<img src="../analysis.png" width="500px">
+<img src="../analysis.png" width="700px">
 
 The actual code is located here:\
 https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/modal5/code/app/src/main/java/hs_kempten/ibrush/
