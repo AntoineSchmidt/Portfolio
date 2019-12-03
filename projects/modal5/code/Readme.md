@@ -11,7 +11,7 @@ Directly detecting the users mouth didn't show success as the mouth is mostly co
 The brushed tooth is detected by analysing the distance of the outer toothbrush-mark to the calculated mouth center.\
 As the "travelled" distance of the toothbrush-end isn't linear\
 (going from the first tooth to the second has a much higher distance as from the 7th to the last)\
-a parabola has been used to project the linear division into a more realistic distribution.
+a parabola is used to project the linear division into a more realistic distribution.
 <img src="../tooth.png" width="500px">
 
 After detecting the quadrant and tooth, the brushed surface can be calculated. This is done by comparing the two different mark colors.\
