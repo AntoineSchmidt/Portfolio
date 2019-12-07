@@ -1,6 +1,6 @@
 #  Self-reproduction with cellular automata in C++
 This team-project simulates cellular automata on a grid.\
-(SELF-REPRODUCTION IN CELLULAR AUTOMATA by Christopher G. LANGTON)
+[SELF-REPRODUCTION IN CELLULAR AUTOMATA by Christopher G. LANGTON](http://www-users.york.ac.uk/~gt512/BIC/langton84.pdf)
 
 This project is:
 - using the boosted library for multithreading

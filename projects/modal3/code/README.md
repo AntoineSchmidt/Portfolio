@@ -9,6 +9,10 @@ Following, these state-encodings where used to learn a 8bit action encoding:
 Finally, using PU-learning, a state and transition classifier was trained.\
 These networks decide if a state or transition is legal or illegal.
 
+Corresponding Papers:
+[Classical Planning in Deep Latent Space: Bridging the Subsymbolic-Symbolic Boundary](https://arxiv.org/abs/1705.00154)
+[Towards Stable Symbol Grounding with Zero-Suppressed State AutoEncoder](https://arxiv.org/abs/1903.11277)
+
 ## Executing the code
 All the above networks can be trained and their performance can be controlled in the *analysis.ipynb* jupyter-notebook.
 
