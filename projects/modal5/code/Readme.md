@@ -1,4 +1,4 @@
-# Android-App for detecting the brushed quad, tooth and surface
+## Android-App for detecting the brushed quad, tooth and surface
 Using a specially preparated toothbrush, as shown below, the app can detect its colors using openCV.
 <img src="../brush.png" width="500px">
 
