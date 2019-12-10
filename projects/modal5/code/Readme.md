@@ -1,8 +1,16 @@
 ## Android-App for detecting the brushed quad, tooth and surface
-Using a specially preparated toothbrush, as shown below, the app can detect its colors using openCV.
+The user interface of the app is shown below (splashscreen, user list, creating a new user)
+<p float="left">
+  <img src="../ui_intro.png" width="200px" />
+  <img src="../ui_users.png" width="200px" /> 
+  <img src="../ui_new.png" width="200px" />
+</p>
+The users profile (name and toothbrush length) and the brushing-events (start- and end-time) are managed in a SQLite database.\
+
+Using a specially preparated toothbrush, as shown below, the app can detect its colors using OpenCV.
 <img src="../brush.png" width="500px">
 
-By additionally detecting the users eyes the quadrant schema can be layed over.
+By additionally detecting the users eyes, the quadrant schema can be layed over.
 <img src="../schema.png" width="500px">
 
 This quadrant schema gets positioned and appropriately sized with the help of the eye distance and the toothbrush length.\
@@ -15,7 +23,8 @@ a parabola is used to project the linear division into a more realistic distribu
 <img src="../tooth.png" width="500px">
 
 After detecting the quadrant and tooth, the brushed surface can be calculated. This is done by comparing the two different mark colors.\
-By analysing their color "volume" and positioning relative to each other, the brushed surface can be calculated. This additionally allows to second check the previous quad and tooth results.
+By analysing their color "volume" and positioning relative to each other, the brushed surface can be calculated.\
+This additionally allows to second check the previous quad and tooth results.
 
 Shown below is a full analysis output, with the edgepoints of the schema and the detected brush colors.\
 The calculated brushed quad, tooth and surface are shown in the top left corner.
