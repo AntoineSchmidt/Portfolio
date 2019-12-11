@@ -5,4 +5,4 @@ In-depth explanations in my report: (this report seems to be to big to view in g
 <del>https://github.com/AntoineSchmidt/Portfolio/blob/master/projects/modal1/code/Report.pdf</del>\
 https://github.com/AntoineSchmidt/Portfolio/raw/master/projects/modal1/code/Report.pdf
 
-<img src="../icon.png">
+<img src="../anim.png">
