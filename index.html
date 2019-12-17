@@ -33,6 +33,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-2 px-0 px-lg-3" href="https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/gimmick/code/" target="_blank">
+              <img id="gimmick" src="projects/gimmick/player.png" height="30px">
+            </a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
@@ -216,7 +221,10 @@
                 <ul>
                     <li>Dieter Knoch Gmbh:<br>Full Stack C# Software Developer</li>
                 </ul>
-                <h5>Currently searching &darr;</h5>
+                <h5>Currently</h5>
+                <ul>
+                    Finishing my master thesis<br>and searching (contact me)
+                </ul>
           </p>
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">
@@ -285,6 +293,15 @@
 
   <!-- Custom scripts -->
   <script src="js/freelancer.min.js"></script>
+
+  <!-- Change gimmick image on hover -->
+  <script>
+    $(document).ready(function () {
+      $('#gimmick')
+        .mouseover(function () {$(this).attr("src", "projects/gimmick/player.gif");})
+        .mouseout(function () {$(this).attr("src", "projects/gimmick/player.png");});
+      });
+  </script>
 
 </body>
 
