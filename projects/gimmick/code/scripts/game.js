@@ -56,7 +56,7 @@ var Game = function Game(ctx, width, height, doneCallback) {
 }
 
 Game.prototype.beatTheGame = function () {
-  alert('You beat the game!');
+  alert('You beat the game! (only one level for now)');
   window.location.reload();
 }
 
