@@ -154,6 +154,14 @@ Game.prototype.update = function (delta) {
   // Draw UI
   this.draw();
 
+  if (this.currentLevel == 0) {
+    // Draw Message
+    this.ctx.fillStyle = '#AF0000';
+    this.ctx.font = this.HEIGHT + 'px Monospace';
+    this.ctx.fillText('Use Firefox/Chrome', 16.5 * this.WIDTH, 14 * this.HEIGHT);
+    this.ctx.fillText(' to play properly', 16.5 * this.WIDTH, 15 * this.HEIGHT);
+  }
+
   this.lastTick = Date.now();
 }
 

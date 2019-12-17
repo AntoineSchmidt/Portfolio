@@ -35,7 +35,7 @@ $(function () {
   message.style.fontSize = 0.9 * (h / 22) + 'px';
   message.style.maxWidth = w + 'px';
   message.style.paddingTop = 0.5 * (h / 22) + 'px';
-  message.style.paddingBottom = 0.5 * (h / 22) + 'px';
+  message.style.paddingBottom = 0.4 * (h / 22) + 'px';
 
   var ctx = canvas.getContext('2d');
 
