@@ -95,7 +95,7 @@ World.prototype.draw = function (ctx, width, height, assets) {
   // draw all artworks
   for (var i = 0; i < this.levelData.background.length; i++) {
     o = this.levelData.background[i];
-    sprite_id = 2; //Math.floor(Math.random() * len(assets[o.id]))
+    sprite_id = Math.min(2, assets[o.id].length-1); // hack
     size = assets[o.id][sprite_id].width / assets[o.id][sprite_id].height;
     ctx.drawImage(assets[o.id][sprite_id], width * o.pos[0], height * o.pos[1], width * o.height * size, height * o.height);
   }

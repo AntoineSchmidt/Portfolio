@@ -1,6 +1,7 @@
 {
   "background": [
-    { "id": "a", "pos": [1, 1], "height": 15 }
+    { "id": "a", "pos": [1 , 1], "height": 15 },
+    { "id": "c", "pos": [17, 2], "height":  8 }
   ],
   "solids": [
     { "id": 1, "pos": [ 0, 19], "comment": "ground floor" },

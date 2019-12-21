@@ -4,4 +4,4 @@ Using [jpexs-decompiler](https://github.com/jindrapetrik/jpexs-decompiler/releas
 Check out the original directly [online](http://www.bambusratte.com/showgame.php?id=118).
 
 For now, only the first level is recreated.\
-Levels can be easily edited and added to the game by creating a json file in the levels folder [more information](https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/gimmick/code/levels/).
+Levels can be easily edited and added to the game by creating a json file in the levels folder ([more information](https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/gimmick/code/levels/)).
