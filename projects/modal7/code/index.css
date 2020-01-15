@@ -1,0 +1,34 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 120%;
+}
+
+div {
+    padding: 50px;
+}
+
+#planner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1abc9c;
+}
+
+canvas {
+    border:2px solid;
+    background: white;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
