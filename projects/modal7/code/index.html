@@ -16,11 +16,16 @@
         </ul>
 
         <canvas id="can" width="200" height="200"></canvas>
-        <input type="button" value="Find Path >>" id="solve" onclick="solve()">
+        <ul>
+            <li><input type="button" value="Find Path >>" id="solve" onclick="solve()"></li>
+            <li><input type="range" id="heuristic" min="0" max="5"></li>
+            <li>Dijkstra <> Greedy</li>
+        </ul>
         <canvas id="cansolve" width="200" height="200"></canvas>
     </div>
     <div>
-        The A* planner uses a greedy euclidean goal heuristic, leading to quicker, but suboptimal pathes.<p>
+        This A* planner uses a costumisable euclidean goal heuristic, <p>
+        from dijkstra (ignoring the goal) to 5x the euclidean distance, leading to quicker solutions but possibly suboptimal pathes.<p>
         <b>The start is located in the top left corner, the goal in the bottom right corner.</b><p>
         <a href="https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/modal7/code/">Check out code</a>
     </div>

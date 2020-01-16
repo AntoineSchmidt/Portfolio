@@ -1,4 +1,4 @@
-var can, ctx, flag = false,
+var planner, can, ctx, flag = false,
     prevX = 0, currX = 0,
     prevY = 0, currY = 0,
     dot_flag = false;
@@ -10,6 +10,7 @@ function init() {
     ctx = can.getContext("2d");
     cansolve = document.getElementById('cansolve');
     ctxsolve = cansolve.getContext("2d");
+    heuristic = document.getElementById('heuristic');
 
     w = can.width;
     h = can.height;
@@ -83,6 +84,11 @@ function clr() {
 }
 
 function solve() {
+    // terminate running planner
+    if (planner) {
+        planner.terminate();
+    }
+
     // get drawn image and copy
     var drawing = ctx.getImageData(0, 0, w, h);
     ctxsolve.putImageData(drawing, 0, 0);
@@ -94,7 +100,7 @@ function solve() {
         for (var y = 0; y < h; y++) {
             var i = (y * w + x) * 4;
             // compress to binary
-            if (drawing.data[i] < 255/2 && drawing.data[i+1] < 255/2 && drawing.data[i+2] < 255/2 && drawing.data[i + 3] > 255/2) {
+            if (drawing.data[i] < 255 / 2 && drawing.data[i + 1] < 255 / 2 && drawing.data[i + 2] < 255 / 2 && drawing.data[i + 3] > 255 / 2) {
                 problem[x][y] = 1; // wall
             } else {
                 problem[x][y] = 0; // free
@@ -102,10 +108,11 @@ function solve() {
         }
     }
 
-    var planner = new Worker('planner.js');
+    // initialize planner thread
+    planner = new Worker('planner.js');
 
     // retrieve paint task from planner
-    planner.addEventListener('message', function(e) {
+    planner.addEventListener('message', function (e) {
         if (typeof e.data == 'string') {
             alert(e.data);
         } else {
@@ -114,5 +121,5 @@ function solve() {
     }, false);
 
     // start solving thread
-    planner.postMessage([problem, [0, 0], [w - 1, h - 1]]);
+    planner.postMessage([problem, [0, 0], [w - 1, h - 1], parseInt(heuristic.value)]);
 }

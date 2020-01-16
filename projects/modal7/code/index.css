@@ -26,6 +26,7 @@ canvas {
 ul {
     list-style: none;
     display: inline-block;
+    font-size: 80%;
 }
 
 input {

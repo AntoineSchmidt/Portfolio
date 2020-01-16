@@ -1,4 +1,4 @@
-function plan(problem, start, goal) {
+function plan(problem, start, goal, heuristic) {
     problem_size = [problem.length, problem[0].length];
 
     // create array for exploration data
@@ -21,8 +21,8 @@ function plan(problem, start, goal) {
         for (var x = 0; x < problem_size[0]; x++) {
             for (var y = 0; y < problem_size[1]; y++) {
                 if (!exploration[x][y][0]) {
-                    // greedy (x5) euclidian goal heuristic (faster, but cost overestimation -> loosing path optimality)
-                    var cost = exploration[x][y][1] + 5 * (Math.abs(goal[0] - x) + Math.abs(goal[0] - y));
+                    // from dijkstra to greedy (x5) euclidian goal heuristic (faster, but cost overestimation -> loosing path optimality)
+                    var cost = exploration[x][y][1] + heuristic * (Math.abs(goal[0] - x) + Math.abs(goal[0] - y));
                     if (cost < current[0]) {
                         // found better node
                         current[0] = cost;
@@ -87,5 +87,5 @@ function plan(problem, start, goal) {
 
 // retrieve task from main
 self.addEventListener('message', function(e) {
-    plan(e.data[0], e.data[1], e.data[2]);
+    plan(e.data[0], e.data[1], e.data[2], e.data[3]);
 }, false);
