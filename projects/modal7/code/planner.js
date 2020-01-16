@@ -22,7 +22,7 @@ function plan(problem, start, goal, heuristic) {
             for (var y = 0; y < problem_size[1]; y++) {
                 if (!exploration[x][y][0]) {
                     // from dijkstra to greedy (x5) euclidian goal heuristic (faster, but cost overestimation -> loosing path optimality)
-                    var cost = exploration[x][y][1] + heuristic * (Math.abs(goal[0] - x) + Math.abs(goal[0] - y));
+                    var cost = exploration[x][y][1] + heuristic * Math.hypot(goal[0] - x, goal[0] - y);
                     if (cost < current[0]) {
                         // found better node
                         current[0] = cost;
@@ -59,16 +59,18 @@ function plan(problem, start, goal, heuristic) {
 
         // update the neighbours if not a wall (infinite cost for walls)
         var neighbours = [-1, 0, 1];
-        for (var xdifi =0; xdifi < 3; xdifi++) {
+        for (var xdifi = 0; xdifi < 3; xdifi++) {
             var xdif = neighbours[xdifi]; // for xdif in neighbours retrieves strings
-            for (var ydifi=0; ydifi<3; ydifi++) {
+            for (var ydifi = 0; ydifi < 3; ydifi++) {
                 var ydif = neighbours[ydifi];
                 if (xdif != 0 || ydif != 0) { // actual neighbour
                     if (current[1] + xdif >= 0 && current[1] + xdif < problem_size[0] && current[2] + ydif >= 0 && current[2] + ydif < problem_size[1]) { // in range
                         if (problem[current[1] + xdif][current[2] + ydif] < 1) { // neighbour not a wall
-                            if (current[0] + 1 < exploration[current[1] + xdif][current[2] + ydif][1]) { // check for lower cost, 1 cost per move
+                            // less cost for diagonal moves, but not same for more intuitive solutions
+                            var cost = current[0] + ((ydif != 0 && xdif != 0) ? 1.5 : 1);
+                            if (cost < exploration[current[1] + xdif][current[2] + ydif][1]) { // check for lower cost
                                 // update cost and parent data
-                                exploration[current[1] + xdif][current[2] + ydif][1] = current[0] + 1;
+                                exploration[current[1] + xdif][current[2] + ydif][1] = cost;
                                 exploration[current[1] + xdif][current[2] + ydif][2] = [current[1], current[2]];
                             }
                         }
@@ -86,6 +88,6 @@ function plan(problem, start, goal, heuristic) {
 }
 
 // retrieve task from main
-self.addEventListener('message', function(e) {
+self.addEventListener('message', function (e) {
     plan(e.data[0], e.data[1], e.data[2], e.data[3]);
 }, false);
