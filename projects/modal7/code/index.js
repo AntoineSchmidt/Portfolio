@@ -78,9 +78,7 @@ function drawPoint(position, color) {
 
 // clears canvas
 function clr() {
-    if (confirm("Clear Image?")) {
-        ctx.clearRect(0, 0, w, h);
-    }
+    ctx.clearRect(0, 0, w, h);
 }
 
 function solve() {

@@ -2,7 +2,17 @@
 
 <head>
     <title>PathFinder</title>
+
+    <!-- Custom fonts for this theme -->
+    <link href="/Portfolio/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="/Portfolio/css/freelancer.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
+    
     <script src="index.js"></script>
     <script src="planner.js"></script>
 </head>
@@ -19,15 +29,15 @@
         <ul>
             <li><input type="button" value="Find Path >>" id="solve" onclick="solve()"></li>
             <li><input type="range" id="heuristic" min="0" max="5"></li>
-            <li>Dijkstra <> Greedy</li>
+            <li>Dijkstra &harr; Greedy</li>
         </ul>
         <canvas id="cansolve" width="200" height="200"></canvas>
     </div>
     <div>
-        This A* planner uses a costumisable euclidean goal heuristic, <p>
+        This A* planner uses a costumisable euclidean goal heuristic,<p>
         from dijkstra (ignoring the goal) to 5x the euclidean distance, leading to quicker solutions but possibly suboptimal pathes.<p>
         <b>The start is located in the top left corner, the goal in the bottom right corner.</b><p>
-        <a href="https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/modal7/code/">Check out code</a>
+        <a href="/Portfolio/tree/master/projects/modal7/code/">Check out code</a>
     </div>
 </body>
 

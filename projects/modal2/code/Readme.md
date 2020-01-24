@@ -4,7 +4,7 @@ With *train.py*, setting *game* to the specific environment, the gym environment
 The learned model can then be tested using *test.py*, again specifying the environment with *game*.
 
 ## Cartpole
-<img src="../anim_a.gif">
+<img src="../anim_a.gif" width="500px">
 
 ## Mountaincar
-<img src="../anim_b.gif">
+<img src="../anim_b.gif" width="500px">

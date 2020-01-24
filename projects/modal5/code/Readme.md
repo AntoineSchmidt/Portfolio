@@ -1,4 +1,4 @@
-## Android-App for detecting the brushed quad, tooth and surface
+## Android-App for the detection of the brushed quad, tooth and surface
 The user interface of the app is shown below (splashscreen, user list, creating a new user)
 <p float="left">
   <img src="../ui_intro.png" width="200px" />
