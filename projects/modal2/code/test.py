@@ -1,4 +1,5 @@
 import os
+import sys
 import gym
 import json
 import numpy as np
@@ -11,9 +12,14 @@ from dqn.dqn_agent import DQNAgent
 
 np.random.seed(0)
 
+# read in environment choice
+try:
+    game = int(sys.argv[1])
+except:
+    print('Select game: cartpole (1) or mountaincar (default)')
+    game = 2
 
-# choose game
-game = 1  #cartpole == 1 or mountaincar == 2
+# setup game parameters
 if game == 1:
     env = gym.make("CartPole-v0").unwrapped
     state_dim = 4
@@ -50,9 +56,8 @@ if not os.path.exists("./results"):
 
 # write out results
 fname = "./results/cartpole_results_dqn-%s.json" % datetime.now().strftime("%Y%m%d-%H%M%S")
-fh = open(fname, "w")
-json.dump(results, fh)
+with open(fname, "w") as fh:
+    json.dump(results, fh)
 
 # close environment
 env.close()
-print('... finished')

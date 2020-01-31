@@ -20,7 +20,6 @@ class NeuralNetwork:
         fc1 = tf.layers.dense(self.states_, hidden, tf.nn.relu)
         fc2 = tf.layers.dense(fc1, hidden, tf.nn.relu)
         self.predictions = tf.layers.dense(fc2, num_actions)
-        self.prediction_dist = tf.nn.softmax(self.predictions / self.tau_)
 
         # get the predictions for the chosen actions only
         batch_size = tf.shape(self.states_)[0]
@@ -39,12 +38,6 @@ class NeuralNetwork:
     def predict(self, sess, states):
         prediction = sess.run(self.predictions, { self.states_: states })
         return prediction
-
-    # select action according to boltzman exploration
-    def boltzmann(self, sess, state, tau):
-        a_probs = sess.run(self.prediction_dist, feed_dict={self.states_: state, self.tau_: tau})
-        a_value = np.random.choice(a_probs[0], p=a_probs[0])
-        return np.argmax(a_value == a_probs[0])
 
     # train network on transition batch
     def update(self, sess, states, actions, targets):

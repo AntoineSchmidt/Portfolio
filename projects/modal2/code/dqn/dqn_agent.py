@@ -48,7 +48,7 @@ class DQNAgent:
         # sample batch from the replay buffer
         batch_states, batch_actions, batch_next_states, batch_rewards, batch_dones = self.replay_buffer.next_batch(self.batch_size)
 
-        # compute td targets using q- or double q- learning
+        # compute td targets using q- or double q-learning
         if self.learning_type == 'q':
             """q learning"""
             targets = batch_rewards.astype(np.float32)
@@ -73,10 +73,18 @@ class DQNAgent:
             a_pred = self.Q.predict(self.sess, [state])
             action_id = np.argmax(a_pred)
         else:
-            # sample random action
             if self.exploration_type=='boltzmann':
-                action_id = self.Q.boltzmann(self.sess, [state], tau = 0.5)
+                actions = self.Q.predict(self.sess, [state])[0]
+
+                # softmax calculation, subtracting max for stability
+                actions = np.exp((actions - max(actions)) / 1.0) # TODO implement tau decay
+                actions /= np.sum(actions)
+
+                # selecting action following probabilities
+                a_value = np.random.choice(actions, p=actions)
+                action_id = np.argmax(a_value == actions)
             else:
+                # sample random action
                 action_id = np.random.randint(0, self.num_actions)
         return action_id
 

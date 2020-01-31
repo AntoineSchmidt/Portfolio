@@ -1,3 +1,4 @@
+import sys
 import gym
 import numpy as np
 import itertools as it
@@ -9,6 +10,7 @@ from tensorboard_evaluation import *
 from dqn.dqn_agent import DQNAgent
 from dqn.networks import NeuralNetwork, TargetNetwork
 
+
 # run one episode in the gym environment
 def run_episode(env, agent, deterministic, do_training=True, rendering=True, max_timesteps=1000):
     # save statistics like episode reward or action usage
@@ -16,8 +18,7 @@ def run_episode(env, agent, deterministic, do_training=True, rendering=True, max
     state = env.reset()
 
     # run environment until max_timesteps or terminal
-    step = 0
-    while True:
+    for _ in range(max_timesteps):
         action_id = agent.act(state=state, deterministic=deterministic)
         next_state, reward, terminal, info = env.step(action_id)
 
@@ -34,10 +35,8 @@ def run_episode(env, agent, deterministic, do_training=True, rendering=True, max
         if rendering:
             env.render()
 
-        if terminal or step > max_timesteps: 
+        if terminal: 
             break
-
-        step += 1
 
     return stats
 
@@ -79,13 +78,18 @@ def train_online(env, agent, num_episodes, model_dir="./models_cartpole", tensor
 
 
 if __name__ == "__main__":
-
     # start tensorboard
     tb_tool = TensorBoardTool()
     tb_tool.run()
 
-    # choose game
-    game = 1  #cartpole == 1 or mountaincar == 2
+    # read in environment choice
+    try:
+        game = int(sys.argv[1])
+    except:
+        print('Select game: cartpole (1) or mountaincar (default)')
+        game = 2
+
+    # setup game parameters
     if game == 1:
         env = gym.make("CartPole-v0").unwrapped
         state_dim = 4

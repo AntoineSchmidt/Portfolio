@@ -7,7 +7,6 @@ from keras.layers import Input, Dense, concatenate
 class ActionDiscriminator:
     def __init__(self, data_shape=(33,), network_shape=[80, 20]):
         self.batch_size = 64
-        self.learning_rate = 1e-3
         self.loss_func = binary_crossentropy
 
         self.name = 'ad-' + str(network_shape) + str(data_shape)

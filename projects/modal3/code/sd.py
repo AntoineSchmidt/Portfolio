@@ -7,7 +7,6 @@ from keras.layers import Input, Dense, Dropout
 class StateDiscriminator:
     def __init__(self, data_shape=(33,), network_shape=[10]):
         self.batch_size = 64
-        self.learning_rate = 2e-3
         self.loss_func = binary_crossentropy
 
         self.name = 'sd-' + str(network_shape) + str(data_shape)

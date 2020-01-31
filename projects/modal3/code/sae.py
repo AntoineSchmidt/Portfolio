@@ -13,7 +13,6 @@ class StateAutoEncoder:
         self.tau_decay = 5e-4
 
         self.batch_size = 64
-        self.learning_rate = 5e-3
         self.loss_func = binary_crossentropy
         self.loss_weight_func = K.variable(1.0)
         self.loss_weight_gumb = K.variable(1.0)
