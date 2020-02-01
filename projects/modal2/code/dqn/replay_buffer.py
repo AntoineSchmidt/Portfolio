@@ -29,8 +29,7 @@ class ReplayBuffer:
             self.data.next_states[self.index] = next_state
             self.data.rewards[self.index] = reward
             self.data.dones[self.index] = done
-            self.index += 1
-            self.index %= self.size
+            self.index = (self.index + 1) % self.size
 
     # samples a random batch of transitions
     def next_batch(self, batch_size):

@@ -77,7 +77,7 @@ class DQNAgent:
                 actions = self.Q.predict(self.sess, [state])[0]
 
                 # softmax calculation, subtracting max for stability
-                actions = np.exp((actions - max(actions)) / 1.0) # TODO implement tau decay
+                actions = np.exp((actions - max(actions)) / self.epsilon)
                 actions /= np.sum(actions)
 
                 # selecting action following probabilities
@@ -89,9 +89,9 @@ class DQNAgent:
         return action_id
 
     # anneal epsilon
-    def anneal(self):
-        if self.exploration_type=='e-annealing' and self.epsilon > self.epsilon_min:
-            self.epsilon *= self.epsilon_decay
+    def anneal(self, e=0):
+        self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay) # linear
+        #self.epsilon = max(self.epsilon_min, self.epsilon * np.exp(-(1 - self.epsilon_decay) * e))
 
     # load trained network
     def load(self, file_name):

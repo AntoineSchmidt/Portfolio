@@ -59,7 +59,7 @@ def train_online(env, agent, num_episodes, model_dir="./models_cartpole", tensor
         stats = run_episode(env, agent, deterministic=False, do_training=True)
 
         # epsilon anneal
-        agent.anneal()
+        agent.anneal(i)
 
         # write data
         tensorboard.write_episode_data(i, eval_dict={"episode_reward" : stats.episode_reward, "a_0" : stats.get_action_usage(0), "a_1" : stats.get_action_usage(1)})

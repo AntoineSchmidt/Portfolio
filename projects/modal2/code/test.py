@@ -44,11 +44,12 @@ for i in range(n_test_episodes):
     stats = run_episode(env, agent, deterministic=True, do_training=False, rendering=True)
     episode_rewards.append(stats.episode_reward)
 
-# save results in a dictionary and write them into a .json file
-results = dict()
-results["episode_rewards"] = episode_rewards
-results["mean"] = np.array(episode_rewards).mean()
-results["std"] = np.array(episode_rewards).std()
+# save results into a .json file
+results = {
+    "episode_rewards": episode_rewards,
+    "mean": np.array(episode_rewards).mean(),
+    "std": np.array(episode_rewards).std(),
+}
 
 # create folder
 if not os.path.exists("./results"):
