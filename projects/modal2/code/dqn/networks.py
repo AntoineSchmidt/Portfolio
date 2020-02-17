@@ -13,9 +13,6 @@ class NeuralNetwork:
         self.actions_ = tf.placeholder(tf.int32, shape=[None])
         self.targets_ = tf.placeholder(tf.float32,  shape=[None])
 
-        # tau for boltzmann exploration
-        self.tau_ = tf.placeholder(shape=None, dtype=tf.float32)
-
         # network
         fc1 = tf.layers.dense(self.states_, hidden, tf.nn.relu)
         fc2 = tf.layers.dense(fc1, hidden, tf.nn.relu)
