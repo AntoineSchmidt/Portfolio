@@ -1,9 +1,7 @@
-import os
-import gzip
-import pickle
 import numpy as np
 
 from collections import namedtuple
+
 
 # handels the observed tuples (state -> action -> next state and reward)
 class ReplayBuffer:
@@ -23,7 +21,6 @@ class ReplayBuffer:
             self.data.rewards.append(reward)
             self.data.dones.append(done)
         else: # fifo if full
-            self.index = int(self.index)
             self.data.states[self.index] = state
             self.data.actions[self.index] = action
             self.data.next_states[self.index] = next_state
