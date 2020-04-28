@@ -9,14 +9,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="966.10187mm"
+   height="1173.2939mm"
+   viewBox="0 0 966.10187 1173.2939"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="sae_network.svg"
-   inkscape:export-filename="C:\Users\Antoine\Desktop\PegAE\image\sae_network.png"
+   inkscape:export-filename="C:\Users\Antoine\Desktop\sae_network.png"
    inkscape:export-xdpi="100"
    inkscape:export-ydpi="100">
   <defs
@@ -28,20 +28,30 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748738"
-     inkscape:cx="-505.26003"
-     inkscape:cy="3256.8836"
+     inkscape:zoom="0.175"
+     inkscape:cx="-606.17221"
+     inkscape:cy="2166.5993"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1057"
+     inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:snap-global="false" />
+     inkscape:snap-global="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <sodipodi:guide
+       position="747.08665,389.9568"
+       orientation="1,0"
+       id="guide4694"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -50,14 +60,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(693.63274,1343.7378)">
     <path
        style="fill:#000000;stroke-width:0.18426029"
        d="m -517.08298,-391.37048 v -124.28356 h 124.28357 124.28359 v 124.28356 124.28357 h -124.28359 -124.28357 z m 177.44268,106.31819 v -17.78112 h -17.78112 -17.78112 v 17.78112 17.78112 h 17.78112 17.78112 z m -35.56224,-70.94021 v -17.78112 h -17.689 -17.68898 v -17.68899 -17.68899 h 17.68898 17.689 v -17.78111 -17.78112 h 17.78112 17.78112 v -35.37798 -35.37797 h -17.78112 -17.78112 v 35.37797 35.37798 h -17.689 -17.68898 v 17.78112 17.78111 h -17.78112 -17.78112 v 35.47011 35.47011 h 35.47011 35.47011 z m 106.50246,0 v -17.78112 h -17.78112 -17.78113 v 17.78112 17.78112 h 17.78113 17.78112 z m -212.82066,-70.94021 v -17.78112 h -17.68899 -17.68899 v 17.78112 17.78111 h 17.68899 17.68899 z m 212.82066,0 v -17.78112 h -17.78112 -17.78113 v 17.78112 17.78111 h 17.78113 17.78112 z m -141.88044,-70.84809 v -17.68898 h -17.78112 -17.78112 v 17.68898 17.68899 h 17.78112 17.78112 z"
@@ -124,13 +135,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45.12989426px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12824738px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-204.07359"
-       y="-355.30121"
+       x="-163.44862"
+       y="-371.33737"
        id="text45"><tspan
          sodipodi:role="line"
          id="tspan43"
-         x="-204.07359"
-         y="-355.30121"
+         x="-163.44862"
+         y="-371.33737"
          style="stroke-width:1.12824738px">binary-crossentropy</tspan></text>
     <text
        xml:space="preserve"
@@ -168,12 +179,12 @@
     <text
        id="text61"
        y="-502.48907"
-       x="32.113808"
+       x="34.251965"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:67.97966003px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.6994915px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="stroke-width:1.6994915px"
          y="-502.48907"
-         x="32.113808"
+         x="34.251965"
          id="tspan59"
          sodipodi:role="line">+</tspan></text>
     <path
@@ -196,5 +207,26 @@
        d="m -271.50666,-535.30109 c -70.5592,-149.6709 -70.5592,-149.6709 -70.5592,-149.6709"
        id="path876"
        inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.56500006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4696"
+       width="243.41666"
+       height="242.28278"
+       x="-501.57437"
+       y="-1237.2053" />
+    <rect
+       y="-515.49493"
+       x="-516.84119"
+       height="247.57555"
+       width="247.92865"
+       id="rect4698"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.59659648;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.56500006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4702"
+       width="473.98212"
+       height="29.482143"
+       x="-617.28156"
+       y="-729.4707" />
   </g>
 </svg>
