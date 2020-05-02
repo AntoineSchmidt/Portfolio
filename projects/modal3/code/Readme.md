@@ -3,7 +3,9 @@ Using a Gumbel-Softmax Categorical-Autoencoder a 33-bit state encoding has been 
 The figure below shows the Autoencoder network-structure,\
 by additionally minimising the entropy in the bottleneck a binary encoding can be learned.
 
-<img src="image/sae_network.png" width="400px">
+<p align="center">
+    <img src="image/sae_network.png" width="400px">
+</p>
 
 Analysing the found encoding shows that every Peg has been mapped to one bit:
 <img src="image/sae_test2_9.png">
@@ -12,7 +14,9 @@ Following, these state encodings where used to learn a 8-bit action encoding.\
 The figure below shows the network-structure, the before-state s gets concatenated to every layer in the Autoencoder.\
 This allows to learn a decoder which can output the after-state from a given before-state and an encoded action.
 
-<img src="image/aae_network.png" width="600px">
+<p align="center">
+    <img src="image/aae_network.png" width="600px">
+</p>
 
 One exemplary action encoding:
 <img src="image/aae_test_15.png">
