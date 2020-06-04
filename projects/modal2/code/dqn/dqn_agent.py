@@ -49,18 +49,14 @@ class DQNAgent:
         batch_states, batch_actions, batch_next_states, batch_rewards, batch_dones = self.replay_buffer.next_batch(self.batch_size)
 
         # compute td targets using q- or double q-learning
-        if self.learning_type == 'q':
-            """q learning"""
-            targets = batch_rewards.astype(np.float32)
-            targets[np.logical_not(batch_dones)] += self.discount_factor * np.max(self.Q_target.predict(self.sess, batch_next_states), axis=1)[np.logical_not(batch_dones)]
-        else:
-            """double q learning"""
+        if self.learning_type == 'q': # q learning
+            batch_rewards[np.logical_not(batch_dones)] += self.discount_factor * np.max(self.Q_target.predict(self.sess, batch_next_states), axis=1)[np.logical_not(batch_dones)]
+        else: # double q learning
             q_actions = np.argmax(self.Q.predict(self.sess, batch_next_states), axis=1)
-            targets = batch_rewards.astype(np.float32)
-            targets[np.logical_not(batch_dones)] += self.discount_factor * self.Q_target.predict(self.sess, batch_next_states)[np.arange(self.batch_size), q_actions][np.logical_not(batch_dones)]
+            batch_rewards[np.logical_not(batch_dones)] += self.discount_factor * self.Q_target.predict(self.sess, batch_next_states)[np.arange(self.batch_size), q_actions][np.logical_not(batch_dones)]
 
         # update network and target network
-        loss = self.Q.update(self.sess, batch_states, batch_actions, targets)
+        loss = self.Q.update(self.sess, batch_states, batch_actions, batch_rewards)
         self.Q_target.update(self.sess)
 
         return loss

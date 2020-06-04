@@ -35,7 +35,7 @@ class ReplayBuffer:
         batch_states = np.array([self.data.states[i] for i in batch_indices])
         batch_actions = np.array([self.data.actions[i] for i in batch_indices])
         batch_next_states = np.array([self.data.next_states[i] for i in batch_indices])
-        batch_rewards = np.array([self.data.rewards[i] for i in batch_indices])
+        batch_rewards = np.array([self.data.rewards[i] for i in batch_indices]).astype(np.float32)
         batch_dones = np.array([self.data.dones[i] for i in batch_indices])
 
         return batch_states, batch_actions, batch_next_states, batch_rewards, batch_dones
