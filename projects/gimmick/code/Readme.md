@@ -1,6 +1,6 @@
 # JavaScript game from scratch
 I recreated (with some artistic freedom) my favorite flash-game from scratch, using pure JavaScript/JQuery.\
-Using [jpexs-decompiler](https://github.com/jindrapetrik/jpexs-decompiler/releases) to extract assets (images and sounds) from the [original game](https://antoineschmidt.github.io/Portfolio/projects/gimmick/starrunner.swf) ([online](http://www.bambusratte.com/showgame.php?id=118)).
+Using <a href="https://github.com/jindrapetrik/jpexs-decompiler">jpexs-decompiler</a> to extract assets (images and sounds) from the <a href="https://antoineschmidt.github.io/Portfolio/projects/gimmick/starrunner.swf">original game</a> (<a href="http://www.bambusratte.com/showgame.php?id=118">online</a>).
 
 For now, only the first level is recreated.\
-Levels can be easily edited and added to the game by creating a json file in the levels folder ([more information](https://github.com/AntoineSchmidt/Portfolio/tree/master/projects/gimmick/code/levels/)).
+Levels can be easily edited and added to the game by creating a json file in the levels folder (<a href="levels/">more information</a>).

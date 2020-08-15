@@ -1,4 +1,4 @@
-# Creating or editing new game levels
+# Editing or creating new game levels
 
 CHANGING ASSET IDS IN level.json WILL BREAK THE GAME!
 
