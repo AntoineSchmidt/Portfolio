@@ -1,7 +1,8 @@
 # Solving Gym environments with reinforcement learning
-Using Python, Tensorflow and Tensorboard to solve Gym environments.\
-With *train.py*, setting *game* to the specific environment, the gym environment can be solved using reinforcement learning (using double q-learning with e-greedy/e-anneal or boltzmann).\
-The learned model can then be tested using *test.py*, again specifying the environment with *game*.
+This project uses Python, Tensorflow and Tensorboard to solve Gym environments with double q-learning.\
+The environment can be chosen by running *train.py* or *test.py* with command-line parameter 1 for Cartpole or 2 for Mountaincar.\
+With *train.py* the Gym environment can be solved using e-greedy or boltzmann exporation.\
+The learned model can then be tested using *test.py*.
 
 ## Cartpole and Mountaincar results
 <p align="center">
