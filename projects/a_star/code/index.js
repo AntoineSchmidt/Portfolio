@@ -12,6 +12,13 @@ function init() {
     ctxsolve = cansolve.getContext("2d");
     heuristic = document.getElementById('heuristic');
 
+    // load default image into canvas
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+    };
+    img.src = "default.png";
+
     w = can.width;
     h = can.height;
 
