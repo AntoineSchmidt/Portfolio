@@ -42,4 +42,4 @@ The calculated brushed quad, tooth and surface are shown in the top left corner.
   <img src="../analysis.png" width="700px">
 </p>
 
-The actual code is located in: <a href="app/src/main/java/hs_kempten/ibrush/">app/src/main/java/hs_kempten/ibrush/</a>
+The actual code is located in <a href="app/src/main/java/hs_kempten/ibrush/">app/src/main/java/hs_kempten/ibrush/</a>.
