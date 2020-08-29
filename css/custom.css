@@ -1,0 +1,25 @@
+#heading {
+    margin-top: -2%;
+    margin-bottom: -2%;
+    margin-left: 15%;
+}
+
+#heading_left {
+    float: left;
+    margin-right: -5%;
+}
+
+#heading_right {
+    float: right;
+    margin-top: 10%;
+}
+
+#gimmick {
+    height: 40px;
+}
+
+#skills {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
