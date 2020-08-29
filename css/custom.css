@@ -4,14 +4,12 @@
     margin-left: 15%;
 }
 
-#heading_left {
-    float: left;
-    margin-right: -5%;
+#heading-right {
+    margin-top: 10%;
 }
 
-#heading_right {
-    float: right;
-    margin-top: 10%;
+#heading-right-heading {
+    font-size: 50px;
 }
 
 #gimmick {
