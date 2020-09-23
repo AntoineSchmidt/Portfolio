@@ -33,6 +33,11 @@ function color(obj) {
     draw_color = obj.id;
     if (draw_color == "white") draw_width = 3;
     else draw_width = 2;
+
+    // keep button visually pressed
+    document.getElementById('black').classList.remove("pressed");
+    document.getElementById('white').classList.remove("pressed");
+    obj.classList.add("pressed");
 }
 
 function findxy(res, e) {
