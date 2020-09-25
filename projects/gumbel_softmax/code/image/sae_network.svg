@@ -16,7 +16,7 @@
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="sae_network.svg"
-   inkscape:export-filename="C:\Users\Antoine\Desktop\sae_network.png"
+   inkscape:export-filename="E:\04_Dokumente\Projekte\Html\Portfolio\projects\gumbel_softmax\code\image\sae_network.png"
    inkscape:export-xdpi="100"
    inkscape:export-ydpi="100">
   <defs
@@ -60,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -164,7 +164,7 @@
          id="tspan51"
          x="-55.887871"
          y="-746.00696"
-         style="stroke-width:1.00389504px">gumbel-loss</tspan></text>
+         style="stroke-width:1.00389504px">entropy-loss</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:67.97966003px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.6994915px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
