@@ -1,87 +1,90 @@
-import os
-import glob
 import numpy as np
-import pandas as pd
+import matplotlib.pyplot as plt
 
-from scipy import ndimage
-
-from evaluation import Evaluation
-from model import Model
-
-
-# read image data
-def read_images(folder):
-    files_left = sorted(glob.glob(folder + str("/img_MyCamera0_5*png")))
-    images_left = np.array([ndimage.imread(file) for file in files_left])
-    files_straight = sorted(glob.glob(folder + str("/img_MyCamera1_5*png")))
-    images_straight = np.array([ndimage.imread(file) for file in files_straight])
-    files_right = sorted(glob.glob(folder + str("/img_MyCamera2_5*png")))
-    images_right = np.array([ndimage.imread(file) for file in files_right])
-    return images_left, images_straight, images_right
-
-# read text information
-def read_text(file):
-    df = pd.read_csv(file, sep="\t")
-    labels = df[["Throttle", "Steering"]].values
-    data = df[["Speed"]].values
-    return labels, data
+from data import *
+from model import *
+from tensorboard_writer import *
 
 
-if __name__ == "__main__":
-    # train parameter
-    batch_size = 128
-    n_minibatches = 10000
+# train parameter
+BATCH_SIZE = 128
+VALIDATION_SPLIT = 0.05
+STEERING_CORRECTION = 0.1    
 
-    # initialize model
-    agent = Model()
-    agent.sess.run(agent.init)
+# initialize model
+agent = Model()
 
-    # setup tensorboard files
-    tensorboard_train = Evaluation("tensorboard/train")
-    tensorboard_valid = Evaluation("tensorboard/valid")
+# setup tensorboard files
+tensorboard_train = TensorboardWriter("tensorboard/train")
+tensorboard_valid = TensorboardWriter("tensorboard/valid")
 
-    # load data
-    labels, driving_data = read_text("./data/airsim_rec.txt")
-    images_left, images_straight, images_right = read_images("./data/images")
+# load data
+data = [load_folder("./data/{}".format(i)) for i in [3, 1, 2, 0]]
+speed = np.concatenate([data[i][0] for i in range(len(data))])
+control = np.concatenate([data[i][1] for i in range(len(data))])
+images_left = np.concatenate([data[i][2] for i in range(len(data))])
+images_center = np.concatenate([data[i][3] for i in range(len(data))])
+images_right = np.concatenate([data[i][4] for i in range(len(data))])
 
-    # normalize data
-    driving_data /= 15
-    labels[:, 1] *= 2
+# correct steering for left and right images
+control_left = control + np.array([0, STEERING_CORRECTION])
+control_right = control - np.array([0, STEERING_CORRECTION])
 
-    # correct steering for left and right images
-    labels_left = labels[:] + np.array([0., 0.2])
-    labels_straight = labels[:]
-    labels_right = labels[:] - np.array([0., 0.2])
+# validation and training data split
+valid_size = int(len(speed) * VALIDATION_SPLIT)
 
-    # validation and training data split
-    valid_size = int(labels.shape[0] * 0.04)
+speed_train = np.concatenate([speed[valid_size:]] * 3)
+control_train = np.concatenate([control_left[valid_size:], control[valid_size:], control_right[valid_size:]])
+images_train = np.concatenate([images_left[valid_size:], images_center[valid_size:], images_right[valid_size:]])
 
-    labels_train = np.concatenate([labels_left[valid_size:], labels_straight[valid_size:], labels_right[valid_size:]])
-    driving_data_train = np.concatenate([driving_data[valid_size:], driving_data[valid_size:], driving_data[valid_size:]])
-    images_train = np.concatenate([images_left[valid_size:], images_straight[valid_size:], images_right[valid_size:]])
+speed_valid = np.concatenate([speed[:valid_size]] * 3)
+control_valid = np.concatenate([control_left[:valid_size], control[:valid_size], control_right[:valid_size]])
+images_valid = np.concatenate([images_left[:valid_size], images_center[:valid_size], images_right[:valid_size]])
 
-    labels_valid = np.concatenate([labels_left[:valid_size], labels_straight[:valid_size], labels_right[:valid_size]])
-    driving_data_valid = np.concatenate([driving_data[:valid_size], driving_data[:valid_size], driving_data[:valid_size]])
-    images_valid = np.concatenate([images_left[:valid_size], images_straight[:valid_size], images_right[:valid_size]])
+# clip control for tanh, reduce acceleration
+control_train = np.clip((control_train * np.array([0.9, 1.0])) - np.array([0.03, 0]), -1.0, 1.00)
+control_valid = np.clip((control_valid * np.array([0.9, 1.0])) - np.array([0.03, 0]), -1.0, 1.00)
+
+# check data
+print(min(speed), max(speed), np.mean(speed))
+print(min(control[:, 0]), max(control[:, 0]), np.mean(control[:, 0]))
+print(min(control[:, 1]), max(control[:, 1]), np.mean(control[:, 1]))
+#for i in range(3):
+#    plt.imshow(images_center[234, :, :, i])
+#    plt.show()
+
+# validation dict
+valid_dict = { agent.image: images_valid, agent.speed: speed_valid, agent.control: control_valid }
 
 
-    # samples a minibatch
-    n_datapoints = labels_train.shape[0]
-    def sample_minibatch():
-        indices = np.random.choice(n_datapoints, batch_size)
-        return images_train[indices] / 255., driving_data_train[indices], labels_train[indices]
+# sample a balanced minibatch
+indices_p_p = np.arange(len(speed_train))[(control_train[:, 0] >= 0) * (control_train[:, 1] > 0)]
+indices_p_n = np.arange(len(speed_train))[(control_train[:, 0] >= 0) * (control_train[:, 1] <= 0)]
+indices_n_p = np.arange(len(speed_train))[(control_train[:, 0] < 0) * (control_train[:, 1] > 0)]
+indices_n_n = np.arange(len(speed_train))[(control_train[:, 0] < 0) * (control_train[:, 1] <= 0)]
+def sample_minibatch():
+    indices = np.random.choice(indices_p_p, BATCH_SIZE // 4)
+    indices = np.append(indices, np.random.choice(indices_p_n, BATCH_SIZE // 4))
+    indices = np.append(indices, np.random.choice(indices_n_p, BATCH_SIZE // 4))
+    indices = np.append(indices, np.random.choice(indices_n_n, BATCH_SIZE // 4))
+    return images_train[indices], speed_train[indices], control_train[indices]
 
-    # run training on n minibatches
-    for i in range(n_minibatches):
-        images_batch, driving_data_batch, labels_batch = sample_minibatch()
-        _, c = agent.sess.run([agent.optimizer, agent.loss], feed_dict={agent.image: images_batch, agent.X: driving_data_batch, agent.y: labels_batch, agent.train: True})
-        tensorboard_train.write_episode_data(i, {"loss": c})
-        print(i, c)
 
-        # calculate validation
-        if i % 100 == 0 or i == n_minibatches-1:
-            c_valid = agent.sess.run(agent.loss, feed_dict={agent.image: images_valid / 255., agent.X: driving_data_valid, agent.y: labels_valid, agent.train: False})
-            tensorboard_valid.write_episode_data(i, {"loss": c_valid})
+# train agent
+batch = 0
+while True:
+    batch += 1
 
-            agent.save("model/agent.ckpt", step=i)
-            print("validation loss: ", c_valid)
+    images_batch, speed_batch, control_batch = sample_minibatch()
+    data = { agent.image: images_batch, agent.speed: speed_batch, agent.control: control_batch }
+    _, loss = agent.sess.run([agent.il_optimizer, agent.il_loss], feed_dict=data)
+    tensorboard_train.write_episode_data(batch, { "loss": loss })
+    print(batch, loss)
+
+    # validate agent
+    if batch % 1000 == 0:
+        loss = agent.sess.run(agent.il_loss, feed_dict=valid_dict)
+        tensorboard_valid.write_episode_data(batch, { "loss": loss })
+
+        agent.save("agent.ckpt", step=batch)
+        print("validation loss:", loss)
