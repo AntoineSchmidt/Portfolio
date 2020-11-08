@@ -1,9 +1,9 @@
 ## Android-App for the detection of the brushed quad, tooth and surface
 The user interface of the app is shown below (splashscreen, user list, creating a new user).
 <p align="center">
-    <img src="../ui_intro.png" width="200px">
-    <img src="../ui_users.png" width="200px"> 
-    <img src="../ui_new.png" width="200px">
+  <img src="../ui_intro.png" width="200px">
+  <img src="../ui_users.png" width="200px"> 
+  <img src="../ui_new.png" width="200px">
 </p>
 The users profile (name and toothbrush length) and the brushing-events (start- and end-time) are managed in a SQLite database.
 
