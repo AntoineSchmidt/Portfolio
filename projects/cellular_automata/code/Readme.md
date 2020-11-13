@@ -15,8 +15,8 @@ Checkout data.xml and data_lab.xml for examples.\
 *linux_dependencies.txt* states all dependencies needed using linux.
 
 ## Langton Loops (setting-id: 0)
-<img src="../anim_a.gif">
+<img src="../media/anim_a.gif">
 
 ## Evoloops (setting-id: 1)
-<img src="../anim_b.gif">
+<img src="../media/anim_b.gif">
 

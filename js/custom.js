@@ -4,6 +4,6 @@ $(document).ready(function() {
 
     //Change gimmick image on hover
     $('#gimmick')
-    .mouseover(function () {$(this).attr("src", "projects/star_runner/player.gif");})
-    .mouseout(function () {$(this).attr("src", "projects/star_runner/player.png");});
+    .mouseover(function () {$(this).attr("src", "projects/star_runner/media/player.gif");})
+    .mouseout(function () {$(this).attr("src", "projects/star_runner/media/player.png");});
 });

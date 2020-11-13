@@ -4,12 +4,12 @@ The figure below shows the Autoencoder network-structure,\
 by additionally minimising the entropy in the bottleneck a binary encoding can be learned.
 
 <p align="center">
-  <img src="image/sae_network.png" width="400px">
+  <img src="../media/sae_network.png" width="400px">
 </p>
 
 Analysing the found encoding shows that every Peg has been mapped to one bit:
 <p align="center">
-  <img src="image/sae_test2_9.png">
+  <img src="../media/sae_test2_9.png">
 </p>
 
 Following, these state encodings where used to learn a 8-bit action encoding.\
@@ -17,12 +17,12 @@ The figure below shows the network-structure, the before-state s gets concatenat
 This allows to learn a decoder which can output the after-state from a given before-state and an encoded action.
 
 <p align="center">
-  <img src="image/aae_network.png" width="600px">
+  <img src="../media/aae_network.png" width="600px">
 </p>
 
 One exemplary action encoding:
 <p align="center">
-  <img src="image/aae_test_15.png">
+  <img src="../media/aae_test_15.png">
 </p>
 
 Finally, using PU-learning, a state and transition classifier was trained.\
@@ -43,13 +43,13 @@ Following parameters can be set:
 
 Three random steps:
 <p align="center">
-  <img src="image/path_0_2.png" width="70%">
+  <img src="../media/path_0_2.png" width="70%">
 </p>
 <p align="center">
-  <img src="image/path_1_2.png" width="70%">
+  <img src="../media/path_1_2.png" width="70%">
 </p>
 <p align="center">
-  <img src="image/path_2_0.png" width="70%">
+  <img src="../media/path_2_0.png" width="70%">
 </p>
 
 The given game simulation code can be easily modified to run a depth/breadth first search on the transition tree.

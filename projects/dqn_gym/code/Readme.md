@@ -6,6 +6,6 @@ The learned model can then be tested using *test.py*.
 
 ## Cartpole and Mountaincar results
 <p align="center">
-	<img src="../anim_a.gif" width="400px">
-	<img src="../anim_b.gif" width="400px">
+	<img src="../media/anim_a.gif" width="400px">
+	<img src="../media/anim_b.gif" width="400px">
 <p>

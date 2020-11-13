@@ -6,14 +6,14 @@ The human driver recorded the view from three cameras using segmented images.\
 For that, the *settings.json* file has to be moved into the AirSim settings directory.
 
 <p align="center">
-    <img src="media/img_Left.png">
-    <img src="media/img_Center.png">
-    <img src="media/img_Right.png">
+    <img src="../media/img_Left.png">
+    <img src="../media/img_Center.png">
+    <img src="../media/img_Right.png">
 </p>
 <p align="center">
-    <img src="media/img_Left_masked.png">
-    <img src="media/img_Center_masked.png">
-    <img src="media/img_Right_masked.png">
+    <img src="../media/img_Left_masked.png">
+    <img src="../media/img_Center_masked.png">
+    <img src="../media/img_Right_masked.png">
 </p>
 
 Those images are then masked for the ground, concatenating the last 3 binary-images as network input.\
@@ -26,7 +26,7 @@ Watch the agent drive:
 
 <p align="center">
     <a href="https://youtu.be/NtGKL55OlRk">
-        <img src="media/watch.png" alt="Play Video" width="400px">
+        <img src="../media/watch.png" alt="Play Video" width="400px">
     </a>
 </p>
 
@@ -38,6 +38,6 @@ Watch the reinforced agent drive:
 
 <p align="center">
     <a href="https://youtu.be/FeG0P5Vdqsg">
-        <img src="media/watch.png" alt="Play Video" width="400px">
+        <img src="../media/watch.png" alt="Play Video" width="400px">
     </a>
 </p>

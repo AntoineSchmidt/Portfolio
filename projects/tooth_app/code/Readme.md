@@ -1,22 +1,22 @@
 ## Android-App for the detection of the brushed quad, tooth and surface
 The user interface of the app is shown below (splashscreen, user list, creating a new user).
 <p align="center">
-  <img src="../ui_intro.png" width="200px">
-  <img src="../ui_users.png" width="200px"> 
-  <img src="../ui_new.png" width="200px">
+  <img src="../media/ui_intro.png" width="200px">
+  <img src="../media/ui_users.png" width="200px"> 
+  <img src="../media/ui_new.png" width="200px">
 </p>
 The users profile (name and toothbrush length) and the brushing-events (start- and end-time) are managed in a SQLite database.
 
 Using a specially preparated toothbrush, as shown below, the app can detect its colors using OpenCV.
 
 <p align="center">
-  <img src="../brush.png" width="500px">
+  <img src="../media/brush.png" width="500px">
 </p>
 
 By additionally detecting the users eyes, the quadrant schema can be layed over.
 
 <p align="center">
-  <img src="../schema.png" width="500px">
+  <img src="../media/schema.png" width="500px">
 </p>
 
 This quadrant schema gets positioned and appropriately sized with the help of the eye distance and the toothbrush length.\
@@ -28,7 +28,7 @@ As the "travelled" distance of the toothbrush-end isn't linear\
 a parabola is used to project the linear division into a more realistic distribution.
 
 <p align="center">
-  <img src="../tooth.png" width="500px">
+  <img src="../media/tooth.png" width="500px">
 </p>
 
 After detecting the quadrant and tooth, the brushed surface can be calculated. This is done by comparing the two different mark colors.\
@@ -39,7 +39,7 @@ Shown below is a full analysis output, with the edgepoints of the schema and the
 The calculated brushed quad, tooth and surface are shown in the top left corner.
 
 <p align="center">
-  <img src="../analysis.png" width="700px">
+  <img src="../media/analysis.png" width="700px">
 </p>
 
 The actual code is located in <a href="app/src/main/java/hs_kempten/ibrush/">app/src/main/java/hs_kempten/ibrush/</a>.
