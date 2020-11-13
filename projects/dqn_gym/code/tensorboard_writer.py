@@ -1,14 +1,34 @@
-import tensorflow as tf
 import os
+import logging
+import tensorflow as tf
+
 from datetime import datetime
+from tensorboard import default, program
+
 
 # writes data to tensorboard file
-class Evaluation:
+class TensorboardWriter:
+    DIR = './tensorboard'
+
+    # start tensorboard server
+    def run():
+        # Remove http messages
+        log = logging.getLogger('werkzeug').setLevel(logging.ERROR)
+
+        # Start tensorboard server
+        tb = program.TensorBoard(default.get_plugins(), default.get_assets_zip_provider())
+        tb.configure(argv=[None, '--logdir', TensorboardWriter.DIR])
+        url = tb.launch()
+        print('TensorBoard at %s \n' % url)
+
     # setup file and placeholders for tensorboard
     def __init__(self, store_dir, stats = []):
+        store_dir = os.path.join(TensorboardWriter.DIR, store_dir)
+        os.makedirs(store_dir, exist_ok=True)
+
         tf.reset_default_graph()
         self.sess = tf.Session()
-        os.makedirs(store_dir, exist_ok=True)
+
         self.tf_writer = tf.summary.FileWriter(os.path.join(store_dir, "experiment-%s" % datetime.now().strftime("%Y%m%d-%H%M%S") ))
 
         self.stats = stats

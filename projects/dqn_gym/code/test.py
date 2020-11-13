@@ -3,11 +3,12 @@ import sys
 import gym
 import json
 import numpy as np
+
 from datetime import datetime
 
-from train import run_episode
+from dqn.agent import *
 from dqn.networks import *
-from dqn.dqn_agent import DQNAgent
+from train import run_episode
 
 
 np.random.seed(0)
@@ -32,10 +33,10 @@ else:
     model_dir = "./models_mountaincar"
 
 # initialize/load networks and agent
-Q = NeuralNetwork(state_dim, num_actions)
-Q_target = TargetNetwork(state_dim, num_actions)
-agent = DQNAgent(Q, Q_target, num_actions)
-agent.load(os.path.join(model_dir, "dqn_agent.ckpt"))
+q = NeuralNetwork(state_dim, num_actions)
+q_target = TargetNetwork(state_dim, num_actions)
+agent = Agent(q, q_target, num_actions)
+agent.load(model_dir)
 
 # run number of episodes
 n_test_episodes = 15

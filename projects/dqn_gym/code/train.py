@@ -3,12 +3,10 @@ import gym
 import numpy as np
 import itertools as it
 
-from utils import EpisodeStats
-from start_tensorboard import TensorBoardTool
-from tensorboard_evaluation import *
-
-from dqn.dqn_agent import DQNAgent
-from dqn.networks import NeuralNetwork, TargetNetwork
+from utils import *
+from dqn.agent import *
+from dqn.networks import *
+from tensorboard_writer import *
 
 
 # run one episode in the gym environment
@@ -42,16 +40,15 @@ def run_episode(env, agent, deterministic, do_training=True, rendering=True, max
 
 
 # execute the dqn training
-def train_online(env, agent, num_episodes, model_dir="./models_cartpole", tensorboard_dir="./tensorboard"):
+def train_online(env, agent, num_episodes, model_dir):
     # create folder for model
-    if not os.path.exists(model_dir):
-        os.mkdir(model_dir)
+    os.makedirs(model_dir, exist_ok=True)
 
     print("... train agent")
 
     # setup tensorboard files for monitoring
-    tensorboard = Evaluation(os.path.join(tensorboard_dir, "train"), ["episode_reward", "a_0", "a_1"])
-    tensorboard_eval = Evaluation(os.path.join(tensorboard_dir, "eval"), ["episode_reward", "a_0", "a_1"])
+    tensorboard = TensorboardWriter("train", ["episode_reward", "a_0", "a_1"])
+    tensorboard_eval = TensorboardWriter("eval", ["episode_reward", "a_0", "a_1"])
 
     # training
     for i in range(num_episodes):
@@ -68,19 +65,19 @@ def train_online(env, agent, num_episodes, model_dir="./models_cartpole", tensor
         if i % 100 == 0 and i != 0:
             stats = run_episode(env, agent, deterministic=True, do_training=False)
             tensorboard_eval.write_episode_data(i, eval_dict={"episode_reward": stats.episode_reward, "a_0": stats.get_action_usage(0), "a_1": stats.get_action_usage(1)})
-       
+
         # store model every 100 episodes and in the end.
         if i % 100 == 0 or i >= (num_episodes - 1):
-            agent.saver.save(agent.sess, os.path.join(model_dir, "dqn_agent.ckpt"))
+            agent.saver.save(agent.sess, os.path.join(model_dir, "agent.ckpt"), global_step=i)
 
-    # close tensorboard session
+    # close tensorboard sessions
     tensorboard.close_session()
+    tensorboard_eval.close_session()
 
 
 if __name__ == "__main__":
     # start tensorboard
-    tb_tool = TensorBoardTool()
-    tb_tool.run()
+    TensorboardWriter.run()
 
     # read in environment choice
     try:
@@ -104,9 +101,9 @@ if __name__ == "__main__":
         model_dir = "./models_mountaincar"
 
     # initialize networks and agent
-    Q = NeuralNetwork(state_dim, num_actions)
-    Q_target = TargetNetwork(state_dim, num_actions)
-    DQNAgent = DQNAgent(Q, Q_target, num_actions, replay_buffer_size = 1e4, epsilon = 1.0, epsilon_decay = 0.999)
+    q = NeuralNetwork(state_dim, num_actions)
+    q_target = TargetNetwork(state_dim, num_actions)
+    agent = Agent(q, q_target, num_actions, replay_buffer_size=1e4, epsilon=1.0, epsilon_decay=0.999)
 
     # train agent
-    train_online(env, DQNAgent, num_episodes=episodes, model_dir=model_dir)
+    train_online(env, agent, episodes, model_dir)

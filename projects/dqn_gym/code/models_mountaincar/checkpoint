@@ -1,2 +1,2 @@
-model_checkpoint_path: "dqn_agent.ckpt"
-all_model_checkpoint_paths: "dqn_agent.ckpt"
+model_checkpoint_path: "agent.ckpt"
+all_model_checkpoint_paths: "agent.ckpt"

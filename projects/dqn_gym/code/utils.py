@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class EpisodeStats:
     """
     This class tracks statistics like episode reward or action usage.

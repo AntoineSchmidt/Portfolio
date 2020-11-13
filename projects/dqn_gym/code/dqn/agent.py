@@ -4,18 +4,9 @@ import tensorflow as tf
 from dqn.replay_buffer import ReplayBuffer
 
 
-class DQNAgent:
+class Agent:
     def __init__(self, Q, Q_target, num_actions, discount_factor=0.99, batch_size=64, epsilon=0.95, epsilon_min=0.05, epsilon_decay=0.995,
                  exploration_type='e-annealing', learning_type='dq', replay_buffer_size=1e5):
-        """
-         Args:
-            Q: Action-Value function estimator
-            Q_target: Slowly updated target network to calculate the targets.
-            num_actions: Number of actions of the environment.
-            discount_factor: gamma, discount factor of future rewards.
-            batch_size: Number of samples per batch.
-            epsilon: Chance to sample a random action. Float between 0 and 1.
-        """
         self.Q = Q      
         self.Q_target = Q_target
 
@@ -90,5 +81,5 @@ class DQNAgent:
         #self.epsilon = max(self.epsilon_min, self.epsilon * np.exp(-(1 - self.epsilon_decay) * e))
 
     # load trained network
-    def load(self, file_name):
-        self.saver.restore(self.sess, file_name)
+    def load(self, folder):
+        self.saver.restore(self.sess, tf.train.latest_checkpoint(folder))
