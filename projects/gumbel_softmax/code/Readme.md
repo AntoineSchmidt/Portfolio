@@ -33,9 +33,9 @@ Corresponding Papers:\
 [Towards Stable Symbol Grounding with Zero-Suppressed State AutoEncoder](https://arxiv.org/abs/1903.11277)
 
 ## Executing the code
-All the above networks can be trained and their performance can be controlled in the *analysis.ipynb* jupyter-notebook.
+All the above networks can be trained and their performance can be controlled in the *<a href="analyse.ipynb">analyse.ipynb</a>* jupyter-notebook.
 
-A random Peg-Solitaire game can be simulated executing the *simulate.ipynb* notebook.\
+A random Peg-Solitaire game can be simulated executing the *<a href="simulate.ipynb">simulate.ipynb</a>* notebook.\
 Following parameters can be set:
 - *randomSteps*: defines the number of moves executed
 - *randomPath*: with this optional parameter the action number to be executed can be defined (this action has to be legal)
